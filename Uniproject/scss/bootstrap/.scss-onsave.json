@@ -1,0 +1,11 @@
+
+{
+  "inputDir": "./",
+  "outputDir": "../compiled/",
+    "useNpmSass": true,
+    "style":"compressed",
+    "sourcemap":"none",
+    "showStartup":false,
+    "showOutput":true,
+    "showError":true
+}
