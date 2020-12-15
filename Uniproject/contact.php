@@ -7,7 +7,7 @@
   <body class="d-flex flex-column h-100">
 
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
-    <?php $tab=0; $navbar=0; require_once('./template/navbar.php') ?>
+    <?php $tab=2; $navbar=0; require_once('./template/navbar.php') ?>
 
 	<div class="banner text-center text-white"><h2>Banner</h2></div>
 
