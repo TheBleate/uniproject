@@ -19,7 +19,7 @@
   <link href="./scss/compiled/bootstrap-grid.css" rel="stylesheet">
 
   <!-- Quicksand google webfont CSS -->
-  <link href="./css/quicksand/quicksand.css" rel="stylesheet">
+  <link href="./css/quicksand/quicksand.min.css" rel="stylesheet">
 
   <!-- Font Awesome webfont CSS -->
   <!-- WARNING: The version of Font Awesome used is the local 4.7.0, so the icon website where everyone is looking is no longer useful, use this instead https://fontawesome.com/v4.7.0/icons -->

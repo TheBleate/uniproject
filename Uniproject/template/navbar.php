@@ -42,7 +42,7 @@ switch ($navbar ?? 0):
       </ul>
       <form class="form-inline my-2 my-lg-0" action="./login.php">
         <input class="form-control mr-sm-2" type="search" placeholder="email@projectus.com" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log In</button>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
       </form>
     </div>
 <?php break;

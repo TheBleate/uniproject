@@ -9,7 +9,12 @@
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php $tab=0; $navbar=0; require_once('./template/navbar.php') ?>
 
-	<div class="banner text-center text-white"><h3 class="d-inline bg-dark px-2 py-1">Banner</h3></div>
+	<div class="banner text-center text-white">
+        <div class="d-inline-block text-left">
+            <div class="bg-secondary px-2 py-1"><h4 class="m-0">Ens presentem al mon exterior!</h4></div>
+            <div class="bg-secondary px-2 py-1 d-inline-block"><small class="m-0">Benvingut a Uniproject</small></div>
+        </div>
+    </div>
 
     <!-- Begin page content -->
     <main class="flex-shrink-0">
