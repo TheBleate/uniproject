@@ -12,30 +12,11 @@
 	<!-- Banner | additionally you can specify the banner title and subtitle ( $title='string'; $subtitle='string'; ) before the requirement -->
 	<?php $title='Ens presentem al mon exterior!'; $subtitle='Benvingut a Uniproject'; require_once('./template/banner.php') ?>
 
-    <!-- Begin page content -->
-    <main class="flex-shrink-0">
-      <div class="container">
-        <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-        <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="#">the default sticky footer</a> minus the navbar.</p>
-    		<div class="container-fluid">
-    			<h4 class="display-4">bg-*</h4>
-    			<p class="bg-muted">Muted.</p>
-    			<p class="bg-primary">Primary.</p>
-    			<p class="bg-success">Success.</p>
-    			<p class="bg-info">Info.</p>
-    			<p class="bg-warning">Warning.</p>
-    			<p class="bg-danger">Danger.</p>
-    			<p class="bg-secondary">Secondary.</p>
-    			<p class="bg-dark">Dark.</p>
-    			<p class="bg-body">Default.</p>
-    			<p class="bg-light">Light.</p>
-    			<p class="bg-white">White</p>
-    		</div>
-        <div class="container-fluid">
-
-        </div>
-	  </div>
+	<!-- Begin page content -->
+	<main class="flex-shrink-0">
+      <div class="container py-5">
+        <!--Content here-->
+	   </div>
     </main>
 
     <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
