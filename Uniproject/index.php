@@ -9,6 +9,7 @@
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php $tab=0; $navbar=0; require_once('./template/navbar.php') ?>
 
+	<!-- Banner | additionally you can specify the banner title and subtitle ( $title='string'; $subtitle='string'; ) before the requirement -->
 	<?php $title='Ens presentem al mon exterior!'; $subtitle='Benvingut a Uniproject'; require_once('./template/banner.php') ?>
 
     <!-- Begin page content -->
