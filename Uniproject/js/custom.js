@@ -8,7 +8,7 @@
    */
   const android = /(android)/i.test(navigator.userAgent);
   const banner = document.querySelector('.banner');
- 
+
   /**
    *  Listeners
    */

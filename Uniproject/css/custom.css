@@ -17,7 +17,7 @@ main>.container {
 .banner {
   margin-top: 56px;
   padding: 7em 0 7em 0;
-  background-image: url('../img/banner-2.jpg');
+  background-image: url('../img/banner.webp');
   background-size: cover;
   background-position: top;
 }
