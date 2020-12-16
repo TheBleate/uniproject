@@ -2,7 +2,7 @@
 {
   "inputDir": "./",
   "outputDir": "../compiled/",
-    "useNpmSass": true,
+    "useNpmSass": false,
     "style":"compressed",
     "sourcemap":"none",
     "showStartup":false,
