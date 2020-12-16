@@ -1,0 +1,30 @@
+* { font-family: 'Quicksand', sans-serif; }
+
+.caixa-total { /*comentari 2*/ display: grid; grid-template-columns: repeat(3, 1fr); }
+
+.caixa-total .caixa-gran { display: flex; display: grid; grid-column-start: 2; grid-column-end: 3; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(14, 1fr); height: 600px; }
+
+.caixa-total .caixa-gran .caixa-titul { align-self: center; justify-self: center; display: grid; grid-column-start: 3; grid-column-end: 6; grid-row-start: 1; grid-row-end: 3; color: #018AC0; font-style: oblique; }
+
+.caixa-total .caixa-gran .caixa-usuari { display: flex; display: grid; grid-column-start: 3; grid-column-end: 6; grid-row-start: 3; grid-row-end: 5; }
+
+.caixa-total .caixa-gran .caixa-usuari .text { align-self: flex-end; text-transform: capitalize; }
+
+.caixa-total .caixa-gran .caixa-usuari .userpass { height: 60%; width: 100%; border: 1px solid #AAFBFF; box-sizing: border-box; padding: 2px; }
+
+.caixa-total .caixa-gran .caixa-password { display: flex; display: grid; grid-column-start: 3; grid-column-end: 6; grid-row-start: 5; grid-row-end: 7; }
+
+.caixa-total .caixa-gran .caixa-password .text { align-self: flex-end; text-transform: capitalize; }
+
+.caixa-total .caixa-gran .caixa-password .userpass { height: 60%; width: 100%; border: 1px solid #AAFBFF; box-sizing: border-box; padding: 2px; }
+
+.caixa-total .caixa-gran .caixa-botons { display: grid; grid-column-start: 3; grid-column-end: 6; grid-row-start: 8; grid-row-end: 10; }
+
+.caixa-total .caixa-gran .caixa-botons .botoblau { border-radius: 34px 34px 34px 34px; width: 100%; height: 75%; color: #DEE8F1; border: 1px solid #AAFBFF; cursor: pointer; background-color: #018AC0; }
+
+.caixa-total .caixa-gran .caixa-botons .botoblau:hover { opacity: 0.7; }
+
+.caixa-total .caixa-gran .caixa-botons .botoroig { border-radius: 34px 34px 34px 34px; width: 100%; height: 75%; color: #DEE8F1; border: 1px solid #AAFBFF; cursor: pointer; background-color: #004481; }
+
+.caixa-total .caixa-gran .caixa-botons .botoroig:hover { opacity: 0.7; }
+/*# sourceMappingURL=access.css.map */

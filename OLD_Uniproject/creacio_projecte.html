@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <LINK rel="shortcut icon" type="image/png" href="imatges/message-chat-bubble-1_108543.png">
+  <link rel="stylesheet" href="../../CSS/gestio.css">
+  <link href="CSS/creacio_projecte.css"rel="stylesheet" type="text/css">
+  <link href="CSS/creacio_empresa.css"rel="stylesheet" type="text/css">
+  <link href="../../CSS/paginicial.css"rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/png" href="imatges/message-chat-bubble-1_108543.png">
+  <title>Uniproject</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h4>UniProject</h4>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="gestio.html">Gestions</a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <li><a href="acces.html">Accedeix</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+  <a name="titolprincipi"><h1 class="titolprincipal">Creació de Projectes</h1></a>
+  <p class ="p_creacio">Com a empresa o institut tens la possibilitat de crear el teu projecte, sempre que no hagis pogut fer-ho anteriorment.</p>
+
+  <form action="PHP/gestio_projecte/alta_projecte.php" method="post">
+
+  <form onsubmit="minimCaracters()">
+    <div class = "flexbox-container">
+      <div>
+        <label for="nom">Nom del projecte</label>
+        <br>
+        <input type="text" id="nom_projecte" name="nom_projecte" placeholder="Introduir el nom del projecte" required></input>
+      </div>
+        <div>
+          <label for="nom centre">Nom de l'empresa/centre</label>
+          <br>
+          <input type="text" id="nom_empresa_centre" name="nom_empresa_centre" placeholder="Nom de l'empresa/centre" required></input>
+        </div>
+    </div>
+    <div class="flexbox-container">
+      <div>
+        <label for = "telefon">Telèfon</label>
+        <br>
+        <input type="tel" id="telefon" name="telefon" placeholder="Introduir telèfon"required></input>
+      </div>
+        <div>
+          <label for = "email">Email</label>
+          <br>
+          <input type="email" id="email" name="email" placeholder="Introduir email" required></input>
+        </div>
+    </div>
+    <div class="flexbox-container">
+      <div>
+        <label for = "municipi">Municipi</label>
+        <br>
+        <select id="municipi" name="municipi">
+          <option>Amposta</option>
+          <option>Alcanar</option>
+          <option>Tortosa</option>
+        </select>
+      </div>
+        <div>
+          <label for="municipi">Categoria del projecte</label>
+          <br>
+          <select id="categoria" name="categoria">
+            <option>Tecnologia</option>
+            <option>Agricultura</option>
+            <option>Comerç</option>
+          </select>
+        </div>
+    </div>
+    <div class="flexbox-container">
+      <div>
+        <label for="descripcio">Descripció</label>
+      </div>
+    </div>
+    <textarea id="desc" name="comentari" onClick='comentari.value=""'rows="10" cols="40" required>Escriu una descripció sobre el projecte</textarea>
+    <br>
+    <div>
+    <button class="botoblau" name="enviar">Enviar</button>
+    <br>
+  </form>
+
+  <br>
+
+  <p class ="text_pagina">Altres opcions</p>
+
+  <form>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_projecte/llistar_projecte.php" required>Llistar</button>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_projecte/modificar_projecte1.php" required>Modificar</button>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_projecte/eliminar_projecte.php" required>Eliminar</button>
+  <br>
+
+<div>
+    <footer>
+        <div class="container-footer-all">
+            <div class="container-body">
+                <div class="column1">
+                    <h1>UniProject</h1>
+                    <p>Nosaltres creiem en les teves capacitats i per això et facilitem les eines <br>
+                    per a la creació de propostes i projectes conjuntament amb altres empreses i centres.
+                    </p>
+                </div>
+                <div class="column2">
+                    <h1>Menú</h1>
+                    <div class="menufooter">
+                        <ul class="links-nav">
+                            <li><a href="index.html">Inici</a></li><br>
+                            <li><a href="gestio.html">Gestions</a></li><br>
+                            <li><a href="mapa.html">Mapa</a></li><br>
+                            <li><a href="acces.html">Acces.html</a></li><br>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column3">
+                    <h1>Informació de contacte</h1>
+                    <div class="row2">
+                        <img src="">
+                        <label>UniProject,
+                            Carrer Madrid, 35, 49,
+                            43870 Amposta <br></label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="">
+                        <label>Telf. 977700043 <br></label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="">
+                        <label>uniproject@gmail.com <br></label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_footer">
+                <div class="footer">
+                    <div class="copyright">
+                        © 2020 Tots els drets reservats |
+                    </div>
+                    <div class="informacio_politica">
+                        Informació companya | Privacio i Politica | Termins i Condicions
+                    </div>
+                </div>
+            </div>
+    </footer>
+</div>
+<script src="JAVASCRIPT/creacio_projecte.js" language="javascript" type="text/javascript"></script>
+
+</body>
+</html>

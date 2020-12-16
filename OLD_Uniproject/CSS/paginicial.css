@@ -1,0 +1,275 @@
+  body{
+    background: #f8f8f8;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .titolprincipal{
+    /*Deixem marge espai dal*/
+    margin-top: 30px;
+    /*Centrar Text*/
+    text-align: center;
+  }
+
+
+
+  /*Slider incial*/
+  .imatge-slider{
+    width: 100%;
+    height: 500px;
+  }
+
+  /*Amb position: relative el contingut està posicionat en relació de la seva posició normal*/
+  /*Display inline block respecta els marges d'altres elements, ademś, no afegeix un salt de pagina si toca un element*/
+  /*El text anirà posicionat a l'esquerra de la pantalla (text-align left)*/
+  .contenidor{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+
+  /*postion absolute la posicio serà exactament a l punt, no hi ha res que el mourà*/
+  .text-imatge{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .text-centrat{
+    margin-top: 30px;
+    text-align: center;
+
+  }
+  .grid-section{
+    width: 1110px;
+    display: grid;
+    grid-template-columns: 500px 300px 300px;
+    grid-gap: 2px;
+    margin-bottom: 20px;
+    margin: 20px 8%;
+  }
+  .grid-item1{
+    width: 500px;
+    height: 450px;
+    grid-row: 1 / 3;
+  }
+  .imatge-intro{
+    width: 300px;
+    height: 225px;
+  }
+  .flex-text {
+    display: flex;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 350px;
+  }
+
+  .flex-iconos {
+    display: flex;
+    background-color: DodgerBlue;
+  }
+
+  .flex-iconos > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+@media (max-width: 1270px) {
+  /*postion absolute la posicio serà exactament a l punt, no hi ha res que el mourà*/
+  .text-imatge{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+  }
+
+  .text-centrat{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 30px;
+  }
+  .grid-section{
+    width: 1050px;
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-gap: 2px;
+    margin: 30px 10%;
+  }
+  .grid-item1{
+    width: 1000px;
+    height: 700px;
+    grid-column: 1 / 3;
+  }
+  .imatge-intro{
+    width: 500px;
+    height: 400px;
+  }
+}
+@media (max-width: 1024px) {
+
+  .titolprincipal{
+    /*Deixem marge espai dal*/
+    margin-top: 30px;
+    /*Centrar Text*/
+    text-align: center;
+  }
+
+  /*Slider incial*/
+  .imatge-slider{
+    display: flex;
+    width: 100%;
+    height: 400px;
+  }
+
+  /*Amb position: relative el contingut està posicionat en relació de la seva posició normal*/
+  /*Display inline block respecta els marges d'altres elements, ademś, no afegeix un salt de pagina si toca un element*/
+  /*El text anirà posicionat a l'esquerra de la pantalla (text-align left)*/
+  .contenidor{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+
+  /*postion absolute la posicio serà exactament a l punt, no hi ha res que el mourà*/
+  .text-imatge{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+  }
+
+  .text-centrat{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 20px;
+
+  }
+  .grid-section{
+    width: 800px;
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-gap: 2px;
+    margin-bottom: 20px;
+    margin: 20px 5%;
+  }
+  .grid-item1{
+    width: 800px;
+    height: 650px;
+    grid-column: 1/3;
+  }
+  .imatge-intro{
+    width: 400px;
+    height: 300px;
+  }
+}
+@media (max-width: 768px) {
+
+  .titolprincipal{
+    /*Deixem marge espai dal*/
+    margin-top: 30px;
+    /*Centrar Text*/
+    text-align: center;
+  }
+
+  /*Slider incial*/
+  .imatge-slider{
+    display: flex;
+    width: 100%;
+    height: 350px;
+  }
+
+  /*Amb position: relative el contingut està posicionat en relació de la seva posició normal*/
+  /*Display inline block respecta els marges d'altres elements, ademś, no afegeix un salt de pagina si toca un element*/
+  /*El text anirà posicionat a l'esquerra de la pantalla (text-align left)*/
+  .contenidor{
+    position: relative;
+    display: inline-block;
+    text-align: left;
+  }
+
+  /*postion absolute la posicio serà exactament a l punt, no hi ha res que el mourà*/
+  .text-imatge{
+    position: absolute;
+    bottom: 80px;
+    left: 40px;
+    margin-right: 20px;
+  }
+
+  .boto-imatge{
+    position: absolute;
+    bottom: 25px;
+    left: 40px;
+
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 8px;
+    border: 2px solid #0016b0;
+  }
+
+  .text-centrat{
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 60px;
+  }
+
+/*El margin top s'ha de canviar cada cop que vulguesim que el text s'adapti*/
+  .imatge-intro{
+    width: 300px;
+    height: 200px;
+    float: right;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+  }
+  .grid-section{
+    width: 600px;
+    display: grid;
+    grid-template-columns: 600px;
+    grid-gap: 2px;
+    margin-bottom: 20px;
+    margin: 20px 3%;
+  }
+  .grid-item1{
+    width: 600px;
+    height: 500px;
+    grid-column: 1/3;
+  }
+  .imatge-intro{
+    width: 600px;
+    height: 500px;
+    grid-column: 1/3;
+  }
+}
+@media (max-width: 550px) {
+  .text-centrat{
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 60px;
+  }
+  .grid-section{
+    width: 350px;
+    display: grid;
+    grid-template-columns: 350px;
+    grid-gap: 2px;
+    margin-bottom: 20px;
+    margin: 20px 1%;
+  }
+  .grid-item1{
+    width: 350px;
+    height: 300px;
+    grid-column: 1/3;
+  }
+  .imatge-intro{
+    width: 350px;
+    height: 300px;
+    grid-column: 1/3;
+  }
+}

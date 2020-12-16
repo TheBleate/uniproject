@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  background: #f8f8f8;
+}
+nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+min-height: 8vh;
+background-color: #2f3640;
+font-family: 'Sansita Swashed', cursive;
+}
+
+.logo{
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+#mapa{
+  margin: 5px;
+  width: 99%;
+  height: 33em;
+  margin-bottom: -6%;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#divcercador {
+  float: right;
+  margin-right: 2%;
+}
+
+.cercadorh1{
+  font-size: 1.3em;
+}
+
+#flex-containercercador {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+#selectmapai{
+  width:100%;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+#selectmapae{
+  width:100%;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+footer{
+  bottom: 0;
+  position: relative;
+  color: white;
+  background-color: black;
+  font-size: 1em;
+  flex-direction: row;
+  display: flex;
+  padding-left: 1%;
+  height: 10%;
+  padding-top: 5px;
+  margin-top: 6%;
+  width: 100%;
+  margin-bottom: -1%;
+
+}
+
+#img_copy{
+  width: 15px;
+  height: 15px;
+}
+
+.div_footer{
+  display: flex;
+  padding-right: 20px;
+  margin-left: 1%;
+  text-align: center;
+  align-items: center;
+  font-size: 1em;
+}
+
+#imatge_montsia{
+  width: 25%;
+  float: right;
+}
+
+
+
+.p_footer{
+  display: flex;
+  flex-direction: column;
+  margin-right: 10%;
+}
+
+.boto{
+background-color: black;
+animation-name: animacio_boto;
+animation-duration: 4s;
+background-color: white;
+text-shadow;
+box-shadow: 2px 2px;
+}
+
+.boto:active{
+  transform: scale(0.8);
+}
+
+
+@keyframes animacio_boto {
+  from {background-color: black;}
+  to {background-color: white;}
+}
+
+@media (max-width: 1024px) {
+  .nav-links{
+      width: 60%;
+  }
+
+  .div_footer{
+    font-size: 0.8em;
+}
+#imatge_montsia{
+  width: 35%;
+}
+footer{
+    bottom: 0;
+    position: fixed;
+}
+
+}
+
+
+
+@media (max-width: 768px) {
+  body{
+      overflow-x: hidden;
+  }
+  .nav-links{
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: #2f3640;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+  }
+
+
+  .nav-links li{
+      opacity: 0;
+  }
+
+  .burger{
+      display: block;
+  }
+
+  .nav-active{
+      transform: translateX(0%);
+  }
+  #imatge_montsia{
+    width: 100%;
+
+  }
+
+  @keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+}
+
+/*Animació dels links*/
+@keyframes navLinkFade{
+  from{
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to{
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+  .cercadorh1{
+    font-size: 1.5em;
+  }
+  .selectmapa{
+    width:100%;
+    font-size: 1.2em;
+  }
+
+  #imatge_montsia{
+    width: 25%;
+
+  }
+  footer{
+    bottom: 0;
+    position: relative;
+    color: white;
+    background-color: black;
+    font-size: 1em;
+    flex-direction: row;
+    padding-left: 1%;
+    height: 15%;
+
+  }
+
+}

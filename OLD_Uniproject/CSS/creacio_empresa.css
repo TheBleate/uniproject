@@ -1,0 +1,75 @@
+ .titols{
+     color: #2f3640;
+    /*Font de la lletra*/
+    /*tamany de la lletra*/
+    font-size: 26px;
+    margin-top: 30px;
+    text-align: center;
+    /*Fem un espai abaix amb padding*/
+    padding: 0px 0px 20px 0px;
+    /*fem cursiva, també está italic*/
+    font-family: 'Quicksand', sans-serif;
+ }
+
+.text_pagina{
+    /*La primera lletra de cada paraula se fa majuscula*/
+    text-transform: capitalize;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    text-align: center;
+    /*Subrallat*/
+    text-decoration: underline;
+  }
+
+/*El text que va dal dels camps per emplenar */
+label{
+    /*La primera lletra de cada paraula se fa majuscula*/
+    text-transform: capitalize;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    /*Subrallat*/
+    text-decoration: underline;
+}
+
+  .botoblau{
+    background-color: #1883ba;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    margin: 8px 0;
+    /*marge esquerre*/
+    margin-left: 360px;
+    border: 1px solid #ccc;
+    border-radius: 34px 34px 34px 34px;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+  .botoblau:hover {
+  opacity: 0.7;
+  }
+
+  .botoroig{
+    background-color: #DC4E44;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    /*marge esquerre*/
+    margin-left: 130px;
+    border: 1px solid #ccc;
+    border-radius: 34px 34px 34px 34px;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+ .botoroig:hover {
+  opacity: 0.7;
+  }
+
+    table, th, td {
+    border: 1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    }

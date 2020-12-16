@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--Serveix per al responsive funcioni correctament-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="CSS/creacio.css"rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../../CSS/gestio.css">
+  <LINK rel="shortcut icon" type="image/png" href="imatges/message-chat-bubble-1_108543.png">
+  <link href="CSS/creacio_empresa.css"rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+  <!--Executar php-->
+  <form action="PHP/gestio_empresa/alta_empresa.php" method="post">
+
+  <title>Uniproject</title>
+</head>
+<body>
+      <nav>
+        <div class="logo">
+            <h4>UniProject</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="http://uniproject.cat/">Inici</a></li>
+            <li><a href="gestio.html">Gestions</a></li>
+            <li><a href="#">Sobre nosaltres</a></li>
+            <li><a href="acces.html">Accedeix</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+  <h2 class ="titols">Creació de l'empresa</h2>
+  <p class ="text_pagina">Aqui tens la possibilitat de crear una empresa</p>
+  <form>
+    <div class = "flexbox-container">
+      <div>
+        <label for="nom">Nom de l'empresa</label>
+        <br>
+        <input type="text" id="nom" name="nom" placeholder="Introduir nom de l'empresa" required></input>
+      </div>
+        <div>
+          <label for = "nom centre">Localitat</label>
+          <br>
+          <input type="text" id="localitat" name="localitat" placeholder="Localitat" required></input>
+        </div>
+    </div>
+    <div class = "flexbox-container">
+      <div>
+        <label  class="columna_esquerra" for = "telefon">Telèfon</label>
+        <br>
+        <input class="columna_dreta" type="tel" id="telefon" name="telefon" placeholder="Introduir telèfon"required></input>
+      </div>
+        <div>
+          <label  class="columna_esquerra" for = "email">Email</label>
+          <br>
+          <input class="columna_dreta" type="email" id="email" name="email" placeholder="Introduir email" required></input>
+        </div>
+        <button class="botoblau" name="enviar">Enviar</button>
+    </div>
+  </form>
+
+  <br>
+
+  <p class ="text_pagina">Altres opcions</p>
+  <br>
+  <form>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_empresa/llistar_empresa.php" required>Llistar</button>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_empresa/modificar_empresa1.php" required>Modificar</button>
+  <button type="submit" class="botoroig" formaction="PHP/gestio_empresa/eliminar_empresa.php" required>Eliminar</button>
+  <br>
+
+<div>
+    <footer>
+        <div class="container-footer-all">
+            <div class="container-body">
+                <div class="column1">
+                    <h1>UniProject</h1>
+                    <p>Nosaltres creiem en les teves capacitats i per això et facilitem les eines <br>
+                    per a la creació de propostes i projectes conjuntament amb altres empreses i centres.
+                    </p>
+                </div>
+                <div class="column2">
+                    <h1>Menú</h1>
+                    <div class="menufooter">
+                        <ul class="links-nav">
+                            <li><a href="index.html">Inici</a></li><br>
+                            <li><a href="gestio.html">Gestions</a></li><br>
+                            <li><a href="mapa.html">Mapa</a></li><br>
+                            <li><a href="acces.html">Acces.html</a></li><br>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column3">
+                    <h1>Informació de contacte</h1>
+                    <div class="row2">
+                        <img src="">
+                        <label>UniProject,
+                            Carrer Madrid, 35, 49,
+                            43870 Amposta <br></label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="">
+                        <label>Telf. 977700043 <br></label>
+                    </div>
+
+                    <div class="row2">
+                        <img src="">
+                        <label>uniproject@gmail.com <br></label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container_footer">
+                <div class="footer">
+                    <div class="copyright">
+                        © 2020 Tots els drets reservats |
+                    </div>
+                    <div class="informacio_politica">
+                        Informació companya | Privacio i Politica | Termins i Condicions
+                    </div>
+                </div>
+            </div>
+    </footer>
+</div>
+
+    <script src="JAVASCRIPT/app.js"></script>
+
+</body>
+</html>

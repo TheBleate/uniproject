@@ -1,0 +1,270 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+  /*input para posar info user pass*/
+  .userpass{
+    /*amplada*/
+    width: 20%;
+    /*generar espai al voltant de l'element*/
+    padding: 12px 20px;
+    /*marge dal*/
+    margin: 8px 0;
+    /*marge esquerra*/
+    margin-left: 500px;
+    /*preguntar quina es la seva funció*/
+    display:inline-block;
+    /*Els bordes, els deixem solids d'una mida d'1px i amb el color #ccc*/
+    border: 1px solid #ccc;
+
+    /*indica al navegador que tingeu en compte qualsevol vora*/
+    box-sizing: border-box;
+  }
+
+  /*botó acces/login*/
+  button{
+    background-color: #1883ba;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    margin: 8px 0;
+    /*marge esquerre*/
+    margin-left: 500px;
+    border: 1px solid #ccc;
+    border-radius: 34px 34px 34px 34px;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+  button:hover {
+  opacity: 0.7;
+  width: 272px;
+  height: 60px;
+
+  }
+  .botoroig{
+    background-color: #DC4E44;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    /*marge esquerre*/
+    margin-left: 500px;
+    border: 1px solid #ccc;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+
+  .text{
+    /*La primera lletra de cada paraula se fa majuscula*/
+    text-transform: capitalize;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    margin-left: 520px;
+    /*Subrallat*/
+    text-decoration: underline;
+
+  }
+
+  /*Titul*/
+  h1{
+    color: #1883ba;
+    /*Font de la lletra*/
+    /*tamany de la lletra*/
+    font-size: 26px;
+    margin-top: 30px;
+    margin-left: 565px;
+    /*Fem un espai abaix amb padding*/
+    padding: 0px 0px 20px 0px;
+    /*fem cursiva, també está italic*/
+    font-style: oblique;
+  }
+  .centrar_js{
+    margin-left: 470px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+@media (max-width: 1024px) {
+
+  .userpass{
+    /*amplada*/
+    width: 40%;
+    /*generar espai al voltant de l'element*/
+    padding: 12px 20px;
+    /*marge dal*/
+    margin: 8px 0;
+    /*marge esquerra*/
+    margin-left: 200px;
+    /*preguntar quina es la seva funció*/
+    display:inline-block;
+    /*Els bordes, els deixem solids d'una mida d'1px i amb el color #ccc*/
+    border: 1px solid #ccc;
+
+    /*indica al navegador que tingeu en compte qualsevol vora*/
+    box-sizing: border-box;
+  }
+
+  button{
+    background-color: #1883ba;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    margin: 8px 0;
+    /*marge esquerre*/
+    margin-left: 290px;
+    border: 1px solid #ccc;
+    border-radius: 34px 34px 34px 34px;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+  button:hover {
+  opacity: 0.7;
+  width: 160px;
+  height: 50px;
+
+  }
+
+  .botoroig{
+    background-color: #DC4E44;
+    color: white;
+    /*generar espai al voltant de l'element*/
+    padding: 10px 15px;
+    /*marge esquerre*/
+    margin-left: 290px;
+    border: 1px solid #ccc;
+    /*Canvia el ratolí quan passem per damun*/
+    cursor: pointer;
+    /*amplada*/
+    width: 20%;
+  }
+
+  .text{
+    /*La primera lletra de cada paraula se fa majuscula*/
+    text-transform: capitalize;
+    /*generar espai al voltant de l'element*/
+    padding: 14px 20px;
+    margin-left: 245px;
+    /*Subrallat*/
+    text-decoration: underline;
+
+  }
+
+  /*Titul*/
+  h1{
+    color: #1883ba;
+    /*Font de la lletra*/
+    /*tamany de la lletra*/
+    font-size: 26px;
+    margin-top: 25px;
+    margin-left: 290px;
+    /*Fem un espai abaix amb padding*/
+    padding: 0px 0px 20px 0px;
+    /*fem cursiva, també está italic*/
+    font-style: oblique;
+  }
+  .centrar_js{
+    margin-left: 215px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+
+
+}
+
+@media (max-width: 768px) {
+
+
+    .userpass{
+      /*amplada*/
+      width: 63%;
+      /*generar espai al voltant de l'element*/
+      padding: 12px 20px;
+      /*marge dal*/
+      margin: 8px 0;
+      /*marge esquerra*/
+      margin-left: 70px;
+      /*preguntar quina es la seva funció*/
+      display:inline-block;
+      /*Els bordes, els deixem solids d'una mida d'1px i amb el color #ccc*/
+      border: 1px solid #ccc;
+
+      /*indica al navegador que tingeu en compte qualsevol vora*/
+      box-sizing: border-box;
+      font-size: 1.1em;
+    }
+
+    button{
+      background-color: #1883ba;
+      color: white;
+      /*generar espai al voltant de l'element*/
+      padding: 14px 20px;
+      margin: 8px 0;
+      /*marge esquerre*/
+      margin-left: 110px;
+      border: 1px solid #ccc;
+      border-radius: 34px 34px 34px 34px;
+      /*Canvia el ratolí quan passem per damun*/
+      cursor: pointer;
+      /*amplada*/
+      width: 40%;
+      font-size: 1.2em;
+    }
+    button:hover {
+    opacity: 0.7;
+    width: 160px;
+    height: 50px;
+
+    }
+
+    .botoroig{
+      background-color: #DC4E44;
+      color: white;
+      /*generar espai al voltant de l'element*/
+      padding: 10px 15px;
+      /*marge esquerre*/
+      margin-left: 110px;
+      border: 1px solid #ccc;
+      /*Canvia el ratolí quan passem per damun*/
+      cursor: pointer;
+      /*amplada*/
+      width: 40%;
+      font-size: 1.2em;
+    }
+
+    .text{
+      /*La primera lletra de cada paraula se fa majuscula*/
+      text-transform: capitalize;
+      /*generar espai al voltant de l'element*/
+      padding: 14px 20px;
+      margin-left: 55px;
+      /*Subrallat*/
+      text-decoration: underline;
+
+
+    }
+
+    /*Titul*/
+    h1{
+      color: #1883ba;
+      /*Font de la lletra*/
+      /*tamany de la lletra*/
+      font-size: 26px;
+      margin-top: 25px;
+      margin-left: 95px;
+      /*Fem un espai abaix amb padding*/
+      padding: 0px 0px 20px 0px;
+      /*fem cursiva, també está italic*/
+      font-style: oblique;
+    }
+    .centrar_js{
+      margin-left: 40px;
+      margin-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}

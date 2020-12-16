@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link href="CSS/mapa.css"rel="stylesheet" type="text/css">
+  <LINK rel="shortcut icon" type="imatges/png" href="imatges/message-chat-bubble-1_108543.png">
+  <title>Uniproject</title>
+</head>
+<body>
+  <nav>
+        <div class="logo">
+            <h4>UniProject</h4>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Inici</a></li><br>
+          <li><a href="gestio.html">Gestions</a></li><br>
+          <li><a href="mapa.html">Mapa</a></li><br>
+          <li><a href="acces.html">Accedeix</a></li><br>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+  <div class="flex-container">
+    <div id="flex-containercercador">
+    <div id="divcercador">
+      <h1 class="cercadorh1">Cercador d'instituts</h1>
+        <select id ="selectmapai" name="instituts">
+         <option value="0">Ningun</option>
+         <option value="1">IesMontsia</option>
+         <option value="2">IesEbre</option>
+       </select>
+        <button class="boto" onclick="funcioMapa()">Envia</button>
+
+        <p id="institutp"></p>
+    </div>
+    <div>
+      <h1 class="cercadorh1">Cercador d'empreses</h1>
+        <select id ="selectmapae" name="empreses">
+         <option value="0" >Ningun</option>
+         <option value="1">CristianSL</option>
+         <option value="2">DavidSL</option>
+        </select>
+        <button class="boto">Envia</button>
+
+    </div>
+  </div>
+
+    <div class="divmapa">
+     <iframe id="mapa"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.395189901729!2d0.5803069505145204!3d40.70931604561603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a0fe735557799b%3A0x3fade49ba3687306!2sInstitut%20Montsi%C3%A0%20i%20CFA%20Sebasti%C3%A0%20Juan%20Arb%C3%B3!5e0!3m2!1sca!2ses!4v1601493204448!5m2!1sca!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </div>
+  <footer>
+    <div class="container-footer-all">
+      <div class="container-body">
+        <div class="column1">
+          <h1>UniProject</h1>
+           <p>Nosaltres creiem en les teves capacitats i per això et facilitem les eines
+per a la creació de propostes i projectes conjuntament amb altres empreses i centres. </p>
+        </div>
+        <div class="column2">
+          <h1>Menú</h1>
+          <div class="menufooter">
+            <ul class="links-nav">
+                <li><a href="index.html">Inici</a></li><br>
+                <li><a href="gestio.html">Gestions</a></li><br>
+                <li><a href="mapa.html">Mapa</a></li><br>
+                <li><a href="acces.html">Accedeix</a></li><br>
+            </ul>
+          </div>
+        </div>
+        <div class="column3">
+          <h1>Informació de contacte</h1>
+          <div class="row2">
+            <img src="">
+             <label>UniProject,
+                    Carrer Madrid, 35, 49,
+                    43870 Amposta <br></label>
+          </div>
+
+          <div class="row2">
+            <img src="">
+             <label>Telf. 977700043 <br></label>
+          </div>
+
+          <div class="row2">
+            <img src="">
+             <label>uniproject@gmail.com <br></label>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="container_footer">
+    <div class="footer">
+    <div class="copyright">
+      © 2020 Tots els drets reservats |
+    </div>
+    <div class="informacio_politica">
+      Informació companya | Privacio i Politica | Termins i Condicions
+    </div>
+  </div>
+</div>
+  </footer>
+  <script src="JAVASCRIPT/mapa.js" lenguage="javascript" type="text/javascript"></script>
+</body>
+</html>

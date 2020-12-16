@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  background: #f8f8f8;
+}
+nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+min-height: 8vh;
+background-color: #2f3640;
+}
+
+.logo{
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+
+    justify-content: space-around;
+    width: 40%;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+#mapa{
+  margin: 5px;
+  width: 99%;
+  height: 36em;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#divcercador {
+  float: right;
+  margin-right: 2%;
+}
+
+.cercadorh1{
+  font-size: 1.3em;
+}
+
+#flex-containercercador {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+#selectmapai{
+  width:100%;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+#selectmapae{
+  width:100%;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.boto{
+background-color: black;
+animation-name: animacio_boto;
+animation-duration: 4s;
+background-color: white;
+text-shadow;
+box-shadow: 2px 2px;
+}
+
+.boto:active{
+  transform: scale(0.8);
+}
+
+@keyframes animacio_boto {
+  from {background-color: black;}
+  to {background-color: white;}
+}
+
+footer{
+  width: 100%;
+  background: #252525;
+  color: white;
+}
+
+.container-footer-all{
+  width: 100%;
+  max-width: 1200px;
+  margin:auto;
+  padding: 40px;
+}
+
+.container-body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.column1{
+  max-width: 400px;
+
+}
+
+.column1 h1{
+  font-size: 22px;
+}
+
+.column1 p{
+  font-size: 14px;
+  color: #C7C7C7;
+  margin-top: 20px;
+}
+
+.column2{
+  max-width: 400px;
+}
+
+.column2 h1{
+  font-size: 22px;
+}
+
+.links-nav a{
+  margin-top: 20px;
+  color: #C7C7C7;
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+
+.column3{
+  max-width: 400px;
+}
+
+.column3 h1{
+  font-size: 22px;
+}
+
+.row2 {
+  margin-top: 20px;
+}
+
+.row2 label{
+  margin-top: 10px;
+  margin-left: 20px;
+  max-width: 10px;
+  color: #C7C7C7;
+}
+
+.container_footer{
+  width: 100%;
+  background: #1B1A1A;
+}
+
+.footer{
+  max-width: 1200px;
+  margin:auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.copyright{
+  color: #C7C7C7;
+}
+
+.informacio_politica{
+  text-decoration: none;
+}
+
+.menufooter{
+  margin-top: 20px;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .nav-links{
+      width: 60%;
+  }
+  .container-body{
+    flex-wrap: wrap;
+  }
+
+  .column1{
+    max-width: 100%;
+  }
+
+  .column2,
+  .column3{
+    margin-top: 40px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  body{
+      overflow-x: hidden;
+  }
+  .nav-links{
+      position: absolute;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: #2f3640;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+  }
+
+
+  .nav-links li{
+      opacity: 0;
+  }
+
+  .burger{
+      display: block;
+  }
+
+  .nav-active{
+      transform: translateX(0%);
+  }
+  @keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+
+}
+
+/*Animació dels links*/
+@keyframes navLinkFade{
+  from{
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to{
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+  .cercadorh1{
+    font-size: 1.5em;
+  }
+  .selectmapa{
+    width:100%;
+    font-size: 1.2em;
+  }
+
+}

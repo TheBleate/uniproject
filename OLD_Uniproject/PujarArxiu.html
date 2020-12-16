@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Pujada d'arxius</title>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <form action="PHP/pujarArxiu/Pujar_Arxiu.php" method="post" enctype="multipart/form-data"> <!--Per a que els arxius es puguin pujar de forma correcta-->
+    <input type="hidden" name="MAX_FILE_SIZE" value="100000"> <!--Indica el tamany en bytes dels arxius a pujar-->
+    <br>
+    <br>
+    <b>Penjar un nou arxiu: </b>
+    <br>
+    <input name="userfile" type="file">
+    <br>
+    <input type="submit" value="Enviar">
+  </form>
+  <ul>
+      <button onclick="location.href = 'gestio.html';">Sortir</button>
+  </ul>
+  </body>
+</html>
