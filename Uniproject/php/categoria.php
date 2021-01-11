@@ -6,7 +6,7 @@ class Categoria {
     if ($query === true) {
           return "Categoria afegida!";
     } else {
-      return "No s'han pogut afegir la Categoria!";
+      return "No s'ha pogut afegir la Categoria!";
     }
   }
 }
