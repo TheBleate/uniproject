@@ -1,6 +1,6 @@
 <?php
 class Categoria {
-  public function alta($idcategoria, $nom, $descripcio) {
+  public function altaCategoria($idcategoria, $nom, $descripcio) {
     $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $idCategoria . '","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {

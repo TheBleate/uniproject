@@ -1,6 +1,6 @@
 <?php
 class Projecte {
-  public function alta($idinstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
+  public function altaProjecte($idinstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
     $query = 'INSERT INTO Projecte(idProjecte, idProposta, Localitat, Adreça, Telefon, CIF, Email) VALUES '. "(". '"' . $idinstitut . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email .'");';
 
     $query = $this->DB->query($query);
