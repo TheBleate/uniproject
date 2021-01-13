@@ -2,7 +2,7 @@
 class Categoria {
   private $DB;
 
-  public function llistar() {
+  public function llistarCategoria() {
     $query = 'SELECT nom, Estat FROM Usuari WHERE Tipus = "categoria";';
 
     $query = $this->DB->query($query);
