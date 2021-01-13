@@ -1,5 +1,5 @@
 <!-- Ventana Editar Registros CRUD -->
-<div class="modal fade" id="edit_<?php echo $row['idCategoria']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit_<?php echo $row['idInstitut']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form method="POST" action="modificarCategoria.php?id=<?php echo $row['idInstitut']; ?>">
+                    <form method="POST" action="modificarInstitut.php?id=<?php echo $row['idInstitut']; ?>">
                         <div class="row form-group">
                             <div class="col-sm-2">
                                 <label class="control-label" style="position:relative; top:7px;">Nom:</label>

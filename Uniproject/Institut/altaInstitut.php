@@ -8,10 +8,10 @@
             </div>
             <div class="modal-body">
                 <div class="container-fluid">
-                    <form method="POST" action="altaCategoria.php">
+                    <form method="POST" action="altaInstitut.php">
                         <div class="row form-group">
                             <div class="col-sm-2">
-                                <label class="control-label" style="position:relative; top:7px;">Id Institut:</label>
+                                <label class="control-label" style="position:relative; top:7px;">IdInstitut:</label>
                             </div>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="ids">
