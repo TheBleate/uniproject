@@ -58,9 +58,10 @@
         ?>
         <table class="table table-bordered table-striped" style="margin-top:20px;">
         	<thead>
-        		<th>IdCategoria</th>
+        		<th>IdInsitut</th>
         		<th>Nom</th>
-        		<th>Descripcio</th>
+        		<th>Direccio</th>
+                <th>Localitat</th>
         	</thead>
         	<tbody>
         		<?php
@@ -74,9 +75,10 @@
         				foreach ($db->query($sql) as $row) {
         					?>
         					<tr>
-        						<td><?php echo $row['IdCategoria']; ?></td>
+        						<td><?php echo $row['IdInsitut']; ?></td>
         						<td><?php echo $row['Nom']; ?></td>
-        						<td><?php echo $row['Descripcio']; ?></td>
+        						<td><?php echo $row['Direccio']; ?></td>
+                                <td><?php echo $row['Localitat']; ?></td>
         						<td>
         							<a href="#edit_<?php echo $row['idEmp']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
         							<a href="#delete_<?php echo $row['idEmp']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
