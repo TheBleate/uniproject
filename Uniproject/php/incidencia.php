@@ -2,7 +2,7 @@
 class Incidencia {
   private $DB;
 
-  public function llistarIncidencia() {
+  public function llistar() {
     $query = 'SELECT nom, descripcio, registreData, Estat FROM Usuari WHERE Tipus = "incidencia";';
 
     $query = $this->DB->query($query);
@@ -40,7 +40,7 @@ class Incidencia {
               </table>';
     }
   }
-  public function altaIncidencia($idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
+  public function alta($idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
     $query = 'INSERT INTO Incidencia(idIncidencia, idUsuari, Estat, Nom, Descripcio, registreData) VALUES '. "(". '"' . $idIncidencia . '","' . $idUsuari . '","' . $estat . '","' . $nom . '","' . $descripcio . '","' . $registreData .'");';
     $query = $this->DB->query($query);
     if ($query === true) {
@@ -50,7 +50,7 @@ class Incidencia {
     }
   }
 
-  function eliminarIncidencia($idIncidencia)
+  function eliminar($idIncidencia)
 {
     $query = 'UPDATE Incidencia SET Estat = "inactiu" WHERE idIncidencia = "' . $idIncidencia . '"';
     $query = $this->DB->query($query);

@@ -2,7 +2,7 @@
 class Categoria {
   private $DB;
 
-  public function llistarCategoria() {
+  public function llistar() {
     $query = 'SELECT nom, Estat FROM Usuari WHERE Tipus = "categoria";';
 
     $query = $this->DB->query($query);
@@ -36,7 +36,7 @@ class Categoria {
               </table>';
     }
   }
-  public function altaCategoria($idcategoria, $nom, $descripcio) {
+  public function alta($idcategoria, $nom, $descripcio) {
     $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $idCategoria . '","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
@@ -45,7 +45,7 @@ class Categoria {
       return "No s'ha pogut afegir la Categoria!";
     }
   }
-  function eliminarCategoria($idCategoria)
+  function eliminar($idCategoria)
   {
       $query = 'UPDATE Categoria SET Estat = "inactiu" WHERE idIncidencia = "' . $idCategoria . '"';
       $query = $this->DB->query($query);
