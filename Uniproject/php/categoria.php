@@ -10,5 +10,5 @@ class Categoria {
     }
   }
 }
-//Sd
+
  ?>
