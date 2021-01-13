@@ -47,14 +47,37 @@
     */
     const android = /(android)/i.test(navigator.userAgent);
     const banner = document.querySelector('.banner');
+    const modals = document.querySelectorAll('.modal-btn');
 
     /**
     *  Listeners
     */
+    if (banner) {
+        window.addEventListener('scroll', function() {
+            if (!android) {
+                banner.style.backgroundPosition = '0 ' + (0.4 * window.scrollY) + 'px';
+            }
+        });
+    }
 
-    window.addEventListener('scroll', function() {
-        if (!android) {
-            banner.style.backgroundPosition = '0 ' + (0.4 * window.scrollY) + 'px';
-        }
-    });
+    if (modals) {
+        modals.forEach(item => {
+            item.addEventListener('click', event => {
+                //console.log(item.dataset.crudaction);
+                switch (parseInt(item.dataset.crudaction)) {
+                    case 1:
+                        $('#modal-creacio').modal();
+                        break;
+                    case 2:
+                        $('#modal-creacio').modal();
+                        break;
+                    case 3:
+                        $('#modal-creacio').modal();
+                        break;
+                }
+
+            });
+        });
+
+    }
 })();

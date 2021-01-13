@@ -29,12 +29,12 @@
 
                     $USUARI = new Usuari($DB->getDB());
 
-                    $USUARI->llistarUsuaris();
+                    $USUARI->llistar();
 
                 ?>
 
             </div>
-            <?php $script = './js/modals.js'; require_once('./template/footer.php'); ?>
+            <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
 
@@ -44,7 +44,7 @@
         </button>
         <!-- Modal de Creacio -->
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'usuaris</h5>
@@ -53,10 +53,28 @@
                 </button>
               </div>
               <div class="modal-body">
+                  <!--Formulari de creacio-->
+                <form>
+                  <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="userEmail">Email address</label>
+                    <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>Alumne</option>
+                      <option>Profesor</option>
+                      <option>Empleat</option>
+                      <option>Admin</option>
+                    </select>
+                  </div>
 
-                <p> muchotexto </p>
 
-
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -65,15 +83,67 @@
             </div>
           </div>
         </div>
-        <!-- Modal de Eliminacio -->
+        <!-- Modal de Eliminacio-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-eliminacio">
+          Eliminar (icona)
+        </button>
+        <!-- Modal de Eliminacio-->
+        <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Eliminar usuari</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <p> Segur que vols eliminar aquest usuari? </p>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Modal de Modificacio -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
+          Modificar (icona)
+        </button>
+        <!-- Modal de Eliminacio -->
+        <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modificar usuari</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <p> Segur que vols modificar l'usuari? </p>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Modificar</button>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
     </main>
 
     <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
 
 
-    <script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./js/modals.js"></script>
+
   </body>
 </html>
