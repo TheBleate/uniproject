@@ -41,7 +41,67 @@
            <?php require_once('./template/footer.php') ?>
 
         <!-- /#page-content-wrapper -->
+        	<div class="row">
+        		<div class="col-sm-8 col-sm-offset-2">
+        			<a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Nuevo Registro</a>
+        <?php
+        	session_start();
+        	if(isset($_SESSION['message'])){
+        		?>
+        		<div class="alert alert-info text-center" style="margin-top:20px;">
+        			<?php echo $_SESSION['message']; ?>
+        		</div>
+        		<?php
 
+        		unset($_SESSION['message']);
+        	}
+        ?>
+        <table class="table table-bordered table-striped" style="margin-top:20px;">
+        	<thead>
+        		<th>ID</th>
+        		<th>Nom</th>
+        		<th>Tipus</th>
+        	</thead>
+        	<tbody>
+        		<?php
+        			//incluimos el fichero de conexion
+        			include_once('dbconect.php');
+
+        			$database = new Connection();
+        			$db = $database->open();
+        			try{
+        				$sql = 'SELECT * FROM empleados';
+        				foreach ($db->query($sql) as $row) {
+        					?>
+        					<tr>
+        						<td><?php echo $row['idEmp']; ?></td>
+        						<td><?php echo $row['Nombres']; ?></td>
+        						<td><?php echo $row['Apellidos']; ?></td>
+        						<td><?php echo $row['Telefono']; ?></td>
+        						<td><?php echo $row['Carrera']; ?></td>
+        						<td><?php echo $row['Pais']; ?></td>
+        						<td>
+        							<a href="#edit_<?php echo $row['idEmp']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
+        							<a href="#delete_<?php echo $row['idEmp']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+        						</td>
+        						<?php include('BorrarEditarModal.php'); ?>
+        					</tr>
+        					<?php
+        				}
+        			}
+        			catch(PDOException $e){
+        				echo "Hubo un problema en la conexión: " . $e->getMessage();
+        			}
+
+        			//Cerrar la Conexion
+        			$database->close();
+
+        		?>
+        				</tbody>
+        			</table>
+        		</div>
+        	</div>
+        </div>
         </div>
     </main>
 
