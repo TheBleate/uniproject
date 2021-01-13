@@ -6,7 +6,7 @@ switch ($navbar ?? 0):
   <!-- Sidebar -->
   <div class="bg-dark">
     <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action active">Empresa</a>
+      <a href="#" class="list-group-item list-group-item-action active">Usuaris</a>
       <a href="#" class="list-group-item list-group-item-action">Centre educatiu</a>
       <a href="#" class="list-group-item list-group-item-action">Projectes</a>
       <a href="#" class="list-group-item list-group-item-action disabled">Incidencies</a>
