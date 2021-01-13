@@ -74,7 +74,7 @@ class Usuari {
       $query = 'UPDATE Usuari SET idRol ="'. $idrol. '", Password = "'. $password . '" , Tipus = "'.$tipus.'", Telefon = "'.$telefon.'", Email = "'.$email.'" WHERE idUsuari ="'.$idusuari.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
-          return "canvis aplicats!";
+          return "Canvis aplicats!";
       }else {
           return "No s'han pogut aplicar els canvis!";
       }

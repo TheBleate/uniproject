@@ -55,7 +55,7 @@ class Categoria {
           return "No s'ha pogut eliminar la categoria!";
       }
   }
-
+  
   function modificar($idUsuari, $idCategoria, $nom, $descripcio,) {
       $query = 'UPDATE Usuari SET idCategoria ="'. $idCategoria . '", Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idusuari.'";';
       $query = $this->DB->query($query);
