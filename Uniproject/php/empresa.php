@@ -1,6 +1,6 @@
 <?php
 
-public function alta($idempresa, $nom, $localitat, $adreça, $telefon, $cif, $email) {
+public function altaEmpresa($idempresa, $nom, $localitat, $adreça, $telefon, $cif, $email) {
   $query = 'INSERT INTO Empresa(idEmpresa, Nom, Localitat, Adreça, Telefon, CIF, Email) VALUES '. "(". '"' . $idempresa . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email .'");';
 
   $query = $this->DB->query($query);
