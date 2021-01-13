@@ -14,9 +14,10 @@
 
     <!-- Begin page content -->
 	<main class="flex-shrink-0">
-      <div class="container py-5">
+        <div class="container py-5">
         <!--Content here-->
-	   </div>
+            
+        </div>
     </main>
 
     <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->

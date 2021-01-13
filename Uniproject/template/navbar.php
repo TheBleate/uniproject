@@ -1,11 +1,11 @@
 <header>
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
 <?php
 $tab = $tab ?? null;
 switch ($navbar ?? 0):
   case 0:?>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Projectus </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,10 +45,11 @@ switch ($navbar ?? 0):
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
       </form>
     </div>
+  </nav>
 <?php break;
   case 1: ?>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Sidebar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Projectus </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,22 +57,14 @@ switch ($navbar ?? 0):
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item <?php echo($tab === 0 ? 'active' : ''); ?>">
-            <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Gestio Central </a>
-          </li>
-          <li class="nav-item <?php echo($tab === 1 ? 'active' : ''); ?>">
-            <a class="nav-link" href="#"><i class="fa fa-info" aria-hidden="true"></i> Gestio Instituts</a>
-          </li>
-          <li class="nav-item <?php echo($tab === 2 ? 'active' : ''); ?>">
-            <a class="nav-link" href="#"><i class="fa fa-phone" aria-hidden="true"></i> Gestio Empleats</a>
-          </li>
-          <li class="nav-item">
-          </li>
+
         </ul>
-        <span class="navbar-text">
-      Benvingut,  Manolo Lama
-    </span>
+        <form class="form-inline my-2 my-lg-0" action="./login.php">
+          <input class="form-control mr-sm-2" type="search" placeholder="email@projectus.com" aria-label="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
+        </form>
       </div>
+    </nav>
 <?php break;
     case 2: ?>
 	<!-- Alternative navbar here -->
@@ -80,5 +73,4 @@ switch ($navbar ?? 0):
   endswitch;
   unset($tab, $navbar); ?>
 
-	</nav>
 </header>
