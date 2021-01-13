@@ -56,6 +56,16 @@ class Categoria {
       }
   }
 
+  function modificar($idUsuari, $idCategoria, $nom, $descripcio,) {
+      $query = 'UPDATE Usuari SET idCategoria ="'. $idCategoria . '", Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idusuari.'";';
+      $query = $this->DB->query($query);
+      if ($query === ture) {
+          return "canvis aplicats!";
+      }else {
+          return "No s'han pogut aplicar els canvis!";
+      }
+  }
+
   function __construct($DB) {
       $this->DB = $DB;
   }
