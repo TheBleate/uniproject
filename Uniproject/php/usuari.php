@@ -3,7 +3,7 @@ class Usuari {
     private $DB;
 
     //alta Usuaris
-    public function altaUsuari($idRol, $nom, $cognom, $segonCognom, $dni, $username, $password, $tipus, $email, $telefon, $dataNaixement) {
+    public function alta($idRol, $nom, $cognom, $segonCognom, $dni, $username, $password, $tipus, $email, $telefon, $dataNaixement) {
         $query = 'INSERT INTO Usuari(idRol, Nom, Cognom, SegonCognom, DNI, UserName, Password, Tipus, Email, Telefon, DataNaixement, Estat) VALUES '. "(". '"' . $idRol . '","' . $nom . '","' . $cognom . '","' . $segonCognom . '","' . $dni . '","' . $username . '","' . $password . '","' . $tipus . '","' . $email . '","' . $telefon . '","' . $dataNaixement . '","actiu");';
 
         $query = $this->DB->query($query);
@@ -15,7 +15,7 @@ class Usuari {
     }
 
     //Mostrar Usuaris
-    public function llistarUsuaris() {
+    public function llistar() {
         $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari';
 
         $query = $this->DB->query($query);
@@ -60,7 +60,15 @@ class Usuari {
             }
         }
   //Eliminar Usuaris
-
+  function eliminar($idusuari) {
+      $query = 'UPDATE Usuari SET Estat = "inactiu" WHERE idUsuari = "' . $idusuari . '"';
+      $query = $this->DB->query($query);
+      if ($query === true) {
+          return "L'usuari s'ha eliminat!";
+      } else {
+          return "No s'han pogut eliminar l'usuari!";
+      }
+  }
   //Modificacio Usuaris
 
   function __construct($DB) {
