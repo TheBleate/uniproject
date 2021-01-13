@@ -60,31 +60,28 @@
         	<thead>
         		<th>ID</th>
         		<th>Nom</th>
-        		<th>Tipus</th>
+        		<th>Descripcio</th>
         	</thead>
         	<tbody>
         		<?php
         			//incluimos el fichero de conexion
-        			include_once('dbconect.php');
+        			include_once('Conexio.php');
 
-        			$database = new Connection();
+        			$database = new Conexio();
         			$db = $database->open();
         			try{
-        				$sql = 'SELECT * FROM empleados';
+        				$sql = 'SELECT * FROM Categoria';
         				foreach ($db->query($sql) as $row) {
         					?>
         					<tr>
-        						<td><?php echo $row['idEmp']; ?></td>
-        						<td><?php echo $row['Nombres']; ?></td>
-        						<td><?php echo $row['Apellidos']; ?></td>
-        						<td><?php echo $row['Telefono']; ?></td>
-        						<td><?php echo $row['Carrera']; ?></td>
-        						<td><?php echo $row['Pais']; ?></td>
+        						<td><?php echo $row['idCategoria']; ?></td>
+        						<td><?php echo $row['Nom']; ?></td>
+        						<td><?php echo $row['Descripcio']; ?></td>
         						<td>
-        							<a href="#edit_<?php echo $row['idEmp']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
-        							<a href="#delete_<?php echo $row['idEmp']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
+        							<a href="#edit_<?php echo $row['idCategoria']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
+        							<a href="#delete_<?php echo $row['idCategoria']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
         						</td>
-        						<?php include('BorrarEditarModal.php'); ?>
+        						<?php include('BorrarEditarCategoria.php'); ?>
         					</tr>
         					<?php
         				}
