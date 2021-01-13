@@ -60,7 +60,7 @@ class Categoria {
       $query = 'UPDATE Usuari SET idCategoria ="'. $idCategoria . '", Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idusuari.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
-          return "canvis aplicats!";
+          return "Canvis aplicats!";
       }else {
           return "No s'han pogut aplicar els canvis!";
       }
