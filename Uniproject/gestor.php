@@ -18,30 +18,55 @@
 
 
 
-          <!-- Begin page content -->
-          <div class="container-fluid py-5">
-            <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-              <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-              <p>Back to <a href="#">the default sticky footer</a> minus the navbar.</p>
-          		<div class="container-fluid">
-          			<h4 class="display-4">bg-*</h4>
-          			<p class="bg-muted">Muted.</p>
-          			<p class="bg-primary">Primary.</p>
-          			<p class="bg-success">Success.</p>
-          			<p class="bg-info">Info.</p>
-          			<p class="bg-warning">Warning.</p>
-          			<p class="bg-danger">Danger.</p>
-          			<p class="bg-secondary">Secondary.</p>
-          			<p class="bg-dark">Dark.</p>
-          			<p class="bg-body">Default.</p>
-          			<p class="bg-light">Light.</p>
-          			<p class="bg-white">White</p>
-          		</div>
-      	   </div>
-           <?php require_once('./template/footer.php') ?>
+            <!-- Begin page content -->
+            <div class="container-fluid p-5">
+                <h2 class="pb-5">Llistat d'usuaris</h2>
+                <?php
+                    require_once('./php/database.php');
+                    require_once('./php/usuari.php');
 
-        <!-- /#page-content-wrapper -->
+                    $DB = new Database();
 
+                    $USUARI = new Usuari($DB->getDB());
+
+                    $USUARI->llistarUsuaris();
+
+                ?>
+
+            </div>
+            <?php $script = './js/modals.js'; require_once('./template/footer.php'); ?>
+
+            <!-- /#page-content-wrapper -->
+
+        <!-- Modal button (se cambiara) -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
+          Crear (icona)
+        </button>
+        <!-- Modal de Creacio -->
+        <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Creacio d'usuaris</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <p> muchotexto </p>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Crear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal de Eliminacio -->
+        <!-- Modal de Modificacio -->
         </div>
     </main>
 
@@ -49,5 +74,6 @@
 
 
     <script src="./js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./js/modals.js"></script>
   </body>
 </html>

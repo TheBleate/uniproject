@@ -51,10 +51,10 @@
     /**
     *  Listeners
     */
+
     window.addEventListener('scroll', function() {
         if (!android) {
             banner.style.backgroundPosition = '0 ' + (0.4 * window.scrollY) + 'px';
         }
     });
-
 })();

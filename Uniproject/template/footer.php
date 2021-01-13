@@ -81,4 +81,8 @@
 
 </footer>
 <script src="./js/jquery/jquery-3.5.1.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
 <script src="./js/custom.js"></script>
+<?php if (isset($script)): ?>
+    <script src="<?php echo $script; ?>"></script>
+<?php endif; ?>
