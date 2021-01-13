@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
-  <?php require_once('./template/header.php') ?>
+  <?php  require_once('./template/header.php') ?>
 
   <body class="d-flex flex-column h-100">
 
