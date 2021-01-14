@@ -55,9 +55,9 @@ class Categoria {
           return "No s'ha pogut eliminar la categoria!";
       }
   }
-  
-  function modificar($idUsuari, $idCategoria, $nom, $descripcio,) {
-      $query = 'UPDATE Usuari SET idCategoria ="'. $idCategoria . '", Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idusuari.'";';
+
+  function modificar($idCategoria, $nom, $descripcio,) {
+      $query = 'UPDATE Usuari SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idCategoria.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
           return "Canvis aplicats!";

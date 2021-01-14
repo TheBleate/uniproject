@@ -55,8 +55,8 @@ class Institut {
       }
   }
 
-  function modificar($idUsuari, $idInstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
-      $query = 'UPDATE Institut SET idInstitut ="'. $idInstitut. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idUsuari ="'.$idusuari.'";';
+  function modificar($idInstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
+      $query = 'UPDATE Institut SET idInstitut ="'. $idInstitut. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idInstitut ="'.$idInstitut.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
           return "Canvis aplicats!";

@@ -60,7 +60,7 @@ class Incidencia {
     }
 }
 function modificar($idUsuari, $idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
-    $query = 'UPDATE Incidencia SET idIncidencia ="'. $idIncidencia. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idUsuari ="'.$idusuari.'";';
+    $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idIncidencia = "'.$idIncidencia.'";';
     $query = $this->DB->query($query);
     if ($query === ture) {
         return "Canvis aplicats!";
