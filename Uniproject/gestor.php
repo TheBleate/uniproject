@@ -97,9 +97,11 @@
                     <input type="text" class="form-control" id="Telefon" placeholder="647768442">
                   </div>
                   <div class="form-group">
-                    <label for="DataNaixement">Data de Naixement</label>
+                    <label for="DataNaixement">Data de Naixement</label><br>
                     <!-- tipus data¿ -->
-                    <input type="text" class="form-control" id="DataNaixement" placeholder="aqui nose que ficar aixique se queda comesta i ia li dire al nostre señor vlad :)">
+
+                    <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                    <span class="validity"></span>
                   </div>
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
@@ -199,9 +201,11 @@
                       <input type="text" class="form-control" id="Telefon" placeholder="647768442">
                     </div>
                     <div class="form-group">
-                      <label for="DataNaixement">Data de Naixement</label>
+                      <label for="DataNaixement">Data de Naixement</label><br>
                       <!-- tipus data¿ -->
-                      <input type="text" class="form-control" id="DataNaixement" placeholder="JS per placeholder (user actual)">
+
+                      <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                      <span class="validity"></span>
                     </div>
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
