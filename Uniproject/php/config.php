@@ -4,10 +4,9 @@
    +------------------------------------+ */
 
    //ACCESS A LA BASE DE DADES
-   define('DB_USER', 'Andrei');
+   define('DB_USER', 'publicUser');
    define('DB_PASS', '1234');
-   define('DB_NAME', 'Proiectus');
-   define('DB_ADDRESS', '192.168.224.101');
+   define('DB_NAME', 'proiectus');
+   define('DB_ADDRESS', 'localhost');
    define('DB_PORT', '3306');
-
 ?>

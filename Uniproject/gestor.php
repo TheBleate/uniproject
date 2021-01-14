@@ -156,7 +156,6 @@
                 </button>
               </div>
               <div class="modal-body">
-
                   <form>
                     <div class="form-group">
                       <label for="name">Nom</label>
@@ -180,7 +179,7 @@
                     </div>
                     <div class="form-group">
                       <label for="Password">Password</label>
-                      <input type="text" class="form-control" id="Password" placeholder="*******">
+                      <input type="text" class="form-control" id="Password" placeholder="*********">
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Tipus</label>

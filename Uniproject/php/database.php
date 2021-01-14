@@ -86,6 +86,7 @@
 		}
 
         function __construct() {
+            
             $this->DB = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME, DB_PORT);
             session_start();
 
