@@ -1,25 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <?php
 
-	require_once('./php/database.php');
-
-	$nomusuari = $_POST['user'] ?? null;
-	$contraseña = $_POST['pass'] ?? null;
-
-	//Creem un nou objecte de Database
-	$DB = new Database();
-
-	//array_key_exists Comprova que dintre de Get existeix el valor
-	if (array_key_exists('logout', $_GET)) {
-		session_destroy();
-		unset($_SESSION['current-user']);
-	}
-
-	//$_SESSION Guarda el usuari de la sessió, en cas de no tindre una sessió, serà null
-	//la variable guarda la sessió al servidor fins que és tanca la sessio
-	$usuariactual = $_SESSION['current-user'] ?? null;
-  ?>
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
 <?php require_once('./template/header.php') ?>
 
@@ -27,6 +8,30 @@
 
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php $tab=0; $navbar=0; require_once('./template/navbar.php') ?>
+
+	<?php
+
+		require_once('./php/database.php');
+
+		$nomusuari = $_POST['user'] ?? null;
+		$contraseña = $_POST['pass'] ?? null;
+
+		//Creem un nou objecte de Database
+		$DB = new Database();
+
+		//array_key_exists Comprova que dintre de Get existeix el valor
+		if (array_key_exists('logout', $_GET)) {
+			session_destroy();
+			unset($_SESSION['current-user']);
+		}
+
+		//$_SESSION Guarda el usuari de la sessió, en cas de no tindre una sessió, serà null
+		//la variable guarda la sessió al servidor fins que és tanca la sessio
+		$usuariactual = $_SESSION['current-user'] ?? null;
+	?>
+
+
+
 
     <!-- Begin page content -->
     <main class="flex-grow-1">
@@ -59,6 +64,7 @@
 								//setcookie('projekt-cat', $user['idUsuari']);
 								$_SESSION['current-user'] = $user;
 								header('Location: ./gestor.php');
+
 							} else {
 								echo '<a href="#" class="float-right">Nom d\'usuari o contrasenya incorrectes!</p>';
 							}
