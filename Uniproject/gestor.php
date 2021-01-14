@@ -29,7 +29,12 @@
 
                     $USUARI = new Usuari($DB->getDB());
 
+                    //intento de if :()
+                    //if($idrol === "alumne"){}
+                    
+
                     $USUARI->llistar();
+
 
                 ?>
 
