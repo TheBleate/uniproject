@@ -40,17 +40,20 @@ switch ($navbar ?? 0):
           <a class="nav-link disabled" href="#">Disabled</a>
         </li> -->
       </ul>
+      <!--
       <form class="form-inline my-2 my-lg-0" action="./login.php">
         <input class="form-control mr-sm-2" type="search" placeholder="email@projectus.com" aria-label="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
       </form>
+  -->
+        <a class="navbar-brand" href="./login.php">Login</a>
     </div>
   </nav>
 <?php break;
   case 1: ?>
     <!-- Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Projectus </a>
+      <a class="navbar-brand " href="#">Projectus </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,10 +62,7 @@ switch ($navbar ?? 0):
         <ul class="navbar-nav mr-auto">
 
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="./login.php">
-          <input class="form-control mr-sm-2" type="search" placeholder="email@projectus.com" aria-label="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
-        </form>
+            <a class="navbar-brand" href="./login.php">Login</a>
       </div>
     </nav>
 <?php break;
