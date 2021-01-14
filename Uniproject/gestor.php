@@ -1,4 +1,4 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en" class="h-100">
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
@@ -38,10 +38,10 @@
 
             <!-- /#page-content-wrapper -->
 
-        <!-- Modal button (se cambiara) -->
+        <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
-        </button>
+        </button> -->
         <!-- Modal de Creacio -->
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -113,10 +113,10 @@
             </div>
           </div>
         </div>
-        <!-- Modal de Eliminacio-->
+        <!-- Modal de Eliminacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-eliminacio">
           Eliminar (icona)
-        </button>
+        </button>-->
         <!-- Modal de Eliminacio-->
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -141,10 +141,10 @@
           </div>
         </div>
 
-        <!-- Modal de Modificacio -->
+        <!-- Modal de Modificacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
           Modificar (icona)
-        </button>
+        </button> -->
         <!-- Modal de Modificacio -->
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
