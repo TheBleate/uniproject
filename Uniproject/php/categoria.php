@@ -57,7 +57,7 @@ class Categoria {
   }
 
   function modificar($idCategoria, $nom, $descripcio,) {
-      $query = 'UPDATE Usuari SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idCategoria.'";';
+      $query = 'UPDATE Categoria SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idCategoria.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
           return "Canvis aplicats!";
