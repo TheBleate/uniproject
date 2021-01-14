@@ -50,14 +50,22 @@ class Incidencia {
     }
   }
 
-  function eliminar($idIncidencia)
-{
+  function eliminar($idIncidencia) {
     $query = 'UPDATE Incidencia SET Estat = "inactiu" WHERE idIncidencia = "' . $idIncidencia . '"';
     $query = $this->DB->query($query);
     if ($query === true) {
         return "L'incidencia s'ha eliminat!";
     } else {
         return "No s'ha pogut eliminar l'incidencia!";
+    }
+}
+function modificar($idUsuari, $idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
+    $query = 'UPDATE Incidencia SET idIncidencia ="'. $idIncidencia. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idUsuari ="'.$idusuari.'";';
+    $query = $this->DB->query($query);
+    if ($query === ture) {
+        return "Canvis aplicats!";
+    }else {
+        return "No s'han pogut aplicar els canvis!";
     }
 }
   function __construct($DB) {
