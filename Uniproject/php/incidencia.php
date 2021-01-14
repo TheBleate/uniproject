@@ -59,8 +59,8 @@ class Incidencia {
         return "No s'ha pogut eliminar l'incidencia!";
     }
 }
-function modificar($idUsuari, $idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
-    $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idIncidencia = "'.$idIncidencia.'";';
+function modificar($idIncidencia, $estat, $nom, $descripcio, $registreData) {
+    $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Estat = "'. $estat .'", Descripcio = "'. $descripcio .'", registreData = "'.$registreData.'" WHERE idIncidencia = "'. $idIncidencia .'";';
     $query = $this->DB->query($query);
     if ($query === ture) {
         return "Canvis aplicats!";
