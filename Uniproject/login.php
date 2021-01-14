@@ -11,7 +11,7 @@
 
     <!-- Begin page content -->
     <main class="flex-grow-1">
-      <div class="container d-flex py-5 h-100">
+      <div class="container d-flex py-5 h-100 login-container">
 		<div class="login-form">
 			<form action="/examples/actions/confirmation.php" method="post">
 				<h2 class="text-center">Log in</h2>

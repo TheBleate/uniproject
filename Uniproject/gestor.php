@@ -4,11 +4,11 @@
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
   <?php require_once('./template/header.php') ?>
 
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column h-100">
 
     <?php $tab=2; $navbar=1; require_once('./template/navbar.php') ?>
 
-    <main class="d-flex flex-row">
+    <main class="d-flex flex-row flex-grow-1">
 
         <!-- Sidebar -->
         <?php $tab=0; $navbar=0; require_once('./template/sidebar.php') ?>
@@ -16,28 +16,18 @@
         <!-- Page Content -->
         <div class="d-flex flex-column w-100">
 
-
-
             <!-- Begin page content -->
             <div class="container-fluid p-5">
                 <h2 class="pb-5">Llistat d'usuaris</h2>
                 <?php
                     require_once('./php/database.php');
                     require_once('./php/usuari.php');
-
                     $DB = new Database();
-
                     $USUARI = new Usuari($DB->getDB());
-
                     //intento de if :()
                     //if($idrol === "alumne"){}
-                    
-
                     $USUARI->llistar();
-
-
                 ?>
-
             </div>
             <?php require_once('./template/footer.php'); ?>
 
