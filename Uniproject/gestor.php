@@ -145,7 +145,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
           Modificar (icona)
         </button>
-        <!-- Modal de Eliminacio -->
+        <!-- Modal de Modificacio -->
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -157,7 +157,57 @@
               </div>
               <div class="modal-body">
 
-                <p> Segur que vols modificar l'usuari? </p>
+                  <form>
+                    <div class="form-group">
+                      <label for="name">Nom</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="Cognom">Cognom</label>
+                      <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="SegonCognom">SegonCognom</label>
+                      <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="DNI">DNI</label>
+                      <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                    </div>
+                    <div class="form-group">
+                      <label for="UserName">UserName</label>
+                      <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                    </div>
+                    <div class="form-group">
+                      <label for="Password">Password</label>
+                      <input type="text" class="form-control" id="Password" placeholder="*******">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Tipus</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Alumne</option>
+                        <option>Profesor</option>
+                        <option>Empleat</option>
+                        <option>Admin</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="userEmail">Email</label>
+                      <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="Telefon">Telefon</label>
+                      <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                    </div>
+                    <div class="form-group">
+                      <label for="DataNaixement">Data de Naixement</label>
+                      <!-- tipus data¿ -->
+                      <input type="text" class="form-control" id="DataNaixement" placeholder="JS per placeholder (user actual)">
+                    </div>
+                    <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+
+
+                  </form>
 
 
               </div>
