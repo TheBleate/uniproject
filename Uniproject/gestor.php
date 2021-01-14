@@ -1,4 +1,4 @@
-<!doctype html>
+<<!doctype html>
 <html lang="en" class="h-100">
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
@@ -60,11 +60,27 @@
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="userEmail">Email address</label>
-                    <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
+                    <label for="Cognom">Cognom</label>
+                    <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
+                    <label for="SegonCognom">SegonCognom</label>
+                    <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="DNI">DNI</label>
+                    <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                  </div>
+                  <div class="form-group">
+                    <label for="UserName">UserName</label>
+                    <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                  </div>
+                  <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="text" class="form-control" id="Password" placeholder="*******">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tipus</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
@@ -72,6 +88,20 @@
                       <option>Admin</option>
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="Telefon">Telefon</label>
+                    <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                  </div>
+                  <div class="form-group">
+                    <label for="DataNaixement">Data de Naixement</label>
+                    <!-- tipus data¿ -->
+                    <input type="text" class="form-control" id="DataNaixement" placeholder="aqui nose que ficar aixique se queda comesta i ia li dire al nostre señor vlad :)">
+                  </div>
+                  <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
 
                 </form>
