@@ -33,7 +33,11 @@
 
             <!-- /#page-content-wrapper -->
             <?php
-            //require_once('./php/suari.php');
+
+                require_once('./php/database.php');
+                require_once('./php/usuari.php');
+
+                $DB = new Database();
 
 
                 $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
@@ -47,7 +51,6 @@
                 $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
                 $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
-
 
             ?>
 
