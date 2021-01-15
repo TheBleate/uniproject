@@ -4,11 +4,11 @@
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
   <?php require_once('./template/header.php') ?>
 
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column h-100">
 
     <?php $tab=2; $navbar=1; require_once('./template/navbar.php') ?>
 
-    <main class="d-flex flex-row">
+    <main class="d-flex flex-row flex-grow-1">
 
         <!-- Sidebar -->
         <?php $tab=0; $navbar=0; require_once('./template/sidebar.php') ?>
@@ -16,32 +16,27 @@
         <!-- Page Content -->
         <div class="d-flex flex-column w-100">
 
-
-
             <!-- Begin page content -->
             <div class="container-fluid p-5">
                 <h2 class="pb-5">Llistat d'usuaris</h2>
                 <?php
                     require_once('./php/database.php');
                     require_once('./php/usuari.php');
-
                     $DB = new Database();
-
                     $USUARI = new Usuari($DB->getDB());
-
+                    //intento de if :()
+                    //if($idrol === "alumne"){}
                     $USUARI->llistar();
-
                 ?>
-
             </div>
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
 
-        <!-- Modal button (se cambiara) -->
+        <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
-        </button>
+        </button> -->
         <!-- Modal de Creacio -->
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -60,11 +55,27 @@
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="userEmail">Email address</label>
-                    <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
+                    <label for="Cognom">Cognom</label>
+                    <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
+                    <label for="SegonCognom">SegonCognom</label>
+                    <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="DNI">DNI</label>
+                    <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                  </div>
+                  <div class="form-group">
+                    <label for="UserName">UserName</label>
+                    <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                  </div>
+                  <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input type="text" class="form-control" id="Password" placeholder="*******">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tipus</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
@@ -72,6 +83,22 @@
                       <option>Admin</option>
                     </select>
                   </div>
+                  <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="Telefon">Telefon</label>
+                    <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                  </div>
+                  <div class="form-group">
+                    <label for="DataNaixement">Data de Naixement</label><br>
+                    <!-- tipus data¿ -->
+
+                    <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                    <span class="validity"></span>
+                  </div>
+                  <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
 
                 </form>
@@ -83,10 +110,10 @@
             </div>
           </div>
         </div>
-        <!-- Modal de Eliminacio-->
+        <!-- Modal de Eliminacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-eliminacio">
           Eliminar (icona)
-        </button>
+        </button>-->
         <!-- Modal de Eliminacio-->
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -111,11 +138,11 @@
           </div>
         </div>
 
-        <!-- Modal de Modificacio -->
+        <!-- Modal de Modificacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
           Modificar (icona)
-        </button>
-        <!-- Modal de Eliminacio -->
+        </button> -->
+        <!-- Modal de Modificacio -->
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -126,8 +153,59 @@
                 </button>
               </div>
               <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="name">Nom</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="Cognom">Cognom</label>
+                      <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="SegonCognom">SegonCognom</label>
+                      <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="DNI">DNI</label>
+                      <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                    </div>
+                    <div class="form-group">
+                      <label for="UserName">UserName</label>
+                      <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                    </div>
+                    <div class="form-group">
+                      <label for="Password">Password</label>
+                      <input type="text" class="form-control" id="Password" placeholder="*********">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Tipus</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Alumne</option>
+                        <option>Profesor</option>
+                        <option>Empleat</option>
+                        <option>Admin</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="userEmail">Email</label>
+                      <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="Telefon">Telefon</label>
+                      <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                    </div>
+                    <div class="form-group">
+                      <label for="DataNaixement">Data de Naixement</label><br>
+                      <!-- tipus data¿ -->
 
-                <p> Segur que vols modificar l'usuari? </p>
+                      <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                      <span class="validity"></span>
+                    </div>
+                    <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+
+
+                  </form>
 
 
               </div>

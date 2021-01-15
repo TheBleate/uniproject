@@ -69,10 +69,10 @@
                         $('#modal-creacio').modal();
                         break;
                     case 2:
-                        $('#modal-creacio').modal();
+                        $('#modal-modificacio').modal();
                         break;
                     case 3:
-                        $('#modal-creacio').modal();
+                        $('#modal-eliminacio').modal();
                         break;
                 }
 

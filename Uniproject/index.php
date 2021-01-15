@@ -9,12 +9,13 @@
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php $tab=0; $navbar=0; require_once('./template/navbar.php') ?>
 
+
 	<!-- Banner | additionally you can specify the banner title and subtitle ( $title='string'; $subtitle='string'; ) before the requirement -->
 	<?php $title='Ens presentem al mon exterior!'; $subtitle='Benvingut a Uniproject'; require_once('./template/banner.php') ?>
 
     <!-- Begin page content -->
-    <main class="flex-shrink-0">
-      <div class="container py-5">
+    <main class="flex-grow-1">
+      <div class="container d-flex flex-column py-5 h-100">
         <h1 class="mt-5">Sticky footer with fixed navbar</h1>
         <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
         <p>Back to <a href="#">the default sticky footer</a> minus the navbar.</p>

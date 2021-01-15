@@ -63,5 +63,14 @@ class Empresa {
               </table>';
     }
   }
+  function modificar($idEmpresa, $nom, $localitat, $adreça, $telefon, $cifm, $email) {
+      $query = 'UPDATE Empresa SET Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idEmpresa ="'.$idEmpresa.'";';
+      $query = $this->DB->query($query);
+      if ($query === ture) {
+          return "Canvis aplicats!";
+      }else {
+          return "No s'han pogut aplicar els canvis!";
+      }
+  }
 }
  ?>

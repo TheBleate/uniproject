@@ -70,6 +70,15 @@ class Usuari {
       }
   }
   //Modificacio Usuaris
+  function modificar($idusuari, $idrol, $password, $tipus, $email, $telefon) {
+      $query = 'UPDATE Usuari SET idRol ="'. $idrol. '", Password = "'. $password . '" , Tipus = "'.$tipus.'", Telefon = "'.$telefon.'", Email = "'.$email.'" WHERE idUsuari ="'.$idusuari.'";';
+      $query = $this->DB->query($query);
+      if ($query === ture) {
+          return "Canvis aplicats!";
+      }else {
+          return "No s'han pogut aplicar els canvis!";
+      }
+  }
 
   function __construct($DB) {
       $this->DB = $DB;

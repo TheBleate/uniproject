@@ -18,12 +18,11 @@
 
             if ($user) {
                 if ($user['Contraseña'] === $contraseña && $user['Estat'] !== 'inactiu') {
-                    return array_intersect_key($user, array_flip(array('idUsuari', 'idRol','Nom','Cognom','SegonCognom','Username','Tipus','Email')));
+                    return array_intersect_key($user, array_flip(array('idUsuari','idRol','Nom','Cognom','SegonCognom','Username','Tipus','Email')));
                 }
             }
             return false;
         }
-
         //Evitem una injecció sql i fem una consulta si existeix l'usuari
         //preg_match encaixa una plantilla anti-injeccions sql
         public function consultaUsuari($nomusuari) {
@@ -32,15 +31,36 @@
                 //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
                 $user = $this->DB->query($query);
                 //Pilla tots els camps i els guarda com si fos un array
-                if ($user) {
+                //echo "asaddasa";
+                if (mysqli_num_rows($user)>0) {
+
+                    /*
+
+                    //var_dump($user->fetch_row());
+
+                    echo "sssssss";
+                    var_dump($user);*/
                     $user = $user->fetch_row();
+                    //echo "ssss";
+                    //var_dump($user);
                     switch($user[8]) {
                         case 'Alumne':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], '$dataNaixement' => $user[11], 'Estat' => $user[12]);
+                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
                             break;
                         case 'Professor':
+                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
+                            break;
+                        case 'Gerent':
+                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
+                            break;
+                        case 'Empleat':
+                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
+                            break;
+                            /*
+                        case 'Admin':
                             return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], '$dataNaixement' => $user[11], 'Estat' => $user[12]);
                             break;
+                            */
                     }
                     //$user = $user->fetch_row();
                     //return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'Username' => $user[6], 'Tipus' => $user[8], 'Email' => $user[9]);
@@ -86,6 +106,7 @@
 		}
 
         function __construct() {
+
             $this->DB = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME, DB_PORT);
             session_start();
 
