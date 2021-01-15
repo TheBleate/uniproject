@@ -36,17 +36,17 @@
             //require_once('./php/suari.php');
 
 
-        $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
-        $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
-        $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
-        $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
-        $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
-        $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
-        $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
-        $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
-        $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
-        $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
-        $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
+                $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
+                $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
+                $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
+                $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
+                $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
+                $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
+                $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
+                $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
+                $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
+                $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
+                $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
 
 
             ?>
@@ -67,7 +67,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form>
+                <form action=".php/.php" method="post">
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
