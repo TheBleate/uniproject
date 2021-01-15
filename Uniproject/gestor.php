@@ -70,7 +70,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action=".php/.php" method="post">
+                <form action=".???????" method="post">
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
