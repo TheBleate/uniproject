@@ -18,7 +18,7 @@
 
             <!-- Begin page content -->
             <div class="container-fluid p-5">
-                <h2 class="pb-5">Llistat d'instituts</h2>
+                <h2 class="pb-5">Llistat d'empreses</h2>
                 <?php
                     require_once('./php/database.php');
                     require_once('./php/usuari.php');
@@ -41,8 +41,11 @@
 
 
                 $Nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
-                $Direccio = (isset($_POST['Direccio']) ? $_POST['Direccio'] : null);
+                $Adresa = (isset($_POST['Adresa']) ? $_POST['Adresa'] : null);
                 $Localitat = (isset($_POST['Localitat']) ? $_POST['Localitat'] : null);
+                $Telefon = (isset($_POST['Telefon']) ? $_POST['Telefon'] : null);
+                $CIF = (isset($_POST['CIF']) ? $_POST['CIF'] : null);
+                $Email = (isset($_POST['Email']) ? $_POST['Email'] : null);
 
             ?>
 
@@ -68,12 +71,24 @@
                     <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="direccio">direccio</label>
-                    <input type="text" class="form-control" name="direccio" id="direccio" placeholder="Название">
-                  </div>
-                  <div class="form-group">
                     <label for="Localitat">Localitat</label>
                     <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="Adreça">Adreça</label>
+                    <input type="text" class="form-control" name="Adreça" id="Adreça" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="Telefon">Telefon</label>
+                    <input type="text" class="form-control" name="Telefon" id="Telefon" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="CIF">CIF</label>
+                    <input type="text" class="form-control" name="CIF" id="CIF" placeholder="Название">
+                  </div>
+                  <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Название">
                   </div>
 
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
@@ -96,14 +111,14 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Eliminar institut</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Eliminar empresa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
 
-                <p> Segur que vols eliminar aquest institut? </p>
+                <p> Segur que vols eliminar aquesta empresa? </p>
 
 
               </div>
@@ -124,7 +139,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modificar institut</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Modificar empresa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -136,12 +151,24 @@
                       <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
                     </div>
                     <div class="form-group">
+                      <label for="Localitat">Localitat</label>
+                      <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
+                    </div>
+                    <div class="form-group">
                       <label for="Adreça">Adreça</label>
                       <input type="text" class="form-control" name="Adreça" id="Adreça" placeholder="Название">
                     </div>
                     <div class="form-group">
-                      <label for="Localitat">Localitat</label>
-                      <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
+                      <label for="Telefon">Telefon</label>
+                      <input type="text" class="form-control" name="Telefon" id="Telefon" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="CIF">CIF</label>
+                      <input type="text" class="form-control" name="CIF" id="CIF" placeholder="Название">
+                    </div>
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input type="text" class="form-control" name="Email" id="Email" placeholder="Название">
                     </div>
 
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
