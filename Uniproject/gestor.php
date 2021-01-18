@@ -32,25 +32,6 @@
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
-            <?php
-                require_once('./php/database.php');
-                require_once('./php/usuari.php');
-
-                $DB = new Database();
-
-                $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
-                $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
-                $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
-                $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
-                $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
-                $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
-                $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
-                $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
-                $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
-                $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
-                $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
-
-            ?>
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
@@ -68,7 +49,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action=".???????" method="post">
+                <form>
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
@@ -98,7 +79,6 @@
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
-                      <option>Gestor</option>
                       <option>Empleat</option>
                       <option>Admin</option>
                     </select>

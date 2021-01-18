@@ -2,8 +2,7 @@
   <!-- Fixed navbar -->
 
 <?php
-$tab = $tab ?? null;
-switch ($navbar ?? 0):
+switch ($args[0] ?? 0):
   case 0:?>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="#">Projectus </a>
@@ -13,14 +12,14 @@ switch ($navbar ?? 0):
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item <?php echo($tab === 0 ? 'active' : ''); ?>">
+        <li class="nav-item <?php echo(CURRENT_FILENAME === 'index' ? 'active' : ''); ?>">
           <a class="nav-link" href="./index.php"><i class="fa fa-home" aria-hidden="true"></i> Inici</a>
         </li>
 
-        <li class="nav-item <?php echo($tab === 1 ? 'active' : ''); ?>">
+        <li class="nav-item <?php echo(CURRENT_FILENAME === 'about'  ? 'active' : ''); ?>">
           <a class="nav-link" href="./about.php"><i class="fa fa-info" aria-hidden="true"></i> About</a>
         </li>
-        <li class="nav-item <?php echo($tab === 2 ? 'active' : ''); ?>">
+        <li class="nav-item <?php echo(CURRENT_FILENAME === 'contact'  ? 'active' : ''); ?>">
           <a class="nav-link" href="./contact.php"><i class="fa fa-phone" aria-hidden="true"></i> Contacte</a>
         </li>
         <li class="nav-item">
@@ -70,7 +69,6 @@ switch ($navbar ?? 0):
 	<!-- Alternative navbar here -->
 
 <?php break;
-  endswitch;
-  unset($tab, $navbar); ?>
+  endswitch; ?>
 
 </header>
