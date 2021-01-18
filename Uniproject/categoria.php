@@ -29,7 +29,7 @@
             require_once('./php/database.php');
             require_once('./php/categoria.php');
             $DB = new Database();
-            $CATEGORIA = new Database($DB->getDB());
+            $CATEGORIA =new Categoria($DB->getDB());
             //intento de if :()
             //if($idrol === "alumne"){}
             $CATEGORIA->llistar();
@@ -42,10 +42,7 @@
 
         		<?php
 
-                    include_once('php/categoria.php');
-        			include_once('php/database.php');
 
-                $DB = new Database();
 
                 $idCategoria = (isset($_POST['idCategoria']) ? $_POST['idCategoria'] : null);
                 $nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
