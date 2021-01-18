@@ -3,7 +3,7 @@ class Categoria {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT nom, Estat FROM Usuari WHERE Tipus = "categoria";';
+    $query = 'SELECT Nom, Descripcio FROM Categoria;';
 
     $query = $this->DB->query($query);
 
@@ -25,8 +25,8 @@ class Categoria {
                       <!--  <td>'. $row['Estat'] .'</td> -->
                       <td>
                           <div class="table-icons">
-                              <a href="./crudusuaris.php?uid='. $row['idUsuari']. '&action=1&type=0"><i class="fas fa-edit"></i></a>
-                              <a href="./crudusuaris.php?uid='. $row['idUsuari']. '&action=2&type=0"><i class="fas fa-trash-alt"></i></a>
+                              <a href="./crudusuaris.php?uid='. $row['idCategoria']. '&action=1&type=0"><i class="fas fa-edit"></i></a>
+                              <a href="./crudusuaris.php?uid='. $row['idCategoria']. '&action=2&type=0"><i class="fas fa-trash-alt"></i></a>
                           <div>
                       </td>
                   </tr>';
@@ -36,7 +36,7 @@ class Categoria {
               </table>';
     }
   }
-  public function alta($idcategoria, $nom, $descripcio) {
+  public function alta($idCategoria, $nom, $descripcio) {
     $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $idCategoria . '","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
@@ -56,7 +56,7 @@ class Categoria {
       }
   }
 
-  function modificar($idCategoria, $nom, $descripcio,) {
+  function modificar($idCategoria, $nom, $Descripcio) {
       $query = 'UPDATE Categoria SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idCategoria.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
