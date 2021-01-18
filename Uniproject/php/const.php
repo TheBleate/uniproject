@@ -8,10 +8,10 @@
     define('ROOT_PATH', realpath(__DIR__. '/..'). '/');
 
     // Ruta absoluta del directori CSS
-    define('STYLES_PATH', './css/');
+    define('STYLES_PATH', '/github/Uniproject/css/');
 
     // Ruta absoluta del directori JavaScript
-    define('SCRIPTS_PATH', './js/');
+    define('SCRIPTS_PATH', '/github/Uniproject/js/');
 
     // Ruta absoluta del directori Views utilitzat per a la plantilla
     define('VIEWS_PATH', ROOT_PATH. 'views/');
@@ -23,7 +23,6 @@
     define('CONFIG_FILE', ROOT_PATH. 'php/config.php');
 
     // Nom del script PHP actual
-    define('CURRENT_FILENAME', basename($_SERVER["SCRIPT_FILENAME"], '.php'));
-
+    define('CURRENT_FILENAME', basename($_SERVER["PHP_SELF"], '.php'));
 
 ?>
