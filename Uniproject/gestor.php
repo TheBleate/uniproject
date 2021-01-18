@@ -17,7 +17,7 @@
         <?php view('sidebar', 0); ?>
 
         <!-- Page Content -->
-        <div class="d-flex flex-column w-100">
+            <div class="d-flex flex-column w-100">
 
             <!-- Begin page content -->
             <div class="container-fluid p-5">

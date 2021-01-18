@@ -79,9 +79,9 @@
   endswitch; ?>
 
 </footer>
-<script src="./js/jquery/jquery-3.5.1.min.js"></script>
-<script src="./js/bootstrap/bootstrap.min.js"></script>
-<script src="./js/custom.js"></script>
+<script src="<?php echo SCRIPTS_PATH; ?>jquery/jquery-3.5.1.min.js"></script>
+<script src="<?php echo SCRIPTS_PATH; ?>bootstrap/bootstrap.min.js"></script>
+<script src="<?php echo SCRIPTS_PATH; ?>custom.js"></script>
 
 <?php for($i=1;$i<count($args);$i++): ?>
     <!-- Custom per page styles -->

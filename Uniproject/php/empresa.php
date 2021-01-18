@@ -24,7 +24,7 @@ class Empresa {
       }
   }
   public function llistar() {
-    $query = 'SELECT nom, localitat, telefon, email, Estat FROM Usuari WHERE Tipus = "empresa";';
+    $query = 'SELECT nom, localitat, telefon, email, Estat FROM Empresa';
 
     $query = $this->DB->query($query);
 

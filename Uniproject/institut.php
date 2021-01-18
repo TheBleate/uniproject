@@ -40,8 +40,11 @@
             <?php
 
                 $Nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
-                $Direccio = (isset($_POST['direccio']) ? $_POST['direccio'] : null);
                 $Localitat = (isset($_POST['localitat']) ? $_POST['localitat'] : null);
+                $Adreça = (isset($_POST['adreça']) ? $_POST['adreça'] : null);
+                $Telefon = (isset($_POST['telefon']) ? $_POST['telefon'] : null);
+                $CIF = (isset($_POST['cif']) ? $_POST['cif'] : null);
+                $Email = (isset($_POST['email']) ? $_POST['email'] : null);
 
             ?>
 
@@ -61,18 +64,30 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action="alta()" method="post">
+                <form id="crud-alta-institut" method="post">
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
                   </div>
                   <div class="form-group">
-                    <label for="direccio">Direccio</label>
-                    <input type="text" class="form-control" name="direccio" id="direccio" placeholder="C/ Mardid, 5">
-                  </div>
-                  <div class="form-group">
                     <label for="localitat">Localitat</label>
                     <input type="text" class="form-control" name="localitat" id="localitat" placeholder="Amposta">
+                  </div>
+                  <div class="form-group">
+                    <label for="adreça">Adreça</label>
+                    <input type="text" class="form-control" name="adreça" id="adreça" placeholder="C/">
+                  </div>
+                  <div class="form-group">
+                    <label for="telefon">Telefon</label>
+                    <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
+                  </div>
+                  <div class="form-group">
+                    <label for="cif">CIF</label>
+                    <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
                   </div>
 
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
@@ -81,7 +96,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
               </div>
             </div>
           </div>
