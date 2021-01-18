@@ -33,12 +33,10 @@
 
             <!-- /#page-content-wrapper -->
             <?php
-
                 require_once('./php/database.php');
                 require_once('./php/usuari.php');
 
                 $DB = new Database();
-
 
                 $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
                 $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
@@ -100,6 +98,7 @@
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
+                      <option>Gestor</option>
                       <option>Empleat</option>
                       <option>Admin</option>
                     </select>
