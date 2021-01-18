@@ -32,6 +32,7 @@
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
+<<<<<<< HEAD
             <?php
                 require_once('./php/database.php');
                 require_once('./php/usuari.php');
@@ -51,6 +52,8 @@
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
 
             ?>
+=======
+>>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
@@ -68,7 +71,11 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
+<<<<<<< HEAD
                 <form action="alta()" method="post">
+=======
+                <form>
+>>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">

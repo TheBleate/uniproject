@@ -1,6 +1,6 @@
 <footer class="page-footer mt-auto py-3 bg-dark">
 
-<?php switch ($footer ?? 0):
+<?php switch ($args[0] ?? 0):
   case 0:?>
   <!-- Footer -->
     <!-- Footer Links -->
@@ -76,13 +76,14 @@
   <!-- Alternative footer here -->
 
 <?php break;
-  endswitch;
-  unset($footer); ?>
+  endswitch; ?>
 
 </footer>
 <script src="./js/jquery/jquery-3.5.1.min.js"></script>
 <script src="./js/bootstrap/bootstrap.min.js"></script>
 <script src="./js/custom.js"></script>
-<?php if (isset($script)): ?>
-    <script src="<?php echo $script; ?>"></script>
-<?php endif; ?>
+
+<?php for($i=1;$i<count($args);$i++): ?>
+    <!-- Custom per page styles -->
+    <script src="<?php echo SCRIPTS_PATH. $args[$i]; ?>.js"></script>
+<?php endfor; ?>

@@ -8,28 +8,28 @@
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
-  <link href="./scss/compiled/bootstrap.css" rel="stylesheet">
+  <link href="<?php echo './scss/compiled/'; ?>bootstrap.css" rel="stylesheet">
 
   <!-- Bootstrap reboot CSS -->
   <!-- <link href="./css/bootstrap/bootstrap-reboot.min.css" rel="stylesheet"> -->
-  <link href="./scss/compiled/bootstrap-reboot.css" rel="stylesheet">
+  <link href="<?php echo './scss/compiled/'; ?>bootstrap-reboot.css" rel="stylesheet">
 
   <!-- Bootstrap grid CSS -->
   <!-- <link href="./css/bootstrap/bootstrap-grid.min.css" rel="stylesheet"> -->
-  <link href="./scss/compiled/bootstrap-grid.css" rel="stylesheet">
+  <link href="<?php echo './scss/compiled/'; ?>bootstrap-grid.css" rel="stylesheet">
 
   <!-- Quicksand google webfont CSS -->
-  <link href="./css/quicksand/quicksand.min.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>quicksand/quicksand.min.css" rel="stylesheet">
 
   <!-- Font Awesome webfont CSS -->
   <!-- WARNING: The version of Font Awesome used is the local 4.7.0, so the icon website where everyone is looking is no longer useful, use this instead https://fontawesome.com/v4.7.0/icons -->
-  <link href="./css/fontawesome/font-awesome.min.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>fontawesome/font-awesome.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="./css/custom.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>custom.css" rel="stylesheet">
 
-  <?php if (isset($style)): ?>
+  <?php foreach ($args as $arg): ?>
       <!-- Custom per page styles -->
-      <link href="./css/<?php echo $style; unset($style); ?>" rel="stylesheet">
-  <?php endif;?>
+      <link href="<?php echo STYLES_PATH. $arg; ?>.css" rel="stylesheet">
+  <?php endforeach; ?>
 </head>
