@@ -5,7 +5,6 @@
 
    //ACCESS A LA BASE DE DADES
    define('DB_USER', 'master');
-
    define('DB_PASS', '1234');
    define('DB_NAME', 'proiectus');
    define('DB_ADDRESS', '127.0.0.1');
