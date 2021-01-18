@@ -21,8 +21,8 @@ class Categoria {
         foreach ($query as $row) {
           if($row['Estat'] === 'actiu') {
               echo '<tr>
-                      <td>'. $row['nom'].'</td>
-                      <!--  <td>'. $row['Estat'] .'</td> -->
+                      <td>'. $row['Nom'].'</td>
+                      <td>'. $row['Descripcio'] .'</td>
                       <td>
                           <div class="table-icons">
                               <a href="./crudusuaris.php?uid='. $row['idCategoria']. '&action=1&type=0"><i class="fas fa-edit"></i></a>
