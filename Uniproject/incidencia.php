@@ -34,7 +34,6 @@
                     $USUARI->llistar();
                 ?>
             </div>
-            <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
             <?php
