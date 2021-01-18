@@ -21,58 +21,144 @@
             <h2 class="pb-5">Llistat de Categories</h2>
             <?php
 
-            require_once('./Categoria/Conexio.php');
+            require_once('./php/database.php');
             require_once('./php/categoria.php');
-            $DB = new Conexio();
-            $database = new Conexio($DB->getDB());
+            $DB = new Database();
+            $CATEGORIA = new Database($DB->getDB());
             //intento de if :()
             //if($idrol === "alumne"){}
-            $CATEGORIA =new Categoria();
             $CATEGORIA->llistar();
 
 
-            $idCategoria = (isset($_POST['idCategoria']) ? $_POST['idCategoria'] : null);
-            $nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
-            $Descripcio = (isset($_POST['Descripcio']) ? $_POST['Descripcio'] : null);
 
 
-            ?>
+
+            ?>  </div>
+        <?php require_once('./template/footer.php'); ?>
+
         		<?php
-        			//incluimos el fichero de conexion
-        			include_once('Categoria/Conexio.php');
 
-        			$database = new Conexio();
-        			$db = $database->open();
-        			try{
-        				$sql = 'SELECT * FROM Categoria';
-        				foreach ($db->query($sql) as $row) {
-        					?>
-        					<tr>
-        						<td><?php echo $row['idCategoria']; ?></td>
-        						<td><?php echo $row['Nom']; ?></td>
-        						<td><?php echo $row['Descripcio']; ?></td>
-        						<td>
-        							<a href="#edit_<?php echo $row['idCategoria']; ?>" class="btn btn-success btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-edit"></span> Editar</a>
-        							<a href="#delete_<?php echo $row['idCategoria']; ?>" class="btn btn-danger btn-sm" data-toggle="modal"><span class="glyphicon glyphicon-trash"></span> Borrar</a>
-        						</td>
-        						<?php include('Categoria/borrarEditarCategoria.php'); ?>
-        					</tr>
-        					<?php
-        				}
-        			}
-        			catch(PDOException $e){
-        				echo "Hubo un problema en la conexión: " . $e->getMessage();
-        			}
+                    include_once('php/categoria.php');
+        			include_once('php/database.php');
+
+                $DB = new Database();
+
+                $idCategoria = (isset($_POST['idCategoria']) ? $_POST['idCategoria'] : null);
+                $nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
+                $Descripcio = (isset($_POST['Descripcio']) ? $_POST['Descripcio'] : null);
+
+
         		?>
-        		</div>
-        	</div>
-        </div>
-        </div>
-    </main>
 
-    <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
-  <?php require_once('./template/footer.php') ?>
+        <!-- Modal button (se cambiara)
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
+          Crear (icona)
+        </button> -->
+        <!-- Modal de Creacio -->
+        <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Creacio de Categories</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!--Formulari de creacio-->
+                        <form action="alta()" method="post">
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
+                            </div>
+                            <div class="form-group">
+                                <label for="Descripcio">Descripcio</label>
+                                <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Название">
+                            </div>
 
-    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-  </body>
+                            <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Crear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de Eliminacio
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-eliminacio">
+          Eliminar (icona)
+        </button>-->
+        <!-- Modal de Eliminacio-->
+        <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Eliminar Categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <p> Segur que vols eliminar aquesta categoria? </p>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Modificacio
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
+          Modificar (icona)
+        </button> -->
+        <!-- Modal de Modificacio -->
+        <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Modificar categoria</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="nom">Nom</label>
+                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
+                            </div>
+                            <div class="form-group">
+                                <label for="Cognom">Cognom</label>
+                                <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Descripcio">
+                            </div>
+
+                            <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+                        </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Modificar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
+
+
+
+</body>
 </html>
