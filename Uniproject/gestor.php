@@ -2,7 +2,10 @@
 <html lang="en" class="h-100">
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
-  <?php require_once('./template/header.php') ?>
+  <?php require_once('./template/header.php')
+
+//Mucho text
+   ?>
 
   <body class="d-flex flex-column h-100">
 
@@ -32,7 +35,7 @@
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
-<<<<<<< HEAD
+
             <?php
                 require_once('./php/database.php');
                 require_once('./php/usuari.php');
@@ -52,8 +55,7 @@
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
 
             ?>
-=======
->>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
+
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
