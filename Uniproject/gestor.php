@@ -32,6 +32,28 @@
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
+<<<<<<< HEAD
+            <?php
+                require_once('./php/database.php');
+                require_once('./php/usuari.php');
+
+                $DB = new Database();
+
+                //$nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
+                $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
+                $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
+                $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
+                $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
+                $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
+                $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
+                $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
+                $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
+                $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
+                $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
+
+            ?>
+=======
+>>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
@@ -49,53 +71,57 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
+<<<<<<< HEAD
+                <form action="alta()" method="post">
+=======
                 <form>
+>>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
                   <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Название">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="Cognom">Cognom</label>
-                    <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
+                    <label for="cognom">Cognom</label>
+                    <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="SegonCognom">SegonCognom</label>
-                    <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                    <label for="cognom2">Segon Cognom</label>
+                    <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
                   </div>
                   <div class="form-group">
                     <label for="DNI">DNI</label>
-                    <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                    <input type="text" class="form-control" name ="DNI" id="DNI" placeholder="46294233C">
                   </div>
                   <div class="form-group">
-                    <label for="UserName">UserName</label>
-                    <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                    <label for="UserName">Nom d'usuari</label>
+                    <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                   </div>
                   <div class="form-group">
-                    <label for="Password">Password</label>
-                    <input type="text" class="form-control" id="Password" placeholder="*******">
+                    <label for="Contrasenya">Contrasenya</label>
+                    <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
                   </div>
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tipus</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <label for="tipus">Tipus</label>
+                    <select class="form-control" name = "tipus" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
+                      <option>Gestor</option>
                       <option>Empleat</option>
                       <option>Admin</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="userEmail">Email</label>
-                    <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name = "email" id="email" placeholder="name@example.com">
                   </div>
                   <div class="form-group">
-                    <label for="Telefon">Telefon</label>
-                    <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                    <label for="telefon">Telefon</label>
+                    <input type="text" class="form-control" name = "telefon" id="telefon" placeholder="647768442">
                   </div>
                   <div class="form-group">
-                    <label for="DataNaixement">Data de Naixement</label><br>
+                    <label for="dataNaixement">Data de Naixement</label><br>
                     <!-- tipus data¿ -->
-
-                    <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                    <input type="date" id="dataNaixement" name="dataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                     <span class="validity"></span>
                   </div>
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->

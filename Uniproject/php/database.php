@@ -33,11 +33,8 @@
                 //Pilla tots els camps i els guarda com si fos un array
                 //echo "asaddasa";
                 if (mysqli_num_rows($user)>0) {
-
                     /*
-
                     //var_dump($user->fetch_row());
-
                     echo "sssssss";
                     var_dump($user);*/
                     $user = $user->fetch_row();
@@ -64,7 +61,6 @@
                     }
                     //$user = $user->fetch_row();
                     //return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'Username' => $user[6], 'Tipus' => $user[8], 'Email' => $user[9]);
-
                 }
             }
         }
@@ -75,7 +71,6 @@
             $user = $this->DB->query($query);
             if ($user) {
                 $user = $user->fetch_row();
-
                 switch($user[8]) {
                     case 'Alumne':
                         return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], '$dataNaixement' => $user[11], 'Estat' => $user[12]);
@@ -106,10 +101,8 @@
 		}
 
         function __construct() {
-
             $this->DB = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-            session_start();
-
+            //session_start();
             if (!$this->DB) {
                 exit('Base de dades inaccessible');
             }
