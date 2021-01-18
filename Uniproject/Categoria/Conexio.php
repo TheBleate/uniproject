@@ -1,22 +1,25 @@
 <?php
 
-class Conexio extends mysqli{
+class Conexio{
+    private $DB;
 
-    private $DB_HOST = '192.168.224.101';
-    private $DB_USER = 'Josep';
-    private $DB_PASS = '1234';
+    //Getter de la connexió a la Base de Dades
+
+    private $DB_HOST = 'localhost';
+    private $DB_USER = 'josep';
+    private $DB_PASS = '*Deltebre43580';
     private $DB_NAME = 'Proiectus';
 
-    public function __construct(){
-        parent:: __construct($this->DB_HOST, $this->DB_USER, $this->DB_PASS, $this->DB_NAME);
-
-        $this->set_charset('utf-8');
-
-        $this->connect_errno ? die('Error en la conexion'. mysqli_connect_errno()) : $m = 'Conectat';
+    function __construct(){
+        $this->DB = new mysqli($this->DB_HOST, $this->DB_USER, $this->DB_PASS, $this->DB_NAME);
+        session_start();
 
         //echo $m;
     }
 
+    public function getDB() {
+        return $this->DB;
+    }
 
 }
 ?>
