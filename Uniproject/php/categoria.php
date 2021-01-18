@@ -47,7 +47,7 @@ class Categoria {
   }
   function eliminar($idCategoria)
   {
-      $query = 'UPDATE Categoria SET Estat = "inactiu" WHERE idIncidencia = "' . $idCategoria . '"';
+      $query = 'UPDATE Categoria SET Estat = "inactiu" WHERE idCategoria = "' . $idCategoria . '"';
       $query = $this->DB->query($query);
       if ($query === true) {
           return "La categoria s'ha eliminat!";
@@ -57,7 +57,7 @@ class Categoria {
   }
 
   function modificar($idCategoria, $nom, $Descripcio) {
-      $query = 'UPDATE Categoria SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idUsuari ="'.$idCategoria.'";';
+      $query = 'UPDATE Categoria SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idCategoria ="'.$idCategoria.'";';
       $query = $this->DB->query($query);
       if ($query === ture) {
           return "Canvis aplicats!";
