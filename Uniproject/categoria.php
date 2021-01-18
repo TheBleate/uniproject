@@ -1,41 +1,33 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
-  <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
-  <?php require_once('./template/header.php') ?>
+<!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
+<?php require_once('./template/header.php') ?>
 
-  <body class="d-flex flex-column">
+<body class="d-flex flex-column h-100">
 
-  <?php $tab=2; $navbar=1;
-  require_once('./template/navbar.php') ?>
+<?php $tab=2; $navbar=1; require_once('./template/navbar.php') ?>
 
-    <main class="d-flex flex-row">
+<main class="d-flex flex-row flex-grow-1">
 
-        <!-- Sidebar -->
-  <?php $tab=0; $navbar=0;
-  require_once('./template/sidebar.php') ?>
+    <!-- Sidebar -->
+    <?php $tab=0; $navbar=0; require_once('./template/sidebar.php') ?>
 
-        <!-- Page Content -->
-        <div class="d-flex flex-column w-100">
+    <!-- Page Content -->
+    <div class="d-flex flex-column w-100">
 
-
-
-          <!-- Begin page content -->
-
-
-
-        <!-- /#page-content-wrapper -->
-        	<div class="row">
-        		<div class="col-sm-8 col-sm-offset-2">
-        			<a href="#addnew" class="btn btn-primary" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Nuevo Registro</a>
+        <!-- Begin page content -->
+        <div class="container-fluid p-5">
+            <h2 class="pb-5">Llistat de Categories</h2>
             <?php
 
             require_once('./Categoria/Conexio.php');
             require_once('./php/categoria.php');
             $DB = new Conexio();
-            $CATEGORIA = new Categoria($DB->getDB());
+            $database = new Conexio($DB->getDB());
             //intento de if :()
             //if($idrol === "alumne"){}
+            $CATEGORIA =new Categoria();
             $CATEGORIA->llistar();
 
 

@@ -12,7 +12,7 @@ class Conexio{
 
     function __construct(){
         $this->DB = new mysqli($this->DB_HOST, $this->DB_USER, $this->DB_PASS, $this->DB_NAME);
-        session_start();
+
 
         //echo $m;
     }
