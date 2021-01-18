@@ -1,17 +1,21 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
+  <?php
+    // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
+    require_once('./php/template.php');
+  ?>
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
-  <?php require_once('./template/header.php') ?>
+  <?php view('header'); ?>
 
   <body class="d-flex flex-column h-100">
 
-    <?php $tab=2; $navbar=1; require_once('./template/navbar.php') ?>
+    <?php view('navbar', 1); ?>
 
     <main class="d-flex flex-row flex-grow-1">
 
         <!-- Sidebar -->
-        <?php $tab=0; $navbar=0; require_once('./template/sidebar.php') ?>
+        <?php view('sidebar', 0); ?>
 
         <!-- Page Content -->
         <div class="d-flex flex-column w-100">
@@ -32,7 +36,7 @@
             <?php require_once('./template/footer.php'); ?>
 
             <!-- /#page-content-wrapper -->
-<<<<<<< HEAD
+
             <?php
                 require_once('./php/database.php');
                 require_once('./php/usuari.php');
@@ -52,8 +56,7 @@
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
 
             ?>
-=======
->>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
+
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
@@ -71,11 +74,8 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-<<<<<<< HEAD
                 <form action="alta()" method="post">
-=======
                 <form>
->>>>>>> 4dbd389fac8a7b68e45bc7c1d6b774b6f5611475
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -179,53 +179,54 @@
                 </button>
               </div>
               <div class="modal-body">
+                  <form action="modificar()" method="post">
                   <form>
                     <div class="form-group">
-                      <label for="name">Nom</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="Название">
+                      <label for="nom">Nom</label>
+                      <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
                     </div>
                     <div class="form-group">
-                      <label for="Cognom">Cognom</label>
-                      <input type="text" class="form-control" name="Cognom" id="Cognom" placeholder="Название">
+                      <label for="cognom">Cognom</label>
+                      <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                     </div>
                     <div class="form-group">
-                      <label for="SegonCognom">SegonCognom</label>
-                      <input type="text" class="form-control" name="SegonCognom" id="SegonCognom" placeholder="Название">
+                      <label for="cognom2">Segon Cognom</label>
+                      <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
                     </div>
                     <div class="form-group">
                       <label for="DNI">DNI</label>
-                      <input type="text" class="form-control" id="DNI" placeholder="46294233C">
+                      <input type="text" class="form-control" name ="DNI" id="DNI" placeholder="46294233C">
                     </div>
                     <div class="form-group">
-                      <label for="UserName">UserName</label>
-                      <input type="text" class="form-control" id="UserName" placeholder="Название1234">
+                      <label for="UserName">Nom d'usuari</label>
+                      <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                     </div>
                     <div class="form-group">
-                      <label for="Password">Password</label>
-                      <input type="text" class="form-control" id="Password" placeholder="*********">
+                      <label for="Contrasenya">Contrasenya</label>
+                      <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
                     </div>
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Tipus</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <label for="tipus">Tipus</label>
+                      <select class="form-control" name = "tipus" id="exampleFormControlSelect1">
                         <option>Alumne</option>
                         <option>Profesor</option>
+                        <option>Gestor</option>
                         <option>Empleat</option>
                         <option>Admin</option>
                       </select>
                     </div>
                     <div class="form-group">
-                      <label for="userEmail">Email</label>
-                      <input type="text" class="form-control" id="userEmail" placeholder="name@example.com">
+                      <label for="email">Email</label>
+                      <input type="text" class="form-control" name = "email" id="email" placeholder="name@example.com">
                     </div>
                     <div class="form-group">
-                      <label for="Telefon">Telefon</label>
-                      <input type="text" class="form-control" id="Telefon" placeholder="647768442">
+                      <label for="telefon">Telefon</label>
+                      <input type="text" class="form-control" name = "telefon" id="telefon" placeholder="647768442">
                     </div>
                     <div class="form-group">
-                      <label for="DataNaixement">Data de Naixement</label><br>
+                      <label for="dataNaixement">Data de Naixement</label><br>
                       <!-- tipus data¿ -->
-
-                      <input type="date" id="DataNaixement" name="DataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                      <input type="date" id="dataNaixement" name="dataNaixement" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
                       <span class="validity"></span>
                     </div>
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
@@ -246,8 +247,7 @@
     </main>
 
     <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
-
-
+    <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
 
   </body>
 </html>

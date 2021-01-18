@@ -1,17 +1,22 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
+  <?php
+    // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
+    require_once('./php/template.php');
+  ?>
+
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
-  <?php require_once('./template/header.php') ?>
+  <?php view('header'); ?>
 
   <body class="d-flex flex-column h-100">
 
-    <?php $tab=2; $navbar=1; require_once('./template/navbar.php') ?>
+    <?php view('navbar', 1); ?>
 
     <main class="d-flex flex-row flex-grow-1">
 
         <!-- Sidebar -->
-        <?php $tab=0; $navbar=0; require_once('./template/sidebar.php') ?>
+        <?php view('sidebar', 0); ?>
 
         <!-- Page Content -->
         <div class="d-flex flex-column w-100">
@@ -151,6 +156,7 @@
     </main>
 
     <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
+    <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
 
   </body>
 </html>

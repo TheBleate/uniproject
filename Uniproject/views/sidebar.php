@@ -1,7 +1,6 @@
 <!-- Sidebar -->
 <?php
-$tab = $tab ?? null;
-switch ($navbar ?? 0):
+switch ($args[0] ?? 0):
   case 0:?>
   <!-- Sidebar -->
   <div class="bg-dark">
@@ -17,5 +16,4 @@ switch ($navbar ?? 0):
   <!-- Alternative sidebar here -->
 
 <?php break;
-  endswitch;
-  unset($tab, $navbar); ?>
+  endswitch; ?>
