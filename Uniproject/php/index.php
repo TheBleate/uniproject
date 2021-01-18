@@ -5,7 +5,6 @@
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
     require_once('./template.php');
 
-      echo CURRENT_DIR;
   ?>
 
 
