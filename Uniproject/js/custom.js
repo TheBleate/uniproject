@@ -80,4 +80,40 @@
         });
 
     }
+    // *******************Andrei.H******************** //
+    //object map
+    function map() {
+        let map = new Map();
+        map.set('Alumne', 'Nom');
+        map.set('Empresa', 'Nom');
+        map.set('Professor', 'Nom');
+        // sayings.size; // 3
+        map.delete('Alumne');
+        for (let [key, value] of map) {
+            console.log(key + ' diu ' + value);
+        }
+        //sayings.clear();
+        //sayings.size; // 0
+    }
+        function set(  {
+
+        let primerSet = new Set();
+        primerSet.add(1);
+        primerSet.add('Mucho texto');
+        primerSet.add('foo');
+
+        primerSet.has(1);
+        primerSet.delete('foo');
+        primerSet.size;
+
+        for (let item of primerSet) console.log(item);
+
+    }
+
+    map();
+    set();
+// **************************************************
+
+
+
 })();

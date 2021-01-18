@@ -33,12 +33,10 @@
 
             <!-- /#page-content-wrapper -->
             <?php
-
                 require_once('./php/database.php');
                 require_once('./php/usuari.php');
 
                 $DB = new Database();
-
 
                 $nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
                 $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
@@ -70,7 +68,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action=".php/.php" method="post">
+                <form action=".???????" method="post">
                   <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="Название">
@@ -100,6 +98,7 @@
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option>Alumne</option>
                       <option>Profesor</option>
+                      <option>Gestor</option>
                       <option>Empleat</option>
                       <option>Admin</option>
                     </select>
