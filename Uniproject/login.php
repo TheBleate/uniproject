@@ -1,6 +1,52 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
+
+
+  <?php
+	require_once('./php/database.php');
+
+	$nomusuari = $_POST['user'] ?? null;
+	$contraseña = $_POST['pass'] ?? null;
+
+    //Creem un nou objecte de Database
+	$DB = new Database();
+
+    //array_key_exists Comprova que dintre de Get existeix el valor
+	if (array_key_exists('logout', $_GET)) {
+		session_destroy();
+		unset($_SESSION['current-user']);
+	}
+
+    //$_SESSION Guarda el usuari de la sessió, en cas de no tindre una sessió, serà null
+	//la variable guarda la sessió al servidor fins que és tanca la sessio
+	$usuariactual = $_SESSION['current-user'] ?? null;
+
+    //Validació, comprova usuari i contrasenya a la BD
+    if ($usuariactual) {
+        header('Location: ./gestor.php');
+    }
+
+    //Realitza la connexió a la base de dades
+    if ($nomusuari || $contraseña) {
+        $user = $DB->validar($nomusuari,$contraseña);
+        if ($user) {
+            //$hash = md5(uniqid());
+            //setcookie('projekt-cat', $user['idUsuari']);
+            $_SESSION['current-user'] = $user;
+            header('Location: ./gestor.php');
+        } else {
+            echo '<a href="#" class="float-right">Nom d\'usuari o contrasenya incorrectes!</p>';
+        }
+    }
+  ?>
+
+
+
+
+
+
+
   <?php
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
     require_once('./php/template.php');
@@ -13,22 +59,6 @@
 
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php view('navbar', 0); ?>
-
-	<?php
-		require_once('./php/database.php');
-		$nomusuari = $_POST['user'] ?? null;
-		$contraseña = $_POST['pass'] ?? null;
-		//Creem un nou objecte de Database
-		$DB = new Database();
-		//array_key_exists Comprova que dintre de Get existeix el valor
-		if (array_key_exists('logout', $_GET)) {
-			session_destroy();
-			unset($_SESSION['current-user']);
-		}
-		//$_SESSION Guarda el usuari de la sessió, en cas de no tindre una sessió, serà null
-		//la variable guarda la sessió al servidor fins que és tanca la sessio
-		$usuariactual = $_SESSION['current-user'] ?? null;
-	?>
 
 
 
@@ -50,26 +80,12 @@
 				</div>
 				<div class="clearfix">
 					<!--<label class="float-left form-check-label"><input type="checkbox"> Remember me</label>-->
-					<?php
-						//Validació, comprova usuari i contrasenya a la BD
-						if ($usuariactual) {
-							header('Location: ./gestor.php');
-						}
 
-						//Realitza la connexió a la base de dades
-						if ($nomusuari || $contraseña) {
-							$user = $DB->validar($nomusuari,$contraseña);
-							if ($user) {
-								//$hash = md5(uniqid());
-								//setcookie('projekt-cat', $user['idUsuari']);
-								$_SESSION['current-user'] = $user;
-								header('Location: ./gestor.php');
 
-							} else {
-								echo '<a href="#" class="float-right">Nom d\'usuari o contrasenya incorrectes!</p>';
-							}
-						}
-					?>
+
+
+
+
 				</div>
 			</form>
 			<p class="text-center"><a href="#">Create an Account</a></p>
