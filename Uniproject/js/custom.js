@@ -84,9 +84,9 @@
 
 
     $('#modal_creacio').on('submit', function() {
-        
 
-        return false;
+
+        //return false;
     });
 
 

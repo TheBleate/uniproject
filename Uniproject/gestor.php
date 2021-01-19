@@ -62,13 +62,8 @@
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
-<<<<<<< HEAD
-        </button>
-         Modal de Creacio -->
-=======
-        </button>-->
+        </button> -->
         <!-- Modal de Creacio -->
->>>>>>> da626fd4165f539d3c9ef1b976e74d5e032c352b
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -80,8 +75,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action="alta()" method="post">
-                <form>
+
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -137,8 +131,9 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary" name="submit" value="Submit">Crear</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
