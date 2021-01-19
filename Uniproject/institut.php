@@ -26,31 +26,26 @@
                 <h2 class="pb-5">Llistat d'instituts</h2>
                 <?php
                     require_once('./php/database.php');
-                    require_once('./php/usuari.php');
+                    require_once('./php/institut.php');
                     $DB = new Database();
-                    $USUARI = new Usuari($DB->getDB());
+                    $Institut = new institut($DB->getDB());
                     //intento de if :()
                     //if($idrol === "alumne"){}
-                    $USUARI->llistar();
+                    $Institut->llistar();
                 ?>
             </div>
-            <?php require_once('./template/footer.php'); ?>
-
+            <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
+            <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
             <!-- /#page-content-wrapper -->
             <?php
-
-                require_once('./php/database.php');
-                require_once('./php/usuari.php');
-
-                $DB = new Database();
-
-
-                $Nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
-                $Direccio = (isset($_POST['Direccio']) ? $_POST['Direccio'] : null);
-                $Localitat = (isset($_POST['Localitat']) ? $_POST['Localitat'] : null);
+                $Nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
+                $Localitat = (isset($_POST['localitat']) ? $_POST['localitat'] : null);
+                $Adreça = (isset($_POST['adreça']) ? $_POST['adreça'] : null);
+                $Telefon = (isset($_POST['telefon']) ? $_POST['telefon'] : null);
+                $CIF = (isset($_POST['cif']) ? $_POST['cif'] : null);
+                $Email = (isset($_POST['email']) ? $_POST['email'] : null);
 
             ?>
-
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
@@ -67,18 +62,30 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action=".???????" method="post">
+                <form id="crud-alta-institut" method="post">
                   <div class="form-group">
-                    <label for="Nom">Nom</label>
-                    <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
                   </div>
                   <div class="form-group">
-                    <label for="direccio">direccio</label>
-                    <input type="text" class="form-control" name="direccio" id="direccio" placeholder="Название">
+                    <label for="localitat">Localitat</label>
+                    <input type="text" class="form-control" name="localitat" id="localitat" placeholder="Amposta">
                   </div>
                   <div class="form-group">
-                    <label for="Localitat">Localitat</label>
-                    <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
+                    <label for="adreça">Adreça</label>
+                    <input type="text" class="form-control" name="adreça" id="adreça" placeholder="C/">
+                  </div>
+                  <div class="form-group">
+                    <label for="telefon">Telefon</label>
+                    <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
+                  </div>
+                  <div class="form-group">
+                    <label for="cif">CIF</label>
+                    <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
                   </div>
 
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
@@ -87,7 +94,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
               </div>
             </div>
           </div>
@@ -114,7 +121,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
             </div>
           </div>
@@ -135,28 +142,37 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="Nom">Nom</label>
-                      <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
-                    </div>
-                    <div class="form-group">
-                      <label for="Adreça">Adreça</label>
-                      <input type="text" class="form-control" name="Adreça" id="Adreça" placeholder="Название">
-                    </div>
-                    <div class="form-group">
-                      <label for="Localitat">Localitat</label>
-                      <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
-                    </div>
-
-                    <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
+                  <form id="crud-modificar-institut" method="post">
+                      <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
+                      </div>
+                      <div class="form-group">
+                        <label for="localitat">Localitat</label>
+                        <input type="text" class="form-control" name="localitat" id="localitat" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="adreça">Adreça</label>
+                        <input type="text" class="form-control" name="adreça" id="adreça" placeholder="C/">
+                      </div>
+                      <div class="form-group">
+                        <label for="telefon">Telefon</label>
+                        <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="cif">CIF</label>
+                        <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
+                      </div>
                   </form>
 
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Modificar</button>
+                <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
             </div>
           </div>
@@ -164,8 +180,7 @@
         </div>
     </main>
 
-    <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
-    <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
+
 
   </body>
 </html>

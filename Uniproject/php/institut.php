@@ -20,34 +20,39 @@ class Institut {
         }
     }
     public function llistar() {
-      $query = 'SELECT nom, direccio, localitat, Estat FROM Usuari WHERE Tipus = "institut";';
+      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
       $query = $this->DB->query($query);
       if ($query) {
+
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
-                          <th>nom</th>
-                          <th>direccio</th>
-                          <th>localitat</th>
-                          <!--  <th>Estat</th> -->
-                          <td><a href="./crudusuaris.php?action=0&type=0"><i class="fas fa-plus"></i></a></td>
+                          <th>Nom</th>
+                          <th>Localitat</th>
+                          <th>Adreça</th>
+                          <th>Telefon</th>
+                          <th>CIF</th>
+                          <th>Email</th>
+                          <td class="align-middle text-center" ><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                       </tr>
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-            if($row['Estat'] === 'actiu') {
+            if($row['estat'] === 'actiu') {
                 echo '<tr>
                         <td>'. $row['nom'] .'</td>
-                        <td>'. $row['direccio'] .'</td>
                         <td>'. $row['localitat'] .'</td>
-                        <!--  <td>'. $row['Estat'] .'</td> -->
-                        <td>
-                            <div class="table-icons">
-                                <a href="./crudusuaris.php?uid='. $row['idUsuari']. '&action=1&type=0"><i class="fas fa-edit"></i></a>
-                                <a href="./crudusuaris.php?uid='. $row['idUsuari']. '&action=2&type=0"><i class="fas fa-trash-alt"></i></a>
+                        <td>'. $row['adreça'] .'</td>
+                        <td>'. $row['telefon'] .'</td>
+                        <td>'. $row['cif'] .'</td>
+                        <td>'. $row['email'] .'</td>
+                        <td class="align-middle">
+                            <div class="d-flex">
+                                <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-pencil"></i></a>
+                                <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-trash"></i></a>
                             <div>
                         </td>
-                    </tr>';
+                </tr>';
             }
           }
           echo '    </tbody>

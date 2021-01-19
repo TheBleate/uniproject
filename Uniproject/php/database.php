@@ -9,63 +9,49 @@
             return $this->DB;
         }
 
-        public function validar($nomusuari, $contraseña) {
-            $user = $this->consultaUsuari($nomusuari);
-            //Comprovem si l'usuari és correcte
-            //Agafem la seva contrasenya i comparem si es la mateixa i igual tipus
-            //Guardem el id de l'usuari a la cookie i retorna true, que significa que s'ha autenticat
-            //var_dump($user);
-
+        public function validar($nomusuari, $password) {
+            $user = $this->consultaUsuari($nomusuari, false);
             if ($user) {
-                if ($user['Contraseña'] === $contraseña && $user['Estat'] !== 'inactiu') {
-                    return array_intersect_key($user, array_flip(array('idUsuari','idRol','Nom','Cognom','SegonCognom','Username','Tipus','Email')));
+                if ($user['Password'] === $password && $user['Estat'] !== 'inactiu') {
+                    return $user;
                 }
             }
             return false;
         }
-        //Evitem una injecció sql i fem una consulta si existeix l'usuari
-        //preg_match encaixa una plantilla anti-injeccions sql
-        public function consultaUsuari($nomusuari) {
-            if (preg_match('/^[\w\d]{0,20}$/', $nomusuari)) {
-                $query = 'SELECT * FROM Usuari WHERE UserName = "'. $nomusuari. '";';
-                //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
-                $user = $this->DB->query($query);
-                //Pilla tots els camps i els guarda com si fos un array
-                //echo "asaddasa";
-                if (mysqli_num_rows($user)>0) {
-                    /*
-                    //var_dump($user->fetch_row());
-                    echo "sssssss";
-                    var_dump($user);*/
-                    $user = $user->fetch_row();
-                    //echo "ssss";
-                    //var_dump($user);
-                    switch($user[8]) {
-                        case 'Alumne':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
-                            break;
-                        case 'Professor':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
-                            break;
-                        case 'Gerent':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
-                            break;
-                        case 'Empleat':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], 'dataNaixement' => $user[11], 'Estat' => $user[12]);
-                            break;
-                            /*
-                        case 'Admin':
-                            return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'DNI' =>  $user[5], 'Username' => $user[6], 'Contraseña' => $user[7], 'Tipus' => $user[8], 'Email' => $user[9], 'Telefon' => $user[10], '$dataNaixement' => $user[11], 'Estat' => $user[12]);
-                            break;
-                            */
-                    }
-                    //$user = $user->fetch_row();
-                    //return array('idUsuari' => $user[0], 'idRol' => $user[1], 'Nom' => $user[2], 'Cognom' => $user[3], 'SegonCognom' => $user[4], 'Username' => $user[6], 'Tipus' => $user[8], 'Email' => $user[9]);
+
+        public function consultaUsuari($input, $type = true) {
+            //if (preg_match('/^[\w\d]{0,20}$/', $nomusuari)) {
+            $query = ($type ? 'SELECT * FROM Usuari WHERE idUsuari = "'. $input.'";' : 'SELECT * FROM Usuari WHERE UserName = "'. $input.'";' );
+            //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
+            $user = $this->DB->query($query)->fetch_assoc();
+            //Pilla tots els camps i els guarda com si fos un array
+            if ($user) {
+                switch($user['Tipus']) {
+                    case 'Alumne':
+                        $query = 'SELECT idAlumne,CodiAlumne FROM Alumne WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Professor':
+                        $query = 'SELECT idProfessor,CodiProfessor FROM Professor WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Gerent':
+                        $query = 'SELECT idGerent FROM Professor WHERE Gerent = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Empleat':
+                        $query = 'SELECT idEmpleat, NSS FROM Empleat WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
                 }
+
+                $user = array_merge($user, $this->DB->query($query)->fetch_assoc() ?? []);
+
+                return $user;
+
             }
+
+            return false;
         }
 
         //@author Method(consultarUsuariId) Andrei Halauca
+        /*
         public function consultarUsuariId($idUsuari) {
             $query = 'SELECT * FROM Usuari WHERE idUsuari = "'.$idUsuari.'";';
             $user = $this->DB->query($query);
@@ -81,28 +67,15 @@
                 }
             }
         }
-
-        public function consultarPropostaId($idProposta) {
-            $query = 'SELECT * FROM Proposta WHERE idProposta = "'.$idProposta.'";';
-            $proposta = $this->DB->query($query);
-            if ($proposta) {
-                $proposta = $proposta->fetch_row();
-				return array('idProposta' => $proposta[0], 'idDepartament' => $proposta[1], 'idGrup' => $proposta[2], 'idCategoria' => $proposta[3], 'Nom' => $proposta[4], 'Descripcio' =>  $proposta[5], 'Estat' => $proposta[6], 'DataPublicacio' => $proposta[7], 'DataAcceptacio' => $proposta[8]);
-            }
-        }
-
-		public function consultarGrupId($idGrup) {
-			$query = 'SELECT * FROM GrupClasse WHERE idGrup = "'.$idGrup.'";';
-			$grup = $this->DB->query($query);
-			if ($grup) { // mysqli_num_rows($grup) != 0 (en cas de windows)
-				$grup = $grup->fetch_row();
-				return array('idGrup' => $grup[0], 'idInstitut' => $grup[1], 'idTutor' => $grup[2], 'Nom' => $grup[3]);
-			}
-		}
+        */
 
         function __construct() {
             $this->DB = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-            //session_start();
+
+            if(!isset($_SESSION)){
+                session_start();
+            }
+
             if (!$this->DB) {
                 exit('Base de dades inaccessible');
             }

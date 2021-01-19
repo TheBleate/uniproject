@@ -4,8 +4,18 @@
   <?php
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
     require_once('./php/template.php');
+    require_once(PHP_PATH. 'database.php');
+
+    $DB = new Database();
+
+    if (!isset($_SESSION['usuari_actual'])) {
+        header('HTTP/1.0 403 Forbidden', true, 403);
+        exit;
+    }
+
   ?>
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
+
   <?php view('header'); ?>
 
   <body class="d-flex flex-column h-100">
@@ -18,7 +28,7 @@
         <?php view('sidebar', 0); ?>
 
         <!-- Page Content -->
-        <div class="d-flex flex-column w-100">
+            <div class="d-flex flex-column w-100">
 
             <!-- Begin page content -->
             <div class="container-fluid p-5">
@@ -37,30 +47,24 @@
             <!-- /#page-content-wrapper -->
 
             <?php
-                require_once('./php/database.php');
-                require_once('./php/usuari.php');
-
-                $DB = new Database();
-
                 //$nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
                 $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
                 $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
                 $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
                 $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
                 $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
-                $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
+                $password = (isset($_POST['password']) ? $_POST['password'] : null);
                 $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
                 $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
                 $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
-
             ?>
-
 
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
         </button> -->
+
         <!-- Modal de Creacio -->
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -73,8 +77,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action="alta()" method="post">
-                <form>
+
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -96,8 +99,8 @@
                     <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                   </div>
                   <div class="form-group">
-                    <label for="Contrasenya">Contrasenya</label>
-                    <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
+                    <label for="password">Contrasenya</label>
+                    <input type="text" class="form-control" name="password" id="password" placeholder="*******">
                   </div>
                   <div class="form-group">
                     <label for="tipus">Tipus</label>
@@ -130,8 +133,9 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary" name="submit" value="Submit">Crear</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -150,14 +154,13 @@
                 </button>
               </div>
               <div class="modal-body">
-
-                <p> Segur que vols eliminar aquest usuari? </p>
-
-
+                  <form id="crud-eliminar-institut" method="post">
+                      <p> Segur que vols eliminar aquesta empresa? </p>
+                  </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
             </div>
           </div>
@@ -201,8 +204,8 @@
                       <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                     </div>
                     <div class="form-group">
-                      <label for="Contrasenya">Contrasenya</label>
-                      <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
+                      <label for="password">Contrasenya</label>
+                      <input type="text" class="form-control" name="password" id="password" placeholder="*******">
                     </div>
                     <div class="form-group">
                       <label for="tipus">Tipus</label>
@@ -237,7 +240,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Modificar</button>
+                <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
             </div>
           </div>

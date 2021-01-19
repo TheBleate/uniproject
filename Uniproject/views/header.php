@@ -8,15 +8,15 @@
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="./css/bootstrap/bootstrap.min.css" rel="stylesheet"> -->
-  <link href="<?php echo './scss/compiled/'; ?>bootstrap.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>bootstrap/bootstrap.css" rel="stylesheet">
 
   <!-- Bootstrap reboot CSS -->
   <!-- <link href="./css/bootstrap/bootstrap-reboot.min.css" rel="stylesheet"> -->
-  <link href="<?php echo './scss/compiled/'; ?>bootstrap-reboot.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>bootstrap/bootstrap-reboot.css" rel="stylesheet">
 
   <!-- Bootstrap grid CSS -->
   <!-- <link href="./css/bootstrap/bootstrap-grid.min.css" rel="stylesheet"> -->
-  <link href="<?php echo './scss/compiled/'; ?>bootstrap-grid.css" rel="stylesheet">
+  <link href="<?php echo STYLES_PATH; ?>bootstrap/bootstrap-grid.css" rel="stylesheet">
 
   <!-- Quicksand google webfont CSS -->
   <link href="<?php echo STYLES_PATH; ?>quicksand/quicksand.min.css" rel="stylesheet">

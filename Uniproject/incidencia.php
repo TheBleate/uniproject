@@ -26,26 +26,23 @@
                 <h2 class="pb-5">Llistat d'incidencies</h2>
                 <?php
                     require_once('./php/database.php');
-                    require_once('./php/usuari.php');
+                    require_once('./php/incidencia.php');
                     $DB = new Database();
-                    $USUARI = new Usuari($DB->getDB());
+                    $Incidencia = new Incidencia($DB->getDB());
                     //intento de if :()
                     //if($idrol === "alumne"){}
-                    $USUARI->llistar();
+                    $Incidencia->llistar();
                 ?>
             </div>
 
             <!-- /#page-content-wrapper -->
             <?php
 
-                require_once('./php/database.php');
-                require_once('./php/usuari.php');
-
-                $DB = new Database();
 
 
-                $Nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
-                $Descripcio = (isset($_POST['Descripcio']) ? $_POST['Descripcio'] : null);
+
+                $Nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
+                $Descripcio = (isset($_POST['descripcio']) ? $_POST['descripcio'] : null);
 
             ?>
 
@@ -65,23 +62,21 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form action=".???????" method="post">
+                <form id = "crud-alta-incidencia" method="post">
                   <div class="form-group">
-                    <label for="Nom">Nom</label>
-                    <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Problema 1">
                   </div>
                   <div class="form-group">
-                    <label for="Descripcio">Descripcio</label>
-                    <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Название">
-                  </div>
+                    <label for="descripcio">Descripcio</label>
 
-                  <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
+                    <!--//text area -->
+                    <textarea type="text" class="form-control" name="descripcio" id="descripcio" placeholder="El problema ....."></textarea>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
               </div>
             </div>
           </div>
@@ -91,6 +86,7 @@
           Eliminar (icona)
         </button>-->
         <!-- Modal de Eliminacio-->
+
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -101,20 +97,19 @@
                 </button>
               </div>
               <div class="modal-body">
-
-                <p> Segur que vols eliminar aquesta incidencia? </p>
-
-
+                  <form id="crud-eliminar-incidencia" method="post">
+                      <p> Segur que vols eliminar aquesta incidencia? </p>
+                  </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Modal de Modificacio
+        <!-- Modal de Modificacio -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
           Modificar (icona)
         </button> -->
@@ -129,24 +124,24 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="Nom">Nom</label>
-                      <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
-                    </div>
-                    <div class="form-group">
-                      <label for="Descripcio">Descripcio</label>
-                      <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Название">
-                    </div>
+                  <form id = "crud-modificacio-incidencia" method="post">
+                      <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Problema 1">
+                      </div>
+                      <div class="form-group">
+                        <label for="descripcio">Descripcio</label>
+
+                        <!--//text area -->
+                        <textarea type="text" class="form-control" name="descripcio" id="descripcio" placeholder="El problema ....."></textarea>
 
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
                   </form>
 
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Modificar</button>
+                <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
             </div>
           </div>

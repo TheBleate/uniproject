@@ -13,14 +13,14 @@ switch ($args[0] ?? 0):
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item <?php echo(CURRENT_FILENAME === 'index' ? 'active' : ''); ?>">
-          <a class="nav-link" href="./index.php"><i class="fa fa-home" aria-hidden="true"></i> Inici</a>
+          <a class="nav-link" href="<?php echo ROOT_REL_PATH; ?>index.php"><i class="fa fa-home" aria-hidden="true"></i> Inici</a>
         </li>
 
         <li class="nav-item <?php echo(CURRENT_FILENAME === 'about'  ? 'active' : ''); ?>">
-          <a class="nav-link" href="./about.php"><i class="fa fa-info" aria-hidden="true"></i> About</a>
+          <a class="nav-link" href="<?php echo ROOT_REL_PATH; ?>about.php"><i class="fa fa-info" aria-hidden="true"></i> About</a>
         </li>
         <li class="nav-item <?php echo(CURRENT_FILENAME === 'contact'  ? 'active' : ''); ?>">
-          <a class="nav-link" href="./contact.php"><i class="fa fa-phone" aria-hidden="true"></i> Contacte</a>
+          <a class="nav-link" href="<?php echo ROOT_REL_PATH; ?>contact.php"><i class="fa fa-phone" aria-hidden="true"></i> Contacte</a>
         </li>
         <li class="nav-item">
         </li>
@@ -45,11 +45,13 @@ switch ($args[0] ?? 0):
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
       </form>
   -->
-        <a class="navbar-brand" href="./login.php">Login</a>
+        <a class="navbar-brand" href="<?php echo ROOT_REL_PATH; ?>login.php">Login</a>
     </div>
   </nav>
 <?php break;
   case 1: ?>
+
+    <?php // NOTE: Andrei, canviar la navbar del gestio, es aquesta.?>
     <!-- Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand " href="#">Projectus </a>

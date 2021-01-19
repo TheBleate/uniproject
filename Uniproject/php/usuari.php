@@ -16,7 +16,7 @@ class Usuari {
 
     //Mostrar Usuaris
     public function llistar() {
-        $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari';
+        $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Password, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari;';
 
         $query = $this->DB->query($query);
 
@@ -24,32 +24,34 @@ class Usuari {
             echo '<table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                        <th>Nom Complet</th>
-                        <th>DNI</th>
-                        <th>Nom Usuari</th>
-                        <th>Email</th>
-                        <th>Telefon</th>
-                        <th>Data Naixement</th>
-                        <!--  <th>Estat</th> -->
-                        <td class="align-middle text-center"><a href="#!" class="modal-btn" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
-                </tr>
-            </thead>
-            <tbody>';
+                            <th>Nom complet</th>
 
+                            <th>DNI</th>
+                            <th>UserName</th>
+                            <th>Password</th>
+                            <th>Tipus</th>
+                            <th>Email</th>
+                            <th>Telefon</th>
+                            <th>DataNaixement</th>
+                            <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
+                        </tr>
+                    </thead>
+                <tbody>';
             foreach ($query as $row) {
                 if($row['Estat'] === 'actiu') {
                     echo '<tr>
                         <td>'. $row['Nom'] .' '. $row['Cognom'] .' '. $row['SegonCognom'] .'</td>
                         <td>'. $row['DNI'] .'</td>
                         <td>'. $row['UserName'] .'</td>
+                        <td>'. $row['Password'] .'</td>
+                        <td>'. $row['Tipus'] .'</td>
                         <td>'. $row['Email'] .'</td>
                         <td>'. $row['Telefon'] .'</td>
                         <td>'. $row['DataNaixement'] .'</td>
-                        <!--  <td>'. $row['Estat'] .'</td> -->
                         <td class="align-middle">
                             <div class="d-flex">
-                                <a href="#!" class="modal-btn pr-1" data-crudaction="2" data-crudtarget="'. $row['idUsuari']. '"><i class="fa fa-pencil"></i></a>
-                                <a href="#!" class="modal-btn" data-crudaction="3" data-crudtarget="'. $row['idUsuari']. '"><i class="fa fa-trash"></i></a>
+                                <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idUsuari']. '"><i class="fa fa-pencil"></i></a>
+                                <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idUsuari']. '"><i class="fa fa-trash"></i></a>
                             <div>
                         </td>
                 </tr>';
