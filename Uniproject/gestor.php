@@ -63,7 +63,11 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
 <<<<<<< HEAD
+<<<<<<< HEAD
         </button>-->
+=======
+        </button> -->
+>>>>>>> de2f9a0c77ede91900f5a9339a7d60f44ed07ed7
 =======
         </button> -->
 >>>>>>> de2f9a0c77ede91900f5a9339a7d60f44ed07ed7
