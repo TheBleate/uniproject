@@ -20,7 +20,7 @@ class Institut {
         }
     }
     public function llistar() {
-      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email FROM Institut;';
+      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
       $query = $this->DB->query($query);
       if ($query) {
 
@@ -38,7 +38,7 @@ class Institut {
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-            if($row['Estat'] === 'actiu') {
+            if($row['estat'] === 'actiu') {
                 echo '<tr>
                         <td>'. $row['nom'] .'</td>
                         <td>'. $row['localitat'] .'</td>
