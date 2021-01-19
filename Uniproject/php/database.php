@@ -71,7 +71,11 @@
 
         function __construct() {
             $this->DB = new mysqli(DB_ADDRESS, DB_USER, DB_PASS, DB_NAME, DB_PORT);
-            //session_start();
+
+            if(!isset($_SESSION)){
+                session_start();
+            }
+
             if (!$this->DB) {
                 exit('Base de dades inaccessible');
             }

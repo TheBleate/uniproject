@@ -8,6 +8,7 @@
 
 	$nomusuari = $_POST['user'] ?? null;
 	$contraseña = $_POST['pass'] ?? null;
+    $DB = new Database();
 
     //Creem un nou objecte de Database
 
@@ -25,14 +26,17 @@
     //Validació, comprova usuari i contrasenya a la BD
 
 
+    if ($_SESSION['usuari_actual'] ?? false) {
+        header('Location: ./gestor.php');
+    }
+
     //Realitza la connexió a la base de dades
     if ($nomusuari || $contraseña) {
 
-        $DB = new Database();
+        $user = $DB->validar($nomusuari,$contraseña);
 
-        $_SESSION['usuari_actual'] = $DB->validar($nomusuari,$contraseña);
-
-        if ($_SESSION['usuari_actual']) {
+        if ($user) {
+            $_SESSION['usuari_actual'] = $user;
             header('Location: ./gestor.php');
         } else {
             $error = 'Nom d\'usuari o contrasenya incorrectes';
