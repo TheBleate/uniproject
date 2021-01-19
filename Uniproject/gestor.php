@@ -3,8 +3,19 @@
 
   <?php
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
-    require_once('./php/template.php'); ?>
+    require_once('./php/template.php');
+    require_once(PHP_PATH. 'database.php');
+
+    $DB = new Database();
+
+    if (!isset($_SESSION['usuari_actual'])) {
+        header('HTTP/1.0 403 Forbidden', true, 403);
+        exit;
+    }
+
+  ?>
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
+
   <?php view('header'); ?>
 
   <body class="d-flex flex-column h-100">
