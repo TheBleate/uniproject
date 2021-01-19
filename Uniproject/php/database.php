@@ -18,7 +18,7 @@
             }
             return false;
         }
-        
+
         public function consultaUsuari($input, $type = true) {
             //if (preg_match('/^[\w\d]{0,20}$/', $nomusuari)) {
                 $query = ($type ? 'SELECT * FROM Usuari WHERE idUsuari = "'. $input.'";' : 'SELECT * FROM Usuari WHERE UserName = "'. $input.'";' );
