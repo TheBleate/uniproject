@@ -23,7 +23,7 @@ class Institut {
       $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
       $query = $this->DB->query($query);
       if ($query) {
-
+          echo "sss;";
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
