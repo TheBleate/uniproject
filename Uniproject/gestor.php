@@ -62,13 +62,8 @@
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
-<<<<<<< HEAD
-        </button>
-         Modal de Creacio -->
-=======
         </button>-->
         <!-- Modal de Creacio -->
->>>>>>> da626fd4165f539d3c9ef1b976e74d5e032c352b
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
