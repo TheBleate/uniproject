@@ -30,15 +30,17 @@
         public function consultaUsuari($nomusuari) {
             if (preg_match('/^[\w\d]{0,20}$/', $nomusuari)) {
 
-                $query = 'SELECT * FROM Usuari WHERE UserName = "'. $nomusuari. '";';
+                $query = 'SELECT * FROM Usuari WHERE UserName = "'. $userName.'";';
+
+
                 //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
                 $user = $this->DB->query($query);
 
                 //Pilla tots els camps i els guarda com si fos un array
                 if (mysqli_num_rows($user)>0) {
 
-                    $user = $user->fetch_row();
-
+                    $user = $user->fetch_row_assoc();
+/*
                     $data = array(
                         'idUsuari' => $user[0],
                         'idRol' => $user[1],
@@ -54,9 +56,12 @@
                         'dataNaixement' => $user[11],
                         'estat' => $user[12]
                     );
+                    */
 
-                    switch($data['tipus']) {
+                    switch($user['Tipus']) {
                         case 'Alumne':
+                            $query = 'SELECT idAlumne,CodiAlumne FROM Alumne WHERE idUsuari = "'. $user['idUsuari'].'";';
+                            $user = array_merge($user, $query);
                             break;
                         case 'Professor':
                             break;
