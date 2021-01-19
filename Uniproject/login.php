@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en" class="h-100">
 
-
-
   <?php
+    // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
+    require_once('./php/template.php');
 	require_once('./php/database.php');
 
 	$nomusuari = $_POST['user'] ?? null;
@@ -40,16 +40,6 @@
     }
   ?>
 
-
-
-
-
-
-
-  <?php
-    // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
-    require_once('./php/template.php');
-  ?>
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
   <?php view('header'); ?>
