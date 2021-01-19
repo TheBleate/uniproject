@@ -60,10 +60,13 @@
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
             ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
         </button> -->
+=======
+>>>>>>> edb2a78b03bd4ab757c677eaf46dc71260aa65ce
 =======
 >>>>>>> edb2a78b03bd4ab757c677eaf46dc71260aa65ce
         <!-- Modal de Creacio -->
