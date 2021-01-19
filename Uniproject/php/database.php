@@ -21,35 +21,31 @@
 
         public function consultaUsuari($input, $type = true) {
             //if (preg_match('/^[\w\d]{0,20}$/', $nomusuari)) {
-                $query = ($type ? 'SELECT * FROM Usuari WHERE idUsuari = "'. $input.'";' : 'SELECT * FROM Usuari WHERE UserName = "'. $input.'";' );
-                //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
-                $user = $this->DB->query($query);
-                //Pilla tots els camps i els guarda com si fos un array
-                if (mysqli_num_rows($user)>0) {
-                    $user = $user->fetch_row_assoc();
-                    switch($user['Tipus']) {
-                        case 'Alumne':
-                            $query = 'SELECT idAlumne,CodiAlumne FROM Alumne WHERE idUsuari = "'. $user['idUsuari'].'";';
-                            $user = array_merge($user, $query);
-                            var_dump($user);
-                            break;
-                        case 'Professor':
-                            $query = 'SELECT idProfessor,CodiProfessor FROM Professor WHERE idUsuari = "'. $user['idUsuari'].'";';
-                            $user = array_merge($user, $query);
-                            break;
-                        case 'Gerent':
-                            $query = 'SELECT idGerent FROM Professor WHERE Gerent = "'. $user['idUsuari'].'";';
-                            $user = array_merge($user, $query);
-                            break;
-                        case 'Empleat':
-                            $query = 'SELECT idEmpleat, NSS FROM Empleat WHERE idUsuari = "'. $user['idUsuari'].'";';
-                            $user = array_merge($user, $query);
-                            break;
-                    }
-
-                    return $user;
-
+            $query = ($type ? 'SELECT * FROM Usuari WHERE idUsuari = "'. $input.'";' : 'SELECT * FROM Usuari WHERE UserName = "'. $input.'";' );
+            //guardem a $user el resultat de l'objecte de la query (dades, quantitat de camps...)
+            $user = $this->DB->query($query)->fetch_assoc();
+            //Pilla tots els camps i els guarda com si fos un array
+            if ($user) {
+                switch($user['Tipus']) {
+                    case 'Alumne':
+                        $query = 'SELECT idAlumne,CodiAlumne FROM Alumne WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Professor':
+                        $query = 'SELECT idProfessor,CodiProfessor FROM Professor WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Gerent':
+                        $query = 'SELECT idGerent FROM Professor WHERE Gerent = "'. $user['idUsuari'].'";';
+                        break;
+                    case 'Empleat':
+                        $query = 'SELECT idEmpleat, NSS FROM Empleat WHERE idUsuari = "'. $user['idUsuari'].'";';
+                        break;
                 }
+
+                $user = array_merge($user, $this->DB->query($query)->fetch_assoc() ?? []);
+
+                return $user;
+
+            }
 
             return false;
         }
