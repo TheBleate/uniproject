@@ -50,6 +50,8 @@ switch ($args[0] ?? 0):
   </nav>
 <?php break;
   case 1: ?>
+
+    <?php // NOTE: Andrei, canviar la navbar del gestio, es aquesta.?>
     <!-- Sidebar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand " href="#">Projectus </a>
