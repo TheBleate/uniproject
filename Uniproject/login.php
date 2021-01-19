@@ -59,9 +59,6 @@
     <!-- Navigation bar | additionally you can specify the type of the navigation bar adding ( $navbar=type ) before the requirement -->
     <?php view('navbar', 0); ?>
 
-
-
-
     <!-- Begin page content -->
     <main class="flex-grow-1">
       <div class="container d-flex flex-column py-5 h-100 login-container">
