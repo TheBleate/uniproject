@@ -59,10 +59,10 @@
                 $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
                 $dataNaixement = (isset($_POST['$DataNaixement']) ? $_POST['$dataNaixement'] : null);
             ?>
-        <!-- Modal button (se cambiara)-->
+        <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
-        </button>
+        </button>-->
         <!-- Modal de Creacio -->
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
