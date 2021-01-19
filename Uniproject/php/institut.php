@@ -31,6 +31,7 @@ class Institut {
           //var_dump($query);
 
           echo "sss;";
+          echo $query;
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
