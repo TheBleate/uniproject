@@ -10,33 +10,32 @@
 	$contraseña = $_POST['pass'] ?? null;
 
     //Creem un nou objecte de Database
-	$DB = new Database();
+
 
     //array_key_exists Comprova que dintre de Get existeix el valor
-	if (array_key_exists('logout', $_GET)) {
+	/*if (array_key_exists('logout', $_GET)) {
 		session_destroy();
 		unset($_SESSION['current-user']);
-	}
+	}*/
 
     //$_SESSION Guarda el usuari de la sessió, en cas de no tindre una sessió, serà null
 	//la variable guarda la sessió al servidor fins que és tanca la sessio
-	$usuariactual = $_SESSION['current-user'] ?? null;
+
 
     //Validació, comprova usuari i contrasenya a la BD
-    if ($usuariactual) {
-        header('Location: ./gestor.php');
-    }
+
 
     //Realitza la connexió a la base de dades
     if ($nomusuari || $contraseña) {
-        $user = $DB->validar($nomusuari,$contraseña);
-        if ($user) {
-            //$hash = md5(uniqid());
-            //setcookie('projekt-cat', $user['idUsuari']);
-            $_SESSION['current-user'] = $user;
+
+        $DB = new Database();
+
+        $_SESSION['usuari_actual'] = $DB->validar($nomusuari,$contraseña);
+
+        if ($_SESSION['usuari_actual']) {
             header('Location: ./gestor.php');
         } else {
-            echo '<a href="#" class="float-right">Nom d\'usuari o contrasenya incorrectes!</p>';
+            $error = 'Nom d\'usuari o contrasenya incorrectes';
         }
     }
   ?>
@@ -81,10 +80,7 @@
 				<div class="clearfix">
 					<!--<label class="float-left form-check-label"><input type="checkbox"> Remember me</label>-->
 
-
-
-
-
+                    <?php if (isset($error)) { echo $error; } ?>
 
 				</div>
 			</form>
