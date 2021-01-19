@@ -20,4 +20,3 @@ switch ($args[0] ?? 0):
 
 <?php break;
   endswitch; ?>
- 
