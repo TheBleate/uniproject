@@ -97,10 +97,9 @@
                 </button>
               </div>
               <div class="modal-body">
-
-                <p> Segur que vols eliminar aquesta incidencia? </p>
-
-
+                  <form id="crud-eliminar-incidencia" method="post">
+                      <p> Segur que vols eliminar aquesta incidencia? </p>
+                  </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

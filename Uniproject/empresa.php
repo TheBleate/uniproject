@@ -113,7 +113,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="crud-eliminar-institut" method="post">
+                <form id="crud-eliminar-empresa" method="post">
                     <p> Segur que vols eliminar aquesta empresa? </p>
                 </form>
               </div>

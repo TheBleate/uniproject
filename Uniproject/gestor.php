@@ -141,10 +141,9 @@
                 </button>
               </div>
               <div class="modal-body">
-
-                <p> Segur que vols eliminar aquest usuari? </p>
-
-
+                  <form id="crud-eliminar-institut" method="post">
+                      <p> Segur que vols eliminar aquesta empresa? </p>
+                  </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

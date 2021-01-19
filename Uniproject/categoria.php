@@ -19,7 +19,7 @@
             require_once('./php/database.php');
             require_once('./php/categoria.php');
             $DB = new Database();
-            $CATEGORIA =new Categoria($DB->getDB());
+            $CATEGORIA = new Categoria($DB->getDB());
             //intento de if :()
             //if($idrol === "alumne"){}
             $CATEGORIA->llistar();
@@ -80,13 +80,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-
-                        <p> Segur que vols eliminar aquesta categoria? </p>
-
+                        <form id="crud-eliminar-categoria" method="post">
+                            <p> Segur que vols eliminar aquesta categoria? </p>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Eliminar</button>
+                        <button type="submit" class="btn btn-primary">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="crud-alta-categoria" method="post">
+                        <form id="crud-modificar-categoria" method="post">
                             <div class="form-group">
                                 <label for="nom">Nom</label>
                                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -123,7 +123,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Modificar</button>
+                        <button type="submit" class="btn btn-primary">Modificar</button>
                     </div>
                 </div>
             </div>
