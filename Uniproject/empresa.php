@@ -28,10 +28,10 @@
                     require_once('./php/database.php');
                     require_once('./php/empresa.php');
                     $DB = new Database();
-                    $USUARI = new Usuari($DB->getDB());
+                    $Empresa = new Empresa($DB->getDB());
                     //intento de if :()
                     //if($idrol === "alumne"){}
-                    $USUARI->llistar();
+                    $Empresa->llistar();
                 ?>
             </div>
 
@@ -93,7 +93,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
               </div>
             </div>
           </div>
@@ -113,14 +113,13 @@
                 </button>
               </div>
               <div class="modal-body">
-
-                <p> Segur que vols eliminar aquesta empresa? </p>
-
-
+                <form id="crud-eliminar-institut" method="post">
+                    <p> Segur que vols eliminar aquesta empresa? </p>
+                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
             </div>
           </div>

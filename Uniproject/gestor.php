@@ -42,7 +42,7 @@
                 $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
                 $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
                 $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
-                $contrasenya = (isset($_POST['contrasenya']) ? $_POST['contrasenya'] : null);
+                $password = (isset($_POST['password']) ? $_POST['password'] : null);
                 $tipus = (isset($_POST['$tipus']) ? $_POST['$tipus'] : null);
                 $email = (isset($_POST['$email']) ? $_POST['$email'] : null);
                 $telefon = (isset($_POST['$telefon']) ? $_POST['$telefon'] : null);
@@ -87,8 +87,8 @@
                     <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                   </div>
                   <div class="form-group">
-                    <label for="Contrasenya">Contrasenya</label>
-                    <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
+                    <label for="password">Contrasenya</label>
+                    <input type="text" class="form-control" name="password" id="password" placeholder="*******">
                   </div>
                   <div class="form-group">
                     <label for="tipus">Tipus</label>
@@ -121,7 +121,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
               </div>
             </div>
           </div>
@@ -148,7 +148,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Eliminar</button>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
             </div>
           </div>
@@ -192,8 +192,8 @@
                       <input type="text" class="form-control" name ="UserName" id="UserName" placeholder="Название1234">
                     </div>
                     <div class="form-group">
-                      <label for="Contrasenya">Contrasenya</label>
-                      <input type="text" class="form-control" name="Contrasenya" id="Contrasenya" placeholder="*******">
+                      <label for="password">Contrasenya</label>
+                      <input type="text" class="form-control" name="password" id="password" placeholder="*******">
                     </div>
                     <div class="form-group">
                       <label for="tipus">Tipus</label>
