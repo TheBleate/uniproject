@@ -24,7 +24,7 @@ class Empresa {
       }
   }
   public function llistar() {
-    $query = 'SELECT nom, localitat, telefon, email, Estat FROM Empresa';
+    $query = 'SELECT Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Empresa';
 
     $query = $this->DB->query($query);
 
@@ -38,9 +38,7 @@ class Empresa {
                         <th>Telefon</th>
                         <th>CIF</th>
                         <th>Email</th>
-
                         <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
-
                     </tr>
                 </thead>
                 <tbody>';
