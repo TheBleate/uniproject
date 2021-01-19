@@ -40,8 +40,7 @@ class Usuari {
             foreach ($query as $row) {
                 if($row['Estat'] === 'actiu') {
                     echo '<tr>
-                        <td>'. $row['Nom'] .' '. $row['Cognom'] .' '. $row['Cognom'] .'</td>
-                        <td>'. $row['SegonCognom'] .'</td>
+                        <td>'. $row['Nom'] .' '. $row['Cognom'] .' '. $row['SegonCognom'] .'</td>
                         <td>'. $row['DNI'] .'</td>
                         <td>'. $row['UserName'] .'</td>
                         <td>'. $row['Password'] .'</td>
