@@ -16,17 +16,16 @@ class Usuari {
 
     //Mostrar Usuaris
     public function llistar() {
-        $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Password, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari';
+        $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Password, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari;';
 
         $query = $this->DB->query($query);
-echo "ssss";
+
         if ($query) {
             echo '<table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>Nom Complet</th>
-                            <th>Cognom</th>
-                            <th>SegonCognom Usuari</th>
+                            <th>Nom complet</th>
+
                             <th>DNI</th>
                             <th>UserName</th>
                             <th>Password</th>
@@ -41,8 +40,7 @@ echo "ssss";
             foreach ($query as $row) {
                 if($row['Estat'] === 'actiu') {
                     echo '<tr>
-                        <td>'. $row['Nom'] .'</td>
-                        <td>'. $row['Cognom'] .'</td>
+                        <td>'. $row['Nom'] .' '. $row['Cognom'] .' '. $row['Cognom'] .'</td>
                         <td>'. $row['SegonCognom'] .'</td>
                         <td>'. $row['DNI'] .'</td>
                         <td>'. $row['UserName'] .'</td>

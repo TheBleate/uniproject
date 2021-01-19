@@ -20,7 +20,7 @@ class Institut {
         }
     }
     public function llistar() {
-      $query = 'SELECT nom, localitat, adreça, telefon, cif, email FROM Institut WHERE Tipus = "institut";';
+      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email FROM Institut;';
       $query = $this->DB->query($query);
       if ($query) {
 
