@@ -1,31 +1,21 @@
 <!doctype html>
 <html lang="en" class="h-100">
-
 <?php
   // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
-  require_once('./php/template.php');
-?>
-
+  require_once('./php/template.php'); ?>
 <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->
 <?php view('header'); ?>
-
 <body class="d-flex flex-column h-100">
-
 <?php view('navbar', 1); ?>
-
 <main class="d-flex flex-row flex-grow-1">
-
     <!-- Sidebar -->
     <?php view('sidebar', 0); ?>
-
     <!-- Page Content -->
     <div class="d-flex flex-column w-100">
-
         <!-- Begin page content -->
         <div class="container-fluid p-5">
             <h2 class="pb-5">Llistat de Categories</h2>
             <?php
-
             require_once('./php/database.php');
             require_once('./php/categoria.php');
             $DB = new Database();
@@ -33,24 +23,13 @@
             //intento de if :()
             //if($idrol === "alumne"){}
             $CATEGORIA->llistar();
-
-
-
-
-
             ?>  </div>
-
         		<?php
-
-
-
-                $idCategoria = (isset($_POST['idCategoria']) ? $_POST['idCategoria'] : null);
-                $nom = (isset($_POST['Nom']) ? $_POST['Nom'] : null);
-                $Descripcio = (isset($_POST['Descripcio']) ? $_POST['Descripcio'] : null);
-
-
+                //D'on agafes id categoria
+                //$idCategoria = (isset($_POST['idCategoria']) ? $_POST['idCategoria'] : null);
+                $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
+                $Descripcio = (isset($_POST['descripcio']) ? $_POST['descripcio'] : null);
         		?>
-
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
@@ -67,19 +46,16 @@
                     </div>
                     <div class="modal-body">
                         <!--Formulari de creacio-->
-                        <form action="alta()" method="post">
+                        <form id="crud-alta-categoria" method="post">
                             <div class="form-group">
                                 <label for="nom">Nom</label>
                                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
                             </div>
                             <div class="form-group">
-                                <label for="Descripcio">Descripcio</label>
-                                <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Название">
+                                <label for="descripcio">Descripcio</label>
+                                <input type="text" class="form-control" name="descripcio" id="descripcio" placeholder="Название">
                             </div>
-
                             <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
-
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -107,7 +83,6 @@
 
                         <p> Segur que vols eliminar aquesta categoria? </p>
 
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -132,19 +107,18 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="crud-alta-categoria" method="post">
                             <div class="form-group">
                                 <label for="nom">Nom</label>
                                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
                             </div>
                             <div class="form-group">
-                                <label for="Cognom">Cognom</label>
-                                <input type="text" class="form-control" name="Descripcio" id="Descripcio" placeholder="Descripcio">
+                                <label for="categoria">Cognom</label>
+                                <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Descripcio">
                             </div>
 
                             <!-- Estat Sempre actiu(perque crees l'user .-.) -->
                         </form>
-
 
                     </div>
                     <div class="modal-footer">

@@ -82,7 +82,7 @@
     }
     // *******************Andrei.H******************** //
     //object map
-    function map() {
+    /*function map() {
         let map = new Map();
         map.set('Alumne', 'Nom');
         map.set('Empresa', 'Nom');
@@ -111,7 +111,7 @@
     }
 
     map();
-    set();
+    set();*/
 // **************************************************
 
 

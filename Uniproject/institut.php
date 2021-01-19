@@ -38,7 +38,6 @@
             <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
             <!-- /#page-content-wrapper -->
             <?php
-
                 $Nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
                 $Localitat = (isset($_POST['localitat']) ? $_POST['localitat'] : null);
                 $Adreça = (isset($_POST['adreça']) ? $_POST['adreça'] : null);
@@ -47,7 +46,6 @@
                 $Email = (isset($_POST['email']) ? $_POST['email'] : null);
 
             ?>
-
         <!-- Modal button (se cambiara)
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-creacio">
           Crear (icona)
@@ -144,22 +142,31 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="Nom">Nom</label>
-                      <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
-                    </div>
-                    <div class="form-group">
-                      <label for="Adreça">Adreça</label>
-                      <input type="text" class="form-control" name="Adreça" id="Adreça" placeholder="Название">
-                    </div>
-                    <div class="form-group">
-                      <label for="Localitat">Localitat</label>
-                      <input type="text" class="form-control" name="Localitat" id="Localitat" placeholder="Название">
-                    </div>
-
-                    <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
+                  <form id="crud-modificar-institut" method="post">
+                      <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
+                      </div>
+                      <div class="form-group">
+                        <label for="localitat">Localitat</label>
+                        <input type="text" class="form-control" name="localitat" id="localitat" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="adreça">Adreça</label>
+                        <input type="text" class="form-control" name="adreça" id="adreça" placeholder="C/">
+                      </div>
+                      <div class="form-group">
+                        <label for="telefon">Telefon</label>
+                        <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="cif">CIF</label>
+                        <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
+                      </div>
                   </form>
 
                 </div>
