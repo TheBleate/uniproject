@@ -33,7 +33,7 @@ class Institut {
                           <th>Telefon</th>
                           <th>CIF</th>
                           <th>Email</th>
-                          <td class="align-middle text-center" ><a href="#!" class="modal-btn" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
+                          <td class="align-middle text-center" ><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                       </tr>
                   </thead>
                   <tbody>';
@@ -48,8 +48,8 @@ class Institut {
                         <td>'. $row['email'] .'</td>
                         <td class="align-middle">
                             <div class="d-flex">
-                                <a href="#!" class="modal-btn pr-1" data-crudaction="2" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-pencil"></i></a>
-                                <a href="#!" class="modal-btn" data-crudaction="3" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-trash"></i></a>
+                                <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-pencil"></i></a>
+                                <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-trash"></i></a>
                             <div>
                         </td>
                 </tr>';

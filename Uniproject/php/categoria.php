@@ -13,20 +13,19 @@ class Categoria {
                     <tr>
                         <th>nom</th>
                         <!--  <th>Estat</th> -->
-                        <td><a href="./crudusuaris.php?action=0&type=0"><i class="fas fa-plus"></i></a></td>
+                        <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                     </tr>
                 </thead>
                 <tbody>';
-
         foreach ($query as $row) {
           if($row['Estat'] === 'actiu') {
               echo '<tr>
                       <td>'. $row['Nom'].'</td>
                       <td>'. $row['Descripcio'] .'</td>
-                      <td>
-                          <div class="table-icons">
-                              <a href="./crudusuaris.php?uid='. $row['idCategoria']. '&action=1&type=0"><i class="fas fa-edit"></i></a>
-                              <a href="./crudusuaris.php?uid='. $row['idCategoria']. '&action=2&type=0"><i class="fas fa-trash-alt"></i></a>
+                      <td class="align-middle">
+                          <div class="d-flex">
+                              <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idIncidencia']. '"><i class="fa fa-pencil"></i></a>
+                              <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idincidencia']. '"><i class="fa fa-trash"></i></a>
                           <div>
                       </td>
                   </tr>';
