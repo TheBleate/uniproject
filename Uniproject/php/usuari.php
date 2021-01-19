@@ -19,7 +19,7 @@ class Usuari {
         $query = 'SELECT idUsuari, idRol, Nom, Cognom, SegonCognom, DNI, UserName, Password, Tipus, Email, Telefon, DataNaixement, Estat FROM Usuari';
 
         $query = $this->DB->query($query);
-
+echo "ssss";
         if ($query) {
             echo '<table class="table table-bordered table-striped">
                     <thead>
