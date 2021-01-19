@@ -24,6 +24,7 @@ class Institut {
       $query = $this->DB->query($query);
       if ($query) {
           echo "sss;";
+          echo $query;
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
