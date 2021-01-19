@@ -62,8 +62,10 @@
                         case 'Alumne':
                             $query = 'SELECT idAlumne,CodiAlumne FROM Alumne WHERE idUsuari = "'. $user['idUsuari'].'";';
                             $user = array_merge($user, $query);
+                            var_dump($user);
                             break;
                         case 'Professor':
+
                             break;
                         case 'Gerent':
                             break;
@@ -71,7 +73,7 @@
                             break;
                     }
 
-                    return $data;
+                    return $user;
 
                 }
             }
