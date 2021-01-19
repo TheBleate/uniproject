@@ -38,7 +38,7 @@ class Institut {
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-            if($row['estat'] === 'actiu') {
+            if($row['Estat'] === 'actiu') {
                 echo '<tr>
                         <td>'. $row['Nom'] .'</td>
                         <td>'. $row['Localitat'] .'</td>
