@@ -47,7 +47,8 @@
     */
     const android = /(android)/i.test(navigator.userAgent);
     const banner = document.querySelector('.banner');
-    const modals = document.querySelectorAll('.modal-btn');
+    const modal_triggers = document.querySelectorAll('.modal-trigger');
+    const modal_creacio = document.getElementById('modal-creacio');
 
     /**
     *  Listeners
@@ -60,8 +61,8 @@
         });
     }
 
-    if (modals) {
-        modals.forEach(item => {
+    if (modal_triggers) {
+        modal_triggers.forEach(item => {
             item.addEventListener('click', event => {
                 //console.log(item.dataset.crudaction);
                 switch (parseInt(item.dataset.crudaction)) {
@@ -80,6 +81,15 @@
         });
 
     }
+
+
+    $('#modal_creacio').on('submit', function() {
+        
+
+        return false;
+    });
+
+
     // *******************Andrei.H******************** //
     //object map
     /*function map() {
