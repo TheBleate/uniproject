@@ -11,8 +11,8 @@ class Categoria {
         echo '<table border="1" frame="void" rules="cols">
                 <thead>
                     <tr>
-                        <th>nom</th>
-                        <!--  <th>Estat</th> -->
+                        <th>Nom</th>
+                        <th>Descripcio</th>
                         <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                     </tr>
                 </thead>
