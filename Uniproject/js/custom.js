@@ -91,22 +91,25 @@
 
 
     // *******************Andrei.H******************** //
+
     //object map
-    /*function map() {
-        let map = new Map();
-        map.set('Alumne', 'Nom');
-        map.set('Empresa', 'Nom');
-        map.set('Professor', 'Nom');
+    //diccionari
+    function map() {
+        let mapa = new Map();
+        mapa.set('Alumne', 'Denegat');
+        mapa.set('Empresa', 'Denegat');
+        mapa.set('Professor', 'Admes');
         // sayings.size; // 3
-        map.delete('Alumne');
-        for (let [key, value] of map) {
+        //mapa.size();
+        mapa.delete('Alumne');
+        for (let [key, value] of mapa) {
             console.log(key + ' diu ' + value);
+
         }
         //sayings.clear();
         //sayings.size; // 0
     }
-        function set(  {
-
+        function set()  {
         let primerSet = new Set();
         primerSet.add(1);
         primerSet.add('Mucho texto');
@@ -114,16 +117,121 @@
 
         primerSet.has(1);
         primerSet.delete('foo');
-        primerSet.size;
+        //primerSet.size();
 
-        for (let item of primerSet) console.log(item);
+        for (let item of primerSet) {
+            console.log(item);
+        }
 
     }
+    //promises
+    /*
+    const promise = new Promise((resolve, reject) => {
+      const peticio = new XMLHttpRequest();
 
-    map();
-    set();*/
+      peticio.open("GET", "https://randomuser.me/api/?inc=gender,nom,email&noinfo&format=PrettyJSON%22);
+      peticio.onload = () => {
+        if (peticio.status === 200) {
+          resolve(peticio.response);
+
+        } else {
+          reject(Error(peticio.statusText));
+        }
+      };
+
+      peticio.onerror = () => {
+        reject(Error("Error omplint les dades."));
+      };
+
+      peticio.send();
+    });
+
+    console.log("Petició feta.");
+
+    promise.then(
+      data => {
+        console.log("S'ha trobat informació. A continuació es generarà un usuari alistitutori:");
+        console.log(data);
+      },
+      error => {
+        console.log("Promise rebutjada.");
+        console.log(error.message);
+      }
+    );
+    //})();
+
+    */
+//classe animal
+class Animal {
+    constructor(name, weight) {
+        this.name = name;
+        this.weight = weight;
+    }
+
+    eat() {
+        return `${this.name} is eating!`;
+    }
+
+    sleep() {
+        return `${this.name} is going to sleep!`;
+    }
+
+    wakeUp() {
+        return `${this.name} is waking up!`;
+    }
+
+}
+
+class Gorilla extends Animal {
+    constructor(name, weight) {
+        super(name, weight);
+    }
+
+    climbTrees() {
+        return `${this.name} is climbing trees!`;
+    }
+
+    poundChest() {
+        return `${this.name} is pounding its chest!`;
+    }
+
+    showVigour() {
+        return `${super.eat()} ${this.poundChest()}`;
+    }
+
+    dailyRoutine() {
+        return `${super.wakeUp()} ${this.poundChest()} ${super.eat()} ${super.sleep()}`;
+    }
+
+}
+
+function display(content) {
+    console.log(content);
+}
+
+const gorilla = new Gorilla('George', '160Kg');
+display(gorilla.poundChest());
+display(gorilla.sleep());
+display(gorilla.showVigour());
+display(gorilla.dailyRoutine());
+
 // **************************************************
+//Array
+var usersusers = [
+    {nom: "AndreiH", tipus: "Alumne"},
+    {nom: "AlexM", tipus: "Profe"},
+    {nom: "JoanT", tipus: "Empleat"},
+    {nom: "VladU", tipus: "Gerent"}
+];
+var usuarisAlumnes =  usersusers.filter(function(tipusUsuari) {
+    return tipusUsuari.tipus == "Alumne";
+});
 
 
+
+//***************************************************
+map();
+set();
+console.log(usuarisAlumnes);
 
 })();
