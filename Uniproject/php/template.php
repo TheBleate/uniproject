@@ -1,6 +1,6 @@
 <?php
 
-    require_once(realpath(__DIR__. '/methods.php'));
+    require_once(realpath(__DIR__. '/helpers.php'));
     require_once(realpath(__DIR__. '/const.php'));
 
     // Metode utilitzat per implementar Views
