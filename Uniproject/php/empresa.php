@@ -44,14 +44,14 @@ class Empresa {
                 <tbody>';
 
         foreach ($query as $row) {
-          if($row['Estat'] === 'actiu') {
+          if($row['estat'] === 'actiu') {
               echo '<tr>
-                      <td>'. $row['nom'] .'</td>
-                      <td>'. $row['localitat'] .'</td>
-                      <td>'. $row['adreça'] .'</td>
-                      <td>'. $row['telefon'] .'</td>
-                      <td>'. $row['cif'] .'</td>
-                      <td>'. $row['email'] .'</td>
+                      <td>'. $row['Nom'] .'</td>
+                      <td>'. $row['Localitat'] .'</td>
+                      <td>'. $row['Adreça'] .'</td>
+                      <td>'. $row['Telefon'] .'</td>
+                      <td>'. $row['CIF'] .'</td>
+                      <td>'. $row['Email'] .'</td>
                       <td class="align-middle">
                           <div class="d-flex">
                               <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idEmpresa']. '"><i class="fa fa-pencil"></i></a>

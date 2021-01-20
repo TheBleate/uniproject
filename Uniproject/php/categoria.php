@@ -6,7 +6,7 @@ class Categoria {
     $query = 'SELECT idCategoria, Nom, Descripcio, estat FROM Categoria;';
 
     $query = $this->DB->query($query);
-
+    //echo $query;
     if ($query) {
         echo '<table border="1" frame="void" rules="cols">
                 <thead>

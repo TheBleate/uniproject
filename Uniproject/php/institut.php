@@ -21,17 +21,14 @@ class Institut {
     }
     public function llistar() {
         echo "xxxxxxxxxxxxxxxx;";
-      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
+      $query = 'SELECT Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
 
       $query = $this->DB->query($query);
       echo "yyyyyyyyyyyyyyyyyy;";
-      var_dump($query);
+      //var_dump($query);
 
       if ($query) {
           //var_dump($query);
-
-          echo "sss;";
-          echo $query;
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
@@ -41,12 +38,14 @@ class Institut {
                           <th>Telefon</th>
                           <th>CIF</th>
                           <th>Email</th>
-                          <td class="align-middle text-center" ><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
+                          <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                       </tr>
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-            if($row['Estat'] === 'actiu') {
+              echo "fffffffff";
+              //echo $query;
+            if($row['estat'] === 'actiu') {
                 echo '<tr>
                         <td>'. $row['Nom'] .'</td>
                         <td>'. $row['Localitat'] .'</td>
