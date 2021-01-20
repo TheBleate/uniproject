@@ -3,7 +3,7 @@ class Incidencia {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
+    $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
