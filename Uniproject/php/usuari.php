@@ -25,12 +25,11 @@ class Usuari {
                     <thead>
                         <tr>
                             <th>Nom complet</th>
-
                             <th>DNI</th>
                             <th>UserName</th>
                             <th>Password</th>
                             <th>Tipus</th>
-                            <th>Email</th>
+                            <!--<th>Email</th> -->
                             <th>Telefon</th>
                             <th>DataNaixement</th>
                             <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
@@ -45,7 +44,7 @@ class Usuari {
                         <td>'. $row['UserName'] .'</td>
                         <td>'. $row['Password'] .'</td>
                         <td>'. $row['Tipus'] .'</td>
-                        <td>'. $row['Email'] .'</td>
+                        <!--<td>'. $row['Email'] .'</td> -->
                         <td>'. $row['Telefon'] .'</td>
                         <td>'. $row['DataNaixement'] .'</td>
                         <td class="align-middle">
