@@ -20,14 +20,15 @@ class Institut {
         }
     }
     public function llistar() {
-        echo "xxxxxxxxxxxxxxxx;";
-      $query = 'SELECT Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
+      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
 
       $query = $this->DB->query($query);
-      echo "yyyyyyyyyyyyyyyyyy;";
       //var_dump($query);
+      echo "xxxxxxxxxxxxxxxx;";
 
       if ($query) {
+          echo "yyyyyyyyyyyyyyyyyy;";
+
           //var_dump($query);
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
