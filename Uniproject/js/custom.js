@@ -227,6 +227,8 @@ var usuarisAlumnes =  usersusers.filter(function(tipusUsuari) {
     return tipusUsuari.tipus == "Alumne";
 });
 
+console.log(usuarisAlumnes);
+
 
 //***************************************************
 map();
