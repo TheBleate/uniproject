@@ -130,10 +130,11 @@
         </div>
     </div>
 </main>
-
+<iframe width="420" height="315 margin"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
 <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
 <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
-
 
 </body>
 </html>

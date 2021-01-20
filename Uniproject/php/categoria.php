@@ -3,7 +3,7 @@ class Categoria {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT Nom, Descripcio, estat FROM Categoria;';
+    $query = 'SELECT idCategoria, Nom, Descripcio, estat FROM Categoria;';
 
     $query = $this->DB->query($query);
 
@@ -24,8 +24,8 @@ class Categoria {
                       <td>'. $row['Descripcio'] .'</td>
                       <td class="align-middle">
                           <div class="d-flex">
-                              <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idIncidencia']. '"><i class="fa fa-pencil"></i></a>
-                              <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idincidencia']. '"><i class="fa fa-trash"></i></a>
+                              <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idCategoria']. '"><i class="fa fa-pencil"></i></a>
+                              <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idCategoria']. '"><i class="fa fa-trash"></i></a>
                           <div>
                       </td>
                   </tr>';
