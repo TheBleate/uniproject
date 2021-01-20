@@ -110,7 +110,7 @@
                         <form id="crud-modificar-categoria" method="post">
                             <div class="form-group">
                                 <label for="nom">Nom</label>
-                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
+                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
                             </div>
                             <div class="form-group">
                                 <label for="categoria">Cognom</label>
@@ -129,10 +129,11 @@
             </div>
         </div>
     </div>
+    <iframe width="420" height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY">
+    </iframe>
 </main>
-<iframe width="420" height="315 margin"
-        src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
+
 <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->
 <?php view('footer', 0, 'bootstrap/bootstrap.bundle.min'); ?>
 
