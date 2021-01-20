@@ -14,7 +14,7 @@
     <div class="d-flex flex-column w-100">
         <!-- Begin page content -->
         <div class="container-fluid p-5">
-            <h2 class="pb-5">Llistat de Categories</h2>
+            <h2 class="pb-5">Llistat de categories</h2>
             <?php
             require_once('./php/database.php');
             require_once('./php/categoria.php');

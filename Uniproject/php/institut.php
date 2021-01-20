@@ -23,7 +23,8 @@ class Institut {
       $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
       $query = $this->DB->query($query);
       if ($query) {
-
+          echo "sss;";
+          echo $query;
           echo '<table border="1" frame="void" rules="cols">
                   <thead>
                       <tr>
@@ -38,14 +39,14 @@ class Institut {
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-            if($row['estat'] === 'actiu') {
+            if($row['Estat'] === 'actiu') {
                 echo '<tr>
-                        <td>'. $row['nom'] .'</td>
-                        <td>'. $row['localitat'] .'</td>
-                        <td>'. $row['adreça'] .'</td>
-                        <td>'. $row['telefon'] .'</td>
-                        <td>'. $row['cif'] .'</td>
-                        <td>'. $row['email'] .'</td>
+                        <td>'. $row['Nom'] .'</td>
+                        <td>'. $row['Localitat'] .'</td>
+                        <td>'. $row['Adreça'] .'</td>
+                        <td>'. $row['Telefon'] .'</td>
+                        <td>'. $row['CIF'] .'</td>
+                        <td>'. $row['Email'] .'</td>
                         <td class="align-middle">
                             <div class="d-flex">
                                 <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idInstitut']. '"><i class="fa fa-pencil"></i></a>

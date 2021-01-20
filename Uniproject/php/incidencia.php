@@ -3,7 +3,7 @@ class Incidencia {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT nom, descripcio, registreData, Estat FROM Usuari WHERE Tipus = "incidencia";';
+    $query = 'SELECT estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
@@ -11,17 +11,20 @@ class Incidencia {
         echo '<table border="1" frame="void" rules="cols">
                 <thead>
                     <tr>
+                        <th>Estat Incidencia</th>
                         <th>Nom</th>
                         <th>Descripcio</th>
-                        <th>registreData</th>
+                        <th>registre Data</th>
+
                         <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
                     </tr>
                 </thead>
                 <tbody>';
 
         foreach ($query as $row) {
-          if($row['Estat'] === 'actiu') {
+          if($row['estat'] === 'actiu') {
               echo '<tr>
+                      <td>'. $row['estatIncidencia'] .'</td>
                       <td>'. $row['nom'] .'</td>
                       <td>'. $row['descripcio'] .'</td>
                       <td>'. $row['registreData'] .'</td>

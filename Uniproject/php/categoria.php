@@ -3,7 +3,7 @@ class Categoria {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT Nom, Descripcio FROM Categoria;';
+    $query = 'SELECT Nom, Descripcio, estat FROM Categoria;';
 
     $query = $this->DB->query($query);
 
@@ -18,7 +18,7 @@ class Categoria {
                 </thead>
                 <tbody>';
         foreach ($query as $row) {
-          if($row['Estat'] === 'actiu') {
+          if($row['estat'] === 'actiu') {
               echo '<tr>
                       <td>'. $row['Nom'].'</td>
                       <td>'. $row['Descripcio'] .'</td>
