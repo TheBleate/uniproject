@@ -116,7 +116,7 @@
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form id = "crud-modificacio" method="post" data-crud="incidencia">
+                <form id = "crud-modificar" method="post" data-crud="incidencia">
 
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modificar incidencia</h5>

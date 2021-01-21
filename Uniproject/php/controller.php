@@ -58,6 +58,8 @@
           $descripcio = $_POST['descripcio'] ?? null;
 
           //exit("ERROR: id: ". $id. " nom: ". $nom. " descripcio: ". $descripcio);
+          //echo "ERROR: algo";
+          //algo
 
           switch($action) {
               case 'alta':
