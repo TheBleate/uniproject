@@ -42,7 +42,6 @@ class Empresa {
                     </tr>
                 </thead>
                 <tbody>';
-
         foreach ($query as $row) {
           if($row['estat'] === 'actiu') {
               echo '<tr>

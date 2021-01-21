@@ -51,7 +51,8 @@
     const android = /(android)/i.test(navigator.userAgent);
     const banner = document.querySelector('.banner');
     const modal_triggers = document.querySelectorAll('.modal-trigger');
-    const modal_creacio = document.getElementById('modal-creacio');
+    const modals = document.querySelectorAll('[id^="crud-"]');
+    console.log(modals);
 
     /**
     *  Listeners
@@ -70,6 +71,7 @@
                 switch (parseInt(item.dataset.crudaction)) {
                     case 1:
                         $('#modal-creacio').modal();
+                        $('#crud-modificar').data('crudtarget', item.dataset.crudtarget);
                         break;
                     case 2:
                         $('#modal-modificacio').modal();
@@ -86,34 +88,34 @@
 
     }
 
-    $('#crud-alta').on('submit', function(event) {
-        event.preventDefault()
-        let data = new FormData(this);
-        data.append('tab', this.dataset.crud);
-        data.append('action', "alta");
-        request(data,this);
-        return false;
-    });
 
-    $('#crud-modificar').on('submit', function(event) {
-        event.preventDefault()
-        let data = new FormData(this);
-        data.append('tab', this.dataset.crud);
-        data.append('action', "modificar");
-        data.append('target', $(this).data('crudtarget'));
-        request(data,this);
-        return false;
-    });
+    if (modals) {
+        modals.forEach(item => {
+            item.addEventListener('submit', event => {
+                event.preventDefault()
 
-    $('#crud-eliminar').on('submit', function(event) {
-        event.preventDefault()
-        let data = new FormData(this);
-        data.append('tab', this.dataset.crud);
-        data.append('action', "eliminar");
-        data.append('target', $(this).data('crudtarget'));
-        request(data,this);
-        return false;
-    });
+                let data = new FormData(item);
+                data.append('tab', item.dataset.crud);
+                data.append('target', $(item).data('crudtarget'));
+
+                switch (item.id) {
+                    case 'crud-alta':
+                        data.append('action', 'alta');
+                        break;
+                    case 'crud-modificar':
+                        data.append('action', 'modificar');
+                        break;
+                    case 'crud-eliminar':
+                        data.append('action', 'eliminar');
+                        break;
+                }
+
+                request(data,this);
+                return false;
+
+            });
+        });
+    }
 
     // *******************Andrei.H******************** //
 

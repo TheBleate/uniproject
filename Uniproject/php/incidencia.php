@@ -2,8 +2,8 @@
 class Incidencia {
   private $DB;
 
-  public function llistar() {
-    $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
+  public function llistar($idUsuari) {
+    $query = 'SELECT dIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
@@ -16,7 +16,7 @@ class Incidencia {
                         <th>Descripcio</th>
                         <th>registre Data</th>
 
-                        <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
+                        <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" data-crudtarget="'. $idUsuari.'" ><i class="fa fa-plus"></i></a></td>
                     </tr>
                 </thead>
                 <tbody>';
@@ -41,8 +41,8 @@ class Incidencia {
               </table>';
     }
   }
-  public function alta($idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
-    $query = 'INSERT INTO Incidencia(idIncidencia, idUsuari, Estat, Nom, Descripcio, registreData) VALUES '. "(". '"' . $idIncidencia . '","' . $idUsuari . '","' . $estat . '","' . $nom . '","' . $descripcio . '","' . $registreData .'");';
+  public function alta($idUsuari, $nom, $descripcio, $registreData) {
+    $query = 'INSERT INTO Incidencia(idUsuari, estatIncidencia, Nom, Descripcio, registreData) VALUES '. "(". '"' . $idUsuari . '", "Enviat","' . $nom . '","' . $descripcio . '","' . $registreData .'");';
     $query = $this->DB->query($query);
     if ($query === true) {
           return "Incidencia afegida!";

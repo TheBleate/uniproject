@@ -60,7 +60,7 @@
           switch($action) {
               case 'alta':
                   if ($nom && $descripcio) {
-                      exit($GI->alta($nom, $descripcio));
+                      exit($GI->alta($id, 'actiu', $nom,$descripcio, date('Y-m-d H:i:s')));
                   }
                   break;
 

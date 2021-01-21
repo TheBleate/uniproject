@@ -31,7 +31,8 @@
                     $Incidencia = new Incidencia($DB->getDB());
                     //intento de if :()
                     //if($idrol === "alumne"){}
-                    $Incidencia->llistar();
+                    $Incidencia->llistar($_SESSION['usuari_actual']['idUsuari']);
+
                 ?>
             </div>
 

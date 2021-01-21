@@ -74,7 +74,6 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <form id="crud-eliminar" method="post" data-crud="categoria">
-
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">Eliminar Categoria</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -103,13 +102,11 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <form id="crud-modificar" method="post" data-crud="categoria">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modificar categoria</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modificar categoria</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label for="nom">Nom</label>
                                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
@@ -118,15 +115,12 @@
                                 <label for="descripcio">Descripcio</label>
                                 <input type="text" class="form-control" name="descripcio" id="descripcio" placeholder="Descripcio">
                             </div>
-
-                            <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Modificar</button>
-                    </div>
+                                <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Modificar</button>
+                        </div>
                     </form>
                 </div>
             </div>
