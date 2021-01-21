@@ -4,6 +4,12 @@
   <?php
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
     require_once('./php/template.php');
+    /*
+    $DB = new Database();
+    if ($_SESSION['usuari_actual'] ?? false) {
+        header('Location: ./gestor.php');
+    }
+    */
   ?>
 
   <!-- Header | additionally you can specify a custom css file by adding ( $style=file.css ) before the requirement -->

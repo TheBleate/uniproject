@@ -26,9 +26,7 @@
     //Validació, comprova usuari i contrasenya a la BD
 
 
-    if ($_SESSION['usuari_actual'] ?? false) {
-        header('Location: ./gestor.php');
-    }
+    
 
     //Realitza la connexió a la base de dades
     if ($nomusuari || $contraseña) {
