@@ -3,7 +3,7 @@ class Incidencia {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
+    $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
@@ -25,13 +25,13 @@ class Incidencia {
           if($row['estat'] === 'actiu') {
               echo '<tr>
                       <td>'. $row['estatIncidencia'] .'</td>
-                      <td>'. $row['nom'] .'</td>
-                      <td>'. $row['descripcio'] .'</td>
+                      <td>'. $row['Nom'] .'</td>
+                      <td>'. $row['Descripcio'] .'</td>
                       <td>'. $row['registreData'] .'</td>
                       <td class="align-middle">
                           <div class="d-flex">
-                              <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idIncidencia']. '"><i class="fa fa-pencil"></i></a>
-                              <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idincidencia']. '"><i class="fa fa-trash"></i></a>
+                            <a href="#!" class="modal-trigger pr-1" data-crudaction="2" data-crudtarget="'. $row['idIncidencia']. '"><i class="fa fa-pencil"></i></a>
+                            <a href="#!" class="modal-trigger" data-crudaction="3" data-crudtarget="'. $row['idIncidencia']. '"><i class="fa fa-trash"></i></a>
                           <div>
                       </td>
                   </tr>';

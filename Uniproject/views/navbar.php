@@ -45,7 +45,12 @@ switch ($args[0] ?? 0):
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log In</button>
       </form>
   -->
-        <a class="navbar-brand" href="<?php echo ROOT_REL_PATH; ?>login.php">Login</a>
+        <a class="navbar-brand" href="<?php echo ROOT_REL_PATH; ?>login.php">
+             <?php
+             /*require_once("./php/usuari.php");
+             require_once("./php/database.php");
+             echo  */?>Login
+         </a>
     </div>
   </nav>
 <?php break;
