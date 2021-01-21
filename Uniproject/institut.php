@@ -54,6 +54,7 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-alta-institut" method="post">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'instituts</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,7 +63,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form id="crud-alta-institut" method="post">
+
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
