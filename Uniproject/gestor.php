@@ -50,7 +50,7 @@
                 //$nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
                 $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
                 $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
-                $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
+                $segonCognom = (isset($_POST['segonCognom']) ? $_POST['segonCognom'] : null);
                 $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
                 $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
                 $password = (isset($_POST['password']) ? $_POST['password'] : null);
@@ -69,6 +69,7 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+              <form action=" " id="crud-alta" method="post" data-crud="gestor">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'usuaris</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -77,7 +78,6 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -87,8 +87,8 @@
                     <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="cognom2">Segon Cognom</label>
-                    <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
+                    <label for="segonCognom">Segon Cognom</label>
+                    <input type="text" class="form-control" name="segonCognom" id="segonCognom" placeholder="Название">
                   </div>
                   <div class="form-group">
                     <label for="DNI">DNI</label>
@@ -127,9 +127,6 @@
                     <span class="validity"></span>
                   </div>
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
-
-                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -147,6 +144,7 @@
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-eliminar" method="post" data-crud="gestor">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Eliminar usuari</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -154,14 +152,15 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form id="crud-eliminar-institut" method="post">
+
                       <p> Segur que vols eliminar aquesta empresa? </p>
-                  </form>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
+               </form>
             </div>
           </div>
         </div>
@@ -174,6 +173,7 @@
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-modificar" method="post" data-crud="gestor">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modificar usuari</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -181,8 +181,8 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form action="modificar()" method="post">
-                  <form>
+
+
                     <div class="form-group">
                       <label for="nom">Nom</label>
                       <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
@@ -192,8 +192,8 @@
                       <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                     </div>
                     <div class="form-group">
-                      <label for="cognom2">Segon Cognom</label>
-                      <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
+                      <label for="segonCognom">Segon Cognom</label>
+                      <input type="text" class="form-control" name="segonCognom" id="segonCognom" placeholder="Название">
                     </div>
                     <div class="form-group">
                       <label for="DNI">DNI</label>
@@ -234,7 +234,7 @@
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
 
-                  </form>
+
 
 
               </div>
@@ -242,6 +242,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
+              </form>
             </div>
           </div>
         </div>

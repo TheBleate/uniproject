@@ -1,8 +1,8 @@
 <?php
 class Institut {
   private $DB;
-  public function alta($idinstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
-    $query = 'INSERT INTO Institut(idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email) VALUES '. "(". '"' . $idinstitut . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email .'");';
+  public function alta($idinstitut, $nom, $localitat, $adreça, $telefon, $cif, $email, $estat) {
+    $query = 'INSERT INTO Institut(idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat) VALUES '. "(". '"' . $idinstitut . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email . '", "actiu"'.'");';
     $query = $this->DB->query($query);
     if ($query === true) {
           return "Empresa afegida!";
@@ -24,10 +24,9 @@ class Institut {
 
       $query = $this->DB->query($query);
       //var_dump($query);
-      echo "xxxxxxxxxxxxxxxx;";
+
 
       if ($query) {
-          echo "yyyyyyyyyyyyyyyyyy;";
 
           //var_dump($query);
           echo '<table border="1" frame="void" rules="cols">
@@ -44,7 +43,6 @@ class Institut {
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-              echo "fffffffff";
               //echo $query;
             if($row['estat'] === 'actiu') {
                 echo '<tr>
@@ -71,7 +69,7 @@ class Institut {
   function modificar($idInstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
       $query = 'UPDATE Institut SET idInstitut ="'. $idInstitut. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idInstitut ="'.$idInstitut.'";';
       $query = $this->DB->query($query);
-      if ($query === ture) {
+      if ($query === true) {
           return "Canvis aplicats!";
       }else {
           return "No s'han pogut aplicar els canvis!";

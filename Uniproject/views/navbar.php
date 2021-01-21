@@ -68,7 +68,13 @@ switch ($args[0] ?? 0):
         <ul class="navbar-nav mr-auto">
 
         </ul>
-            <a class="navbar-brand" href="./login.php">Login</a>
+            <a class="navbar-brand" href="./login.php"><?php
+            /*
+            require_once("./php/database.php")
+            echo
+            echo $username['Username']; 
+            */?>Login</a>
+
       </div>
     </nav>
 <?php break;

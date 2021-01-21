@@ -42,7 +42,7 @@
                 $Localitat = (isset($_POST['localitat']) ? $_POST['localitat'] : null);
                 $Adreça = (isset($_POST['adreça']) ? $_POST['adreça'] : null);
                 $Telefon = (isset($_POST['telefon']) ? $_POST['telefon'] : null);
-                $CIF = (isset($_POST['cif']) ? $_POST['cif'] : null);
+                $CIF = (isset($_POST['CIF']) ? $_POST['CIF'] : null);
                 $Email = (isset($_POST['email']) ? $_POST['email'] : null);
 
             ?>
@@ -54,6 +54,7 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-alta" method="post" data-crud="institut">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'instituts</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,7 +63,7 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form id="crud-alta-institut" method="post">
+
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
@@ -80,8 +81,8 @@
                     <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
                   </div>
                   <div class="form-group">
-                    <label for="cif">CIF</label>
-                    <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                    <label for="CIF">CIF</label>
+                    <input type="text" class="form-control" name="CIF" id="cif" placeholder="Amposta">
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
@@ -107,6 +108,7 @@
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-eliminar" method="post" data-crud="institut">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Eliminar institut</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -117,12 +119,12 @@
 
                 <p> Segur que vols eliminar aquest institut? </p>
 
-
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
+          </form>
             </div>
           </div>
         </div>
@@ -135,6 +137,7 @@
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                 <form id="crud-modificar" method="post" data-crud="institut">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modificar institut</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -142,7 +145,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form id="crud-modificar-institut" method="post">
+
                       <div class="form-group">
                         <label for="nom">Nom</label>
                         <input type="text" class="form-control" name="nom" id="nom" placeholder="IES Montsia">
@@ -160,20 +163,21 @@
                         <input type="text" class="form-control" name="telefon" id="telefon" placeholder="Amposta">
                       </div>
                       <div class="form-group">
-                        <label for="cif">CIF</label>
-                        <input type="text" class="form-control" name="cif" id="cif" placeholder="Amposta">
+                        <label for="CIF">CIF</label>
+                        <input type="text" class="form-control" name="CIF" id="CIF" placeholder="Amposta">
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
                       </div>
-                  </form>
+
 
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
+               </form>
             </div>
           </div>
         </div>

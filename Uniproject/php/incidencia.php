@@ -2,7 +2,7 @@
 class Incidencia {
   private $DB;
 
-  public function llistar() {
+  public function llistar($idUsuari) {
     $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
@@ -16,7 +16,7 @@ class Incidencia {
                         <th>Descripcio</th>
                         <th>registre Data</th>
 
-                        <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" ><i class="fa fa-plus"></i></a></td>
+                        <td class="align-middle text-center"><a href="#!" class="modal-trigger" data-crudaction="1" data-crudtarget="'. $idUsuari.'" ><i class="fa fa-plus"></i></a></td>
                     </tr>
                 </thead>
                 <tbody>';
@@ -41,13 +41,13 @@ class Incidencia {
               </table>';
     }
   }
-  public function alta($idIncidencia, $idUsuari, $estat, $nom, $descripcio, $registreData) {
-    $query = 'INSERT INTO Incidencia(idIncidencia, idUsuari, Estat, Nom, Descripcio, registreData) VALUES '. "(". '"' . $idIncidencia . '","' . $idUsuari . '","' . $estat . '","' . $nom . '","' . $descripcio . '","' . $registreData .'");';
+  public function alta($idUsuari, $nom, $descripcio) {
+    $query = 'INSERT INTO Incidencia(idUsuari, estatIncidencia, Nom, Descripcio) VALUES '. "(". '"' . $idUsuari . '", "Enviat","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
-          return "Incidencia afegida!";
+        return "Incidencia afegida!";
     } else {
-      return "No s'han pogut afegir la Incidencia!";
+        return "ERROR: No s'han pogut afegir la Incidencia!";
     }
   }
 
@@ -57,16 +57,16 @@ class Incidencia {
     if ($query === true) {
         return "L'incidencia s'ha eliminat!";
     } else {
-        return "No s'ha pogut eliminar l'incidencia!";
+        return "ERROR: No s'ha pogut eliminar l'incidencia!";
     }
 }
 function modificar($idIncidencia, $estat, $nom, $descripcio, $registreData) {
     $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Estat = "'. $estat .'", Descripcio = "'. $descripcio .'", registreData = "'.$registreData.'" WHERE idIncidencia = "'. $idIncidencia .'";';
     $query = $this->DB->query($query);
-    if ($query === ture) {
+    if ($query === true) {
         return "Canvis aplicats!";
     }else {
-        return "No s'han pogut aplicar els canvis!";
+        return "ERROR: No s'han pogut aplicar els canvis!";
     }
 }
   function __construct($DB) {

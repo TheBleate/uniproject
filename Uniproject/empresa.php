@@ -53,13 +53,13 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-alta" method="post" data-crud="empresa">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'empreses</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-                <form id="crud-alta" method="post" data-crud="empresa">
               <div class="modal-body">
                   <!--Formulari de creacio-->
                   <div class="form-group">
@@ -104,13 +104,14 @@
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-eliminar" method="post" data-crud="empresa">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Eliminar empresa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-                <form id="crud-eliminar" method="post" data-crud="empresa">
+
               <div class="modal-body">
                     <p> Segur que vols eliminar aquesta empresa? </p>
               </div>

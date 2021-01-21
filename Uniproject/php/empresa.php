@@ -42,7 +42,6 @@ class Empresa {
                     </tr>
                 </thead>
                 <tbody>';
-
         foreach ($query as $row) {
           if($row['estat'] === 'actiu') {
               echo '<tr>
@@ -68,7 +67,7 @@ class Empresa {
   function modificar($idEmpresa, $nom, $localitat, $adreça, $telefon, $cifm, $email) {
       $query = 'UPDATE Empresa SET Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idEmpresa ="'.$idEmpresa.'";';
       $query = $this->DB->query($query);
-      if ($query === ture) {
+      if ($query === true) {
           return "Canvis aplicats!";
       }else {
           return "No s'han pogut aplicar els canvis!";
