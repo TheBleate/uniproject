@@ -57,10 +57,12 @@
           $nom = $_POST['nom'] ?? null;
           $descripcio = $_POST['descripcio'] ?? null;
 
+          //exit("ERROR: id: ". $id. " nom: ". $nom. " descripcio: ". $descripcio);
+
           switch($action) {
               case 'alta':
-                  if ($nom && $descripcio) {
-                      exit($GI->alta($id, 'actiu', $nom,$descripcio, date('Y-m-d H:i:s')));
+                  if ($id && $nom && $descripcio) {
+                      exit($GI->alta($id, $nom, $descripcio));
                   }
                   break;
 

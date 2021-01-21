@@ -19,7 +19,6 @@
 
         let request = new XMLHttpRequest();
 
-
         request.onload = function () {
 
             if (this.status === 200) {
@@ -52,7 +51,6 @@
     const banner = document.querySelector('.banner');
     const modal_triggers = document.querySelectorAll('.modal-trigger');
     const modals = document.querySelectorAll('[id^="crud-"]');
-    console.log(modals);
 
     /**
     *  Listeners
@@ -71,7 +69,7 @@
                 switch (parseInt(item.dataset.crudaction)) {
                     case 1:
                         $('#modal-creacio').modal();
-                        $('#crud-modificar').data('crudtarget', item.dataset.crudtarget);
+                        $('#crud-alta').data('crudtarget', item.dataset.crudtarget);
                         break;
                     case 2:
                         $('#modal-modificacio').modal();
@@ -87,7 +85,6 @@
         });
 
     }
-
 
     if (modals) {
         modals.forEach(item => {
@@ -110,7 +107,7 @@
                         break;
                 }
 
-                request(data,this);
+                request(data,item);
                 return false;
 
             });

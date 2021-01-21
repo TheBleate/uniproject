@@ -3,7 +3,7 @@ class Incidencia {
   private $DB;
 
   public function llistar($idUsuari) {
-    $query = 'SELECT dIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
+    $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
@@ -41,13 +41,13 @@ class Incidencia {
               </table>';
     }
   }
-  public function alta($idUsuari, $nom, $descripcio, $registreData) {
-    $query = 'INSERT INTO Incidencia(idUsuari, estatIncidencia, Nom, Descripcio, registreData) VALUES '. "(". '"' . $idUsuari . '", "Enviat","' . $nom . '","' . $descripcio . '","' . $registreData .'");';
+  public function alta($idUsuari, $nom, $descripcio) {
+    $query = 'INSERT INTO Incidencia(idUsuari, estatIncidencia, Nom, Descripcio) VALUES '. "(". '"' . $idUsuari . '", "Enviat","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
-          return "Incidencia afegida!";
+        return "Incidencia afegida!";
     } else {
-      return "ERROR: No s'han pogut afegir la Incidencia!";
+        return "ERROR: No s'han pogut afegir la Incidencia!";
     }
   }
 
