@@ -48,8 +48,9 @@
             }
             break;
             /***********************************
-            //Vlad, Josep s'ha intentat... no me fa la funcio "renquest" de custom.js(nose es tard(exactament/(les(4:23(.-.(ok))))))
+            //Vlad, Josep s'ha intentat... no me fa la funcio "renquest" de custom.js(nose es tard(exactament/(les(4:40(.-.(ok))))))
             **********************************/
+            //Fatal error: Uncaught ArgumentCountError: Too few arguments to function Incidencia::alta(), 2 passed in C:\Users\Andrei\github\uniproject12345\Uniproject\php\controller.php on line 62 and exactly 6 expected in C:\Users\Andrei\github\uniproject12345\Uniproject\php\incidencia.php:44 Stack trace: #0 C:\Users\Andrei\github\uniproject12345\Uniproject\php\controller.php(62): Incidencia->alta('asd', 'asd') #1 {main} thrown in C:\Users\Andrei\github\uniproject12345\Uniproject\php\incidencia.php on line 44 (al crear(estic imagecolortransparent))
         case 'incidencia':
           $GI = new Incidencia($DB->getDB());
           $id = $_POST['target'] ?? null;
