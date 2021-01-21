@@ -59,7 +59,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-                <form id="crud-alta" method="post">
+                <form id="crud-alta" method="post" data-crud="empresa">
               <div class="modal-body">
                   <!--Formulari de creacio-->
                   <div class="form-group">
