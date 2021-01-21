@@ -4,7 +4,7 @@
   <?php
     // S'ha de afegir aquest require a qualsevol pagina que fagi us de les views
     require_once('./php/template.php');
-    require_once(PHP_ROOT. 'database.php');
+    require_once(PHP_PATH. 'database.php');
 
     $DB = new Database();
     if ($_SESSION['usuari_actual'] ?? false) {
