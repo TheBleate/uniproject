@@ -24,7 +24,7 @@
                     $descripcio = $_POST['descripcio'] ?? null;
 
                     if ($nom && $descripcio) {
-                        $GC->alta($nom, $descripcio);
+                        echo $GC->alta($nom, $descripcio);
                     }
                     break;
 
