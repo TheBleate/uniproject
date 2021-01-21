@@ -110,15 +110,15 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+                <form id="crud-eliminar" method="post" data-crud="empresa">
               <div class="modal-body">
-                <form id="crud-eliminar-empresa" method="post">
                     <p> Segur que vols eliminar aquesta empresa? </p>
-                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
+                </form>
             </div>
           </div>
         </div>
@@ -137,8 +137,8 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+                <form id="crud-modificar" method="post" data-crud="empresa">
               <div class="modal-body">
-                  <form id="crud-modificar-institut" method="post">
                     <div class="form-group">
                       <label for="Nom">Nom</label>
                       <input type="text" class="form-control" name="Nom" id="Nom" placeholder="Название">
@@ -166,13 +166,14 @@
 
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
 
-                  </form>
+
 
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
+                </form>
             </div>
           </div>
         </div>

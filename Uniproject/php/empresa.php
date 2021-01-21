@@ -24,7 +24,7 @@ class Empresa {
       }
   }
   public function llistar() {
-    $query = 'SELECT Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Empresa';
+    $query = 'SELECT idEmpresa, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Empresa';
 
     $query = $this->DB->query($query);
 
