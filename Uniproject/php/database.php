@@ -1,5 +1,5 @@
 <?php
-    require_once('./php/config.php');
+    require_once(PHP_PATH. 'config.php');
 
     class Database {
         private $DB;
