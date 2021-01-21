@@ -50,7 +50,7 @@
                 //$nomusuari = (isset($_POST['nomusuari']) ? $_POST['nomusuari'] : null);
                 $nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
                 $cognom = (isset($_POST['cognom']) ? $_POST['cognom'] : null);
-                $cognom2 = (isset($_POST['cognom2']) ? $_POST['cognom2'] : null);
+                $segonCognom = (isset($_POST['segonCognom']) ? $_POST['segonCognom'] : null);
                 $dni = (isset($_POST['DNI']) ? $_POST['DNI'] : null);
                 $userName = (isset($_POST['UserName']) ? $_POST['UserName'] : null);
                 $password = (isset($_POST['password']) ? $_POST['password'] : null);
@@ -87,8 +87,8 @@
                     <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                   </div>
                   <div class="form-group">
-                    <label for="cognom2">Segon Cognom</label>
-                    <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
+                    <label for="segonCognom">Segon Cognom</label>
+                    <input type="text" class="form-control" name="segonCognom" id="segonCognom" placeholder="Название">
                   </div>
                   <div class="form-group">
                     <label for="DNI">DNI</label>
@@ -173,7 +173,7 @@
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form method="post" data-crud="gestor">
+                <form id="crud-modificar" method="post" data-crud="gestor">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modificar usuari</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -192,8 +192,8 @@
                       <input type="text" class="form-control" name="cognom" id="cognom" placeholder="Название">
                     </div>
                     <div class="form-group">
-                      <label for="cognom2">Segon Cognom</label>
-                      <input type="text" class="form-control" name="cognom2" id="cognom2" placeholder="Название">
+                      <label for="segonCognom">Segon Cognom</label>
+                      <input type="text" class="form-control" name="segonCognom" id="segonCognom" placeholder="Название">
                     </div>
                     <div class="form-group">
                       <label for="DNI">DNI</label>

@@ -37,13 +37,8 @@
 
             <!-- /#page-content-wrapper -->
             <?php
-
-
-
-
                 $Nom = (isset($_POST['nom']) ? $_POST['nom'] : null);
                 $Descripcio = (isset($_POST['descripcio']) ? $_POST['descripcio'] : null);
-
             ?>
 
         <!-- Modal button (se cambiara)
@@ -54,6 +49,7 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id = "crud-alta" method="post" data-crud="incidencia">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Creacio d'instituts</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,25 +58,24 @@
               </div>
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form id = "crud-alta-incidencia" method="post">
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Problema 1">
                   </div>
                   <div class="form-group">
                     <label for="descripcio">Descripcio</label>
-
                     <!--//text area -->
                     <textarea type="text" class="form-control" name="descripcio" id="descripcio" placeholder="El problema ....."></textarea>
-                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Crear</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
+    </div>
         <!-- Modal de Eliminacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-eliminacio">
           Eliminar (icona)
@@ -90,6 +85,7 @@
         <div class="modal fade" id="modal-eliminacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id="crud-eliminar" method="post" data-crud="incidencia">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Eliminar incidencia</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -97,19 +93,20 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form id="crud-eliminar-incidencia" method="post">
+
                       <p> Segur que vols eliminar aquesta incidencia? </p>
-                  </form>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Eliminar</button>
               </div>
+               </form>
             </div>
           </div>
         </div>
 
-        <!-- Modal de Modificacio -->
+        <!-- Modal de Modificacio
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-modificacio">
           Modificar (icona)
         </button> -->
@@ -117,6 +114,8 @@
         <div class="modal fade" id="modal-modificacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
+                <form id = "crud-modificacio" method="post" data-crud="incidencia">
+
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Modificar incidencia</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -124,25 +123,22 @@
                 </button>
               </div>
               <div class="modal-body">
-                  <form id = "crud-modificacio-incidencia" method="post">
                       <div class="form-group">
                         <label for="nom">Nom</label>
                         <input type="text" class="form-control" name="nom" id="nom" placeholder="Problema 1">
                       </div>
                       <div class="form-group">
                         <label for="descripcio">Descripcio</label>
-
                         <!--//text area -->
                         <textarea type="text" class="form-control" name="descripcio" id="descripcio" placeholder="El problema ....."></textarea>
-
+                        <!-- <span class="comprovacio py-1">Hola mundo</span> -->
                     <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-                  </form>
-
                 </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Modificar</button>
               </div>
+               </form>
             </div>
           </div>
         </div>

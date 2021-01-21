@@ -36,12 +36,12 @@ class Categoria {
     }
   }
   public function alta($nom, $descripcio) {
-    $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $nom . '","' . $descripcio . '");';
+    $query = 'INSERT INTO Categoria(Nom, Descripcio) VALUES '. "(". '"' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
           return "Categoria afegida!";
     } else {
-      return "No s'ha pogut afegir la Categoria!";
+      return "ERROR: No s'ha pogut afegir la Categoria!";
     }
   }
   function eliminar($idCategoria)
@@ -51,17 +51,17 @@ class Categoria {
       if ($query === true) {
           return "La categoria s'ha eliminat!";
       } else {
-          return "No s'ha pogut eliminar la categoria!";
+          return "ERROR: No s'ha pogut eliminar la categoria!";
       }
   }
 
   function modificar($idCategoria, $nom, $Descripcio) {
       $query = 'UPDATE Categoria SET Nom = "'. $nom . '", Descripcio = "'. $Descripcio .'" WHERE idCategoria ="'.$idCategoria.'";';
       $query = $this->DB->query($query);
-      if ($query === ture) {
+      if ($query === true) {
           return "Canvis aplicats!";
       }else {
-          return "No s'han pogut aplicar els canvis!";
+          return "ERROR: No s'han pogut aplicar els canvis!";
       }
   }
 

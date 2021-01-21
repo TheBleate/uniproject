@@ -47,7 +47,7 @@ class Incidencia {
     if ($query === true) {
           return "Incidencia afegida!";
     } else {
-      return "No s'han pogut afegir la Incidencia!";
+      return "ERROR: No s'han pogut afegir la Incidencia!";
     }
   }
 
@@ -57,16 +57,16 @@ class Incidencia {
     if ($query === true) {
         return "L'incidencia s'ha eliminat!";
     } else {
-        return "No s'ha pogut eliminar l'incidencia!";
+        return "ERROR: No s'ha pogut eliminar l'incidencia!";
     }
 }
 function modificar($idIncidencia, $estat, $nom, $descripcio, $registreData) {
     $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Estat = "'. $estat .'", Descripcio = "'. $descripcio .'", registreData = "'.$registreData.'" WHERE idIncidencia = "'. $idIncidencia .'";';
     $query = $this->DB->query($query);
-    if ($query === ture) {
+    if ($query === true) {
         return "Canvis aplicats!";
     }else {
-        return "No s'han pogut aplicar els canvis!";
+        return "ERROR: No s'han pogut aplicar els canvis!";
     }
 }
   function __construct($DB) {

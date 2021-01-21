@@ -24,7 +24,7 @@ class Institut {
 
       $query = $this->DB->query($query);
       //var_dump($query);
-     
+
 
       if ($query) {
 
@@ -43,7 +43,6 @@ class Institut {
                   </thead>
                   <tbody>';
           foreach ($query as $row) {
-              echo "fffffffff";
               //echo $query;
             if($row['estat'] === 'actiu') {
                 echo '<tr>
@@ -70,7 +69,7 @@ class Institut {
   function modificar($idInstitut, $nom, $localitat, $adreça, $telefon, $cif, $email) {
       $query = 'UPDATE Institut SET idInstitut ="'. $idInstitut. '", Nom = "'. $nom . '" , Localitat = "'. $localitat .'", Adreça = "'. $adreça .'", Telefon = "'.$telefon.'", CIF = "'. $cif. '" Email = "'.$email .'" WHERE idInstitut ="'.$idInstitut.'";';
       $query = $this->DB->query($query);
-      if ($query === ture) {
+      if ($query === true) {
           return "Canvis aplicats!";
       }else {
           return "No s'han pogut aplicar els canvis!";
