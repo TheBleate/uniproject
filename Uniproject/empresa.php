@@ -59,9 +59,9 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+                <form id="crud-alta" method="post">
               <div class="modal-body">
                   <!--Formulari de creacio-->
-                <form id="crud-alta-institut" method="post">
                   <div class="form-group">
                     <label for="nom">Nom</label>
                     <input type="text" class="form-control" name="nom" id="nom" placeholder="Manuel">
@@ -86,15 +86,13 @@
                     <label for="email">Email</label>
                     <input type="text" class="form-control" name="email" id="email" placeholder="info@gmail.com">
                   </div>
-
                   <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-
-                </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-primary">Crear</button>
               </div>
+                </form>
             </div>
           </div>
         </div>
