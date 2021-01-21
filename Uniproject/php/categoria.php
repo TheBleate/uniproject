@@ -35,8 +35,8 @@ class Categoria {
               </table>';
     }
   }
-  public function alta($idCategoria, $nom, $descripcio) {
-    $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $idCategoria . '","' . $nom . '","' . $descripcio . '");';
+  public function alta($nom, $descripcio) {
+    $query = 'INSERT INTO Categoria(idCategoria, Nom, Descripcio) VALUES '. "(". '"' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
           return "Categoria afegida!";
