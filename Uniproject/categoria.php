@@ -38,30 +38,30 @@
         <div class="modal fade" id="modal-creacio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Creacio de Categories</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <!--Formulari de creacio-->
-                        <form id="crud-alta-categoria" method="post">
-                            <div class="form-group">
-                                <label for="nom">Nom</label>
-                                <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
-                            </div>
-                            <div class="form-group">
-                                <label for="descripcio">Descripcio</label>
-                                <input type="text" class="form-control" name="descripcio" id="descripcio" placeholder="Название">
-                            </div>
-                            <!-- Estat Sempre actiu(perque crees l'user .-.) -->
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Crear</button>
-                    </div>
+                    <form action=" " id="crud-alta" method="post" data-crud="categoria">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Creacio de Categories</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!--Formulari de creacio-->
+                                <div class="form-group">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Название">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcio">Descripcio</label>
+                                    <input type="text" class="form-control" name="descripcio" id="descripcio" placeholder="Название">
+                                </div>
+                                <!-- Estat Sempre actiu(perque crees l'user .-.) -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" id="submit" class="btn btn-primary">Crear</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@
                                 <input type="text" class="form-control" name="nom" id="nom" placeholder="Nom">
                             </div>
                             <div class="form-group">
-                                <label for="categoria">Cognom</label>
+                                <label for="categoria">Descripcio</label>
                                 <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Descripcio">
                             </div>
 
@@ -129,9 +129,10 @@
             </div>
         </div>
     </div>
-    <iframe width="420" height="315"
+   <!-- <iframe width="420" height="315"
             src="https://www.youtube.com/embed/tgbNymZ7vqY">
     </iframe>
+    -->
 </main>
 
 <!-- Footer | additionally you can specify the type of the navigation bar adding ( $footer=type ) before the requirement -->

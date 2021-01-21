@@ -12,33 +12,31 @@
      * @param 	{(Number|String)} 		arguments 	Any argument we wish to pass
      * @return 	{(Number|String|Array)}				Returns the server response
      */
-    function request(functioname)
+    function request(data, form)
     {
 
-    	let response;
+        form.disabled = true;
 
-    	$.ajax({
-    		type: 'post',
-    		url: './php/main.php',
-    		dataType: 'json',
-    		async: false,
-    		data: {functioname: functioname, arguments: Array.prototype.slice.call(arguments, 1)},
-    		success: function(data)
-    		{
+        let request = new XMLHttpRequest();
 
-    			response = data;
 
-    		},
-    		error: function(request, status, error)
-    		{
+        request.onload = function () {
 
-    			console.error('...');
+            if (this.status === 200) {
 
-    		}
+               console.log(this.responseText);
+            } else {
+                console.log(this.responseText);
+            }
 
-    	});
+            form.disabled = false;
 
-    	return response;
+        };
+
+        request.open("post", "./php/controller.php");
+        //request.setRequestHeader("Content-Type", form.enctype);
+        request.send(data);
+
 
     }
 
@@ -82,11 +80,16 @@
 
     }
 
-
-    $('#modal_creacio').on('submit', function() {
-
-
-        //return false;
+    $('#crud-alta').on('submit', function(event) {
+        event.preventDefault()
+        let data = new FormData(this);
+        data.append('tab', this.dataset.crud);
+        data.append('action', "alta");
+        for (var pair of data.entries()) {
+            console.log(pair[0]+ ', ' + pair[1]);
+        }
+        request(data,this);
+        return false;
     });
 
 
