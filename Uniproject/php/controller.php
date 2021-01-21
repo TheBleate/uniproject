@@ -2,7 +2,7 @@
 /* +------------------------------------+
    |        FITXER INTERMEDIARI         |
    +------------------------------------+ */
-
+   //muhco texto
    require_once('./const.php');
    require_once('./database.php');
    require_once('./categoria.php');
