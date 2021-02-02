@@ -3,12 +3,12 @@ class Categoria {
   private $DB;
 
   public function llistar() {
-    $query = 'SELECT idCategoria, Nom, Descripcio, estat FROM Categoria;';
+    $query = 'SELECT idCategoria, Nom, Descripcio FROM Categoria;';
 
     $query = $this->DB->query($query);
     //echo $query;
     if ($query) {
-        echo '<table border="1" frame="void" rules="cols">
+        echo '<table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Nom</th>
@@ -18,7 +18,6 @@ class Categoria {
                 </thead>
                 <tbody>';
         foreach ($query as $row) {
-          if($row['estat'] === 'actiu') {
               echo '<tr>
                       <td>'. $row['Nom'].'</td>
                       <td>'. $row['Descripcio'] .'</td>
@@ -29,7 +28,6 @@ class Categoria {
                           <div>
                       </td>
                   </tr>';
-          }
         }
         echo '    </tbody>
               </table>';
@@ -46,7 +44,7 @@ class Categoria {
   }
   function eliminar($idCategoria)
   {
-      $query = 'UPDATE Categoria SET Estat = "inactiu" WHERE idCategoria = "' . $idCategoria . '"';
+      $query = 'DELETE FROM Categoria WHERE idCategoria = "' . $idCategoria . '"';
       $query = $this->DB->query($query);
       if ($query === true) {
           return "La categoria s'ha eliminat!";

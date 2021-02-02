@@ -22,7 +22,7 @@
         request.onload = function () {
 
             if (this.status === 200) {
-                if (!this.responseText.includes('ERROR')) {
+                if (!this.responseText.includes('ERROR: ')) {
                     vanillaToast.success(this.responseText);
                     form.reset();
                     setTimeout(function(){ location.reload(); }, 1000);

@@ -2,7 +2,7 @@
 class Institut {
   private $DB;
   public function alta($idinstitut, $nom, $localitat, $adreça, $telefon, $cif, $email, $estat) {
-    $query = 'INSERT INTO Institut(idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat) VALUES '. "(". '"' . $idinstitut . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email . '", "actiu"'.'");';
+    $query = 'INSERT INTO Institut(idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email) VALUES '. "(". '"' . $idinstitut . '","' . $nom . '","' . $localitat .  '","' . $adreça .  '","' . $telefon . '","' . $cif . '","' . $email . '", "actiu"'.'");';
     $query = $this->DB->query($query);
     if ($query === true) {
           return "Empresa afegida!";
@@ -20,7 +20,7 @@ class Institut {
         }
     }
     public function llistar() {
-      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Institut;';
+      $query = 'SELECT idInstitut, Nom, Localitat, Adreça, Telefon, CIF, Email FROM Institut;';
 
       $query = $this->DB->query($query);
       //var_dump($query);
@@ -29,7 +29,7 @@ class Institut {
       if ($query) {
 
           //var_dump($query);
-          echo '<table border="1" frame="void" rules="cols">
+          echo '<table class="table table-bordered table-striped">
                   <thead>
                       <tr>
                           <th>Nom</th>
@@ -44,7 +44,6 @@ class Institut {
                   <tbody>';
           foreach ($query as $row) {
               //echo $query;
-            if($row['estat'] === 'actiu') {
                 echo '<tr>
                         <td>'. $row['Nom'] .'</td>
                         <td>'. $row['Localitat'] .'</td>
@@ -59,7 +58,7 @@ class Institut {
                             <div>
                         </td>
                 </tr>';
-            }
+
           }
           echo '    </tbody>
                 </table>';

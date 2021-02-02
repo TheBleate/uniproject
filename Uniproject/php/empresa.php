@@ -24,12 +24,12 @@ class Empresa {
       }
   }
   public function llistar() {
-    $query = 'SELECT idEmpresa, Nom, Localitat, Adreça, Telefon, CIF, Email, estat FROM Empresa';
+    $query = 'SELECT idEmpresa, Nom, Localitat, Adreça, Telefon, CIF, Email FROM Empresa';
 
     $query = $this->DB->query($query);
 
     if ($query) {
-        echo '<table border="1" frame="void" rules="cols">
+        echo '<table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Nom</th>
@@ -43,7 +43,7 @@ class Empresa {
                 </thead>
                 <tbody>';
         foreach ($query as $row) {
-          if($row['estat'] === 'actiu') {
+
               echo '<tr>
                       <td>'. $row['Nom'] .'</td>
                       <td>'. $row['Localitat'] .'</td>
@@ -58,7 +58,7 @@ class Empresa {
                           <div>
                       </td>
                   </tr>';
-          }
+
         }
         echo '    </tbody>
               </table>';

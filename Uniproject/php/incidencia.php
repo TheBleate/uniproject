@@ -3,12 +3,12 @@ class Incidencia {
   private $DB;
 
   public function llistar($idUsuari) {
-    $query = 'SELECT idIncidencia, estatIncidencia, Nom, Descripcio, registreData, estat FROM Incidencia;';
+    $query = 'SELECT * FROM Incidencia;';
 
     $query = $this->DB->query($query);
 
     if ($query) {
-        echo '<table border="1" frame="void" rules="cols">
+        echo '<table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Estat Incidencia</th>
@@ -22,9 +22,7 @@ class Incidencia {
                 <tbody>';
 
         foreach ($query as $row) {
-          if($row['estat'] === 'actiu') {
               echo '<tr>
-                      <td>'. $row['estatIncidencia'] .'</td>
                       <td>'. $row['Nom'] .'</td>
                       <td>'. $row['Descripcio'] .'</td>
                       <td>'. $row['registreData'] .'</td>
@@ -35,14 +33,13 @@ class Incidencia {
                           <div>
                       </td>
                   </tr>';
-          }
         }
         echo '    </tbody>
               </table>';
     }
   }
   public function alta($idUsuari, $nom, $descripcio) {
-    $query = 'INSERT INTO Incidencia(idUsuari, estatIncidencia, Nom, Descripcio) VALUES '. "(". '"' . $idUsuari . '", "Enviat","' . $nom . '","' . $descripcio . '");';
+    $query = 'INSERT INTO Incidencia(idUsuari, Nom, Descripcio) VALUES '. "(". '"' . $idUsuari . '","' . $nom . '","' . $descripcio . '");';
     $query = $this->DB->query($query);
     if ($query === true) {
         return "Incidencia afegida!";
@@ -52,7 +49,7 @@ class Incidencia {
   }
 
   function eliminar($idIncidencia) {
-    $query = 'UPDATE Incidencia SET Estat = "inactiu" WHERE idIncidencia = "' . $idIncidencia . '"';
+    $query = 'DELETE FROM Incidencia WHERE idIncidencia = "' . $idIncidencia . '"';
     $query = $this->DB->query($query);
     if ($query === true) {
         return "L'incidencia s'ha eliminat!";
@@ -60,8 +57,8 @@ class Incidencia {
         return "ERROR: No s'ha pogut eliminar l'incidencia!";
     }
 }
-function modificar($idIncidencia, $estat, $nom, $descripcio, $registreData) {
-    $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Estat = "'. $estat .'", Descripcio = "'. $descripcio .'", registreData = "'.$registreData.'" WHERE idIncidencia = "'. $idIncidencia .'";';
+function modificar($idIncidencia, $nom, $descripcio) {
+    $query = 'UPDATE Incidencia SET Nom = "'. $nom . '" , Descripcio = "'. $descripcio .'" WHERE idIncidencia = "'. $idIncidencia .'";';
     $query = $this->DB->query($query);
     if ($query === true) {
         return "Canvis aplicats!";
